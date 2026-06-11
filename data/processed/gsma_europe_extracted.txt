@@ -1,0 +1,1712 @@
+
+=== PAGE 1 ===
+The Mobile  
+Economy 
+Europe 2025
+
+
+=== PAGE 2 ===
+The GSMA is a global organisation unifying the mobile 
+ecosystem to discover, develop and deliver innovation 
+foundational to positive business environments and 
+societal change. Our vision is to unlock the full power of 
+connectivity so that people, industry and society thrive. 
+Representing mobile operators and organisations across 
+the mobile ecosystem and adjacent industries, the GSMA 
+delivers for its members across three broad pillars: 
+Connectivity for Good, Industry Services and Solutions, 
+and Outreach. This activity includes advancing policy, 
+tackling today’s biggest societal challenges, underpinning 
+the technology and interoperability that make mobile 
+work, and providing the world’s largest platform to 
+convene the mobile ecosystem at the MWC and M360 
+series of events.
+We invite you to find out more at gsma.com
+Follow the GSMA on X: @GSMA
+Follow the GSMA on LinkedIn
+GSMA Intelligence is the definitive source of global mobile 
+operator data, analysis and forecasts, and publisher of 
+authoritative industry reports and research. Our data 
+covers every operator group, network and MVNO in every 
+country worldwide – from Afghanistan to Zimbabwe. It is 
+the most accurate and complete set of industry metrics 
+available, comprising tens of millions of individual data 
+points, updated daily. 
+GSMA Intelligence is relied on by leading operators, 
+vendors, regulators, financial institutions and third-party 
+industry players, to support strategic decision-making 
+and long-term investment planning. The data is used as 
+an industry reference point and is frequently cited by the 
+media and by the industry itself. 
+Our team of analysts and experts produce regular 
+thought-leading research reports across a range of 
+industry topics. 
+www.gsmaintelligence.com
+info@gsmaintelligence.com
+Copyright © 2025 GSMA
+
+
+=== PAGE 3 ===
+Contents
+Executive summary
+2
+1.
+The mobile industry in numbers
+9
+2.
+Mobile industry trends
+20
+2.1
+5G benchmarking: assessing five years of 5G
+21
+2.2
+5G’s next wave: focus shifts to 5G-Advanced and 5G RedCap
+27
+2.3
+Open Gateway: capturing the opportunities ahead
+30
+2.4
+Generative AI: driving transformation and building partnerships
+32
+2.5
+Satellites and NTNs: momentum builds behind aerial connectivity
+34
+3.
+Mobile industry impact
+36
+3.1
+The mobile industry’s impact on the SDGs
+37
+3.2
+Supporting growing mobile internet use among children
+40
+4.
+Mobile industry enablers
+41
+4.1
+Boosting Europe’s global competitiveness
+42
+
+
+=== PAGE 4 ===
+Digital infrastructure has been at the heart of 
+social and economic progress in Europe for the 
+better part of the last three decades. Today, 
+nearly half a billion people across Europe are 
+connected to the mobile internet, predominantly 
+through high-speed 4G and 5G networks. Mobile 
+technologies and services now generate around 
+5% of GDP across Europe, a contribution that 
+amounts to almost €1.1 trillion of economic value 
+added. 5G, in particular, is expected to benefit 
+most sectors of the European economy, adding 
+around €164 billion of economic value by 2030. 
+However, achieving further growth beyond this 
+will be challenging within the constraints of the 
+current regulatory environment.
+Consequently, Europe is at a crossroads in the 
+development of crucial digital infrastructure, 
+with key network-performance and consumer-
+adoption metrics showing that it is falling behind 
+some of its global peers. This underlines the need 
+for urgent action by the European Commission 
+and other authorities to implement critical policy 
+reforms to ensure that Europe’s digital economy 
+– underpinned by strong, sustained network 
+innovation – can re-establish a leadership 
+position in the global tech race by 2030.
+Executive  
+summary
+Sustaining global competitiveness
+2 / 46
+Executive summary
+
+
+=== PAGE 5 ===
+The focus shifts to 5G standalone 
+and 5G-Advanced 
+By the end of 2024, 5G accounted for 30% of 
+mobile connections in Europe, equivalent to 
+over 200 million connections. However, 5G 
+has not yet materially altered mobile revenue 
+growth, which remains low in most European 
+markets. Shifting investment to more advanced 
+forms of 5G, particularly 5G networks based 
+on the standalone (SA) architecture, as well 
+as 5G-Advanced, will be important to unlock 
+new use cases and monetisation opportunities. 
+However, this investment will not occur 
+automatically, and issues that limit the mobile 
+sector's capacity to invest will need to be 
+addressed first.
+GSMA Open Gateway gains traction
+As of December 2024, 67 operator groups had 
+signed up to the GSMA Open Gateway initiative, 
+accounting for 75% of mobile connections 
+globally. The geographic breakdown of operator 
+commitments indicates regions at par, above or 
+below their established market share. Europe 
+is a leading region, with committed operators 
+representing more than 20% of GSMA Open 
+Gateway commitments despite accounting for 
+around only 10% of mobile connections. Many 
+of the early API launches in the region have 
+focused on fraud prevention and security, using 
+SIM Swap and Number Verification APIs. These 
+represent easy wins, given the ever-present risks 
+from fraudsters and breaches for operators and 
+their customers.
+Key trends shaping 
+the mobile ecosystem 
+By the end of 2024, 5G 
+accounted for 30% of 
+mobile connections in 
+Europe, equivalent to over 
+200 million connections 
+3 / 46
+Executive summary
+
+
+=== PAGE 6 ===
+Driving AI transformation responsibly 
+European operators are leading the way in 
+generative AI (genAI) adoption, with a strong 
+emphasis on network optimisation, security and 
+enhanced customer service. Mobile operators are 
+catalysing genAI innovation through strategic 
+partnerships, exemplified by Telefónica's 
+collaborations with technology partners, as well 
+as Deutsche Telekom's development of telecoms-
+specific large language models (LLMs) with the 
+Global Telco AI Alliance. To foster responsible 
+AI, operators are prioritising ethical AI practices 
+to ensure fairness, protect users and reduce 
+inequalities. The EU’s AI Act sets regulatory 
+standards for responsible AI, while the GSMA's 
+Responsible AI Maturity Roadmap offers a 
+framework for ethical AI use.
+Momentum builds behind aerial 
+connectivity 
+Terrestrial networks remain the primary form 
+of connectivity, supported by the wide area 
+coverage of wireless networks and the mass 
+production and adoption of mobile devices. In 
+recent years, however, technological advances 
+in various satellite and other non-terrestrial 
+networks (NTNs) have helped to overcome 
+several limitations associated with aerial 
+connectivity. Recent developments suggest that 
+European authorities are taking steps to keep 
+up with their global peers in the development 
+and application of satellite connectivity, as 
+a complement to terrestrial-based mobile 
+connectivity services. Recent examples include 
+the award of a contract to the SpaceRISE 
+consortium to develop, deploy and operate the 
+IRIS2 constellation, as well as the emergence 
+of new players across the European satellite 
+ecosystem.
+4 / 46
+Executive summary
+
+
+=== PAGE 7 ===
+Policies for success   
+Addressing Europe’s digital infrastructure needs 
+is an important first step towards resetting the 
+regulatory framework for telecommunications 
+and re-energising the European telecoms sector 
+as an engine of competitiveness and prosperity. 
+The benefits of increased investments in digital 
+infrastructure will not only be felt across the 
+telecoms and technology sectors but across every 
+other industry as well. Achieving this requires a 
+bold new approach to realising the Commission’s 
+digital single market ambitions, underpinned by 
+the following practical measures:
+•	Re-evaluate the existing regulatory framework 
+that was conceived 20–30 years ago, and update 
+the policy objectives and principles to match 
+today’s market realities and challenges.
+•	Implement additional measures to ensure 
+fairness in the internet value chain by defining 
+an obligation on content and application 
+providers (CAPs) to negotiate with internet 
+service providers (ISPs) on the terms and 
+conditions for IP data transport services, thereby 
+making the negotiating parties subject to a 
+dispute resolution process in the event that an 
+agreement cannot be reached.
+•	Take a more long-term view on investment and 
+innovation effects. The Commission needs to 
+initiate a review of the EU Merger Regulation, 
+which has not been reviewed for 20 years, in 
+order to put more emphasis on the long-term 
+investment viewpoint.
+•	Establish a pro-investment approach to EU 
+spectrum policy, including the adoption of 
+best practices to achieve a more predictable 
+and harmonised approach to spectrum auction 
+designs, licensing costs, the prolongation of 
+licences and the identification of future bands. 
+•	Apply circular economy principles to network 
+equipment and incorporate the EU taxonomy for 
+green investment in electronic communication 
+networks, based on robust metrics.
+The benefits of increased 
+investments in digital 
+infrastructure will not only be 
+felt across the telecoms and 
+technology sectors but across 
+every other industry as well 
+5 / 46
+Executive summary
+
+
+=== PAGE 8 ===
+88% penetration rate*
+*Percentage of population
+*Percentage of population
+CAGR 
+2024-2030
+Unique
+mobile 
+subscribers
+527m
+494m
+89% penetration rate*
+2030
+The Mobile Economy Europe
+Mobile 
+internet
+users
+SIM
+connections
+4G
+520m
+0.2%
+18%
+(excluding licensed cellular IoT)
+2024
+2030
+471m
+2024
+134% penetration rate*
+*Percentage of population
+CAGR 
+2024-2030
+816m
+138% penetration rate*
+2030
+795m
+0.4%
+2024
+CAGR 
+2024-2030 0.8%
+63%
+2024
+2030
+80%
+30%
+2024
+2030
+Percentage of connections
+(excluding licensed cellular IoT)
+5G
+Percentage of connections
+(excluding licensed cellular IoT)
+79% penetration rate*
+84% penetration rate*
+
+
+=== PAGE 9 ===
+Licensed
+cellular
+IoT connections
+Smartphones
+Percentage of connections
+Mobile 
+ecosystem
+contribution 
+to GDP
+€120bn
+Public 
+funding
+Mobile ecosystem contribution to 
+public funding (before regulatory 
+and spectrum fees) 
+Operator 
+revenues and 
+investment
+Total revenues
+€163bn
+€177bn
+Employment
+1.9m jobs
+Directly supported by the 
+mobile ecosystem
+Plus 1.4m 
+indirect jobs
+545m
+2030
+322m
+2024
+€175bn
+2023
+91%
+83%
+2024
+2030
+2024
+2030
+Operator capex 
+for the period 
+2024–2030: 
+2023
+Total revenues
+€1.1tn
+€1.2tn
+2023
+2030
+5.0% of GDP
+
+
+=== PAGE 10 ===
+* Percentage of total connections (excluding licensed cellular IoT)
+Note: Totals may not add up due to rounding.
+Subscriber and technology trends for 
+key markets 
+8 / 46
+Executive summary
+1+1+70+28+K 14+86+K
+14%
+1% 1%
+70%
+2024
+2030
+86%
+27%
+3G
+2G
+4G
+5G
+2024
+2030
+Italy 
+Technology mix*
+80%
+90%
+Subscriber penetration
+2024
+2030
+89%
+90%
+Smartphone adoption
+3+2+67+28+K 11+89+K
+11%
+3% 2%
+67%
+2024
+2030
+89%
+28%
+3G
+2G
+4G
+5G
+2024
+2030
+Spain 
+Technology mix*
+81%
+86%
+Subscriber penetration
+2024
+2030
+88%
+90%
+Smartphone adoption
+2+51+47+K 6+94+K
+6%
+2%
+51%
+2024
+2030
+94%
+49%
+3G
+2G
+4G
+5G
+2024
+2030
+1+53+46+K 7+93+K
+7%
+1 %
+53%
+2024
+2030
+93%
+46%
+Germany
+Technology mix*
+83%
+93%
+Subscriber penetration
+2024
+2030
+87%
+89%
+Smartphone adoption
+10+90+K
+1+5+64+30+K
+10%
+1% 5%
+64%
+2024
+2030
+90%
+30%
+3G
+2G
+4G
+5G
+2024
+2030
+France
+Technology mix*
+86%
+94%
+Subscriber penetration
+2024
+2030
+86%
+88%
+Smartphone adoption
+3G
+2G
+4G
+5G
+2024
+2030
+UK
+Technology mix*
+86%
+91%
+Subscriber penetration
+2024
+2030
+88%
+90%
+Smartphone adoption
+
+
+=== PAGE 11 ===
+01
+The mobile industry 
+in numbers
+
+
+=== PAGE 12 ===
+Figure 1
+Europe: mobile internet connectivity in select markets, 2024    
+Percentage of population
+Connected: Those who use mobile internet. 
+Usage gap: Those who live within the footprint of a mobile broadband network but do not use mobile internet services.
+Coverage gap: Those who live in an area not covered by a mobile broadband network. 
+Note: Totals may not add up due to rounding.
+Source: GSMA Intelligence
+Almost 80% of 
+Europe’s population 
+subscribe to mobile 
+internet services  
+By the end of 2024, 520 million people in 
+Europe (88% of the population) subscribed to a 
+mobile service. Mobile internet adoption is also 
+widespread, reaching 79% of the population, which 
+amounts to 471 million users. This represents an 
+increase of more than 150 million people over the 
+past decade. Growth during this period was largely 
+driven by the expansion of mobile broadband 
+networks, with the coverage gap in Europe now at 
+1% of the population.
+At 19%, the usage gap has also narrowed 
+considerably over the past decade. But significant 
+differences persist among Europe's 10 largest 
+markets for mobile internet subscribers. In Ukraine, 
+Poland and Romania, less than three quarters of 
+the population have subscribed to mobile internet, 
+compared to almost 90% in Spain.
+Connected
+Usage gap
+Coverage gap
+88%
+12%
+84%
+16%
+80%
+20%
+72%
+28%
+74%
+22%
+4%
+1%
+1%
+64%
+35%
+79%
+21%
+82%
+17%
+82%
+18%
+79%
+19%
+81%
+18%
+Spain
+UK
+Belgium
+Europe
+Ukraine
+Italy
+Netherlands
+France
+Germany
+Poland
+Romania
+10 / 46
+The mobile industry in numbers
+
+
+=== PAGE 13 ===
+In 2026, 5G adoption 
+will surpass 4G 
+adoption in Europe
+The share of mobile connections on 4G in Europe 
+is beginning to wane as 5G adoption gathers 
+pace. Moreover, with 2G and 3G networks already 
+accounting for less than 10% of mobile connections 
+in the region, legacy networks are being phased 
+out. By the end of Q3 2024, there had been 44 
+network sunsets in Europe – accounting for around 
+a third of network sunsets globally.1
+Europe is expected to stay at the forefront in 
+terms of migrating subscribers to newer network 
+generations, with the region expected to account 
+for more than half of planned network sunsets in 
+2025. This will give operators the opportunity to 
+repurpose spectrum assets for more spectrally 
+efficient 4G and 5G networks while also improving 
+energy efficiency in the network (since legacy 
+networks are less energy efficient).
+Figure 2
+Europe: mobile adoption by technology
+Percentage of total connections
+Source: GSMA Intelligence
+90%
+80%
+70%
+60%
+50%
+40%
+30%
+20%
+10%
+0%
+2024
+2025
+2026
+2027
+2028
+2029
+2030
+5G 80%
+3G
+2%
+2G
+0%
+4G 18%
+1.	
+Network Sunsets, Q3 2024 Global trends, regional variations and outlook, GSMA Intelligence, November 2024
+11 / 46
+The mobile industry in numbers
+
+
+=== PAGE 14 ===
+Figure 3
+5G adoption 
+Percentage of total connections
+Source: GSMA Intelligence
+5G adoption in 
+Europe continues to 
+lag behind other 
+advanced regions  
+By the end of 2024, 5G accounted for 30% of 
+mobile connections in Europe, equivalent to 
+over 200 million connections. Countries such as 
+Denmark, Finland, Germany, Norway, Switzerland 
+and the UK have seen the fastest uptake, with 5G 
+adoption rates exceeding 40% in each of these 
+markets.
+However, regions such as North America, East Asia 
+and the Gulf Cooperation Council (GCC) states 
+have higher levels of 5G adoption. With the first 
+wave of 5G deployments based on Release 15 
+complete, many operators in these markets are 
+shifting their attention to 5G standalone (SA) and 
+5G-Advanced. The adoption of these technologies 
+in Europe will progress more slowly unless the 
+challenges that restrict investment capacity in the 
+European mobile sector are resolved.
+5G connections 
+(2030)
+2024
+2025–2030 increase
+99m
+GCC states
+South Korea
+US
+Japan
+China
+EU27
+Europe
+Global average
+67m
+412m
+656m
+186m
+1.76bn
+5.63bn
+533m
+95%
+95%
+94%
+92%
+80%
+56%
+88%
+80%
+12 / 46
+The mobile industry in numbers
+
+
+=== PAGE 15 ===
+Operators must 
+invest heavily in 
+network upgrades 
+amid rising data 
+traffic  
+Mobile data traffic has experienced massive 
+growth globally over the past decade, driven 
+by the increasing adoption of smartphones 
+and growing consumption of high-bandwidth 
+applications such as video streaming. 
+Between 2019 and 2024, average data traffic 
+per mobile connection grew more than fourfold 
+in Europe, from 3.8 GB in 2019 to 15.3 GB in 
+2024. Mobile data traffic will continue to rise at a 
+significant rate through to the end of the decade, 
+reaching almost 50 GB per mobile connection per 
+month.
+Figure 4
+Mobile data traffic per mobile connection
+GB per month
+Source: GSMA Intelligence
+2024
+2030
+Increase
+US
+42
+98
+2.3×
+China
+20
+69
+3.5×
+Italy
+22
+62
+2.8×
+Spain
+17
+59
+3.6×
+France
+18
+57
+3.2×
+UK
+14
+56
+4×
+Germany
+13
+55
+4.4×
+Europe
+15
+49
+3.2×
+Global
+16
+48
+3×
+Top five smartphone markets in Europe
+Number of smartphone connections, 2030
+UK
+83m
+Italy
+74m
+France
+70m
+Ukraine
+56m
+13 / 46
+The mobile industry in numbers
+Germany
+111m
+
+
+=== PAGE 16 ===
+Figure 5
+Europe: number of licensed cellular IoT connections   
+Million
+Note: Totals may not add up due to rounding.  
+Source: GSMA Intelligence
+Europe is expected 
+to gain another  
+200 million licensed 
+cellular IoT 
+connections by  
+2030 
+By 2030, there will be almost 550 million licensed 
+cellular IoT connections in Europe. Germany 
+will account for around a quarter of these, while 
+the UK, France, Italy and Sweden will each 
+account for around 10%. To address the diverse 
+needs of IoT use cases, operators will leverage a 
+combination of connectivity options. This will help 
+ensure optimised performance across different 
+applications.
+Smart utilities will be a key driver of IoT 
+connections growth as the number of initiatives for 
+smart metering and smart power grids continues 
+to rise, aided by government-funded projects. 
+There also continues to be good traction for 
+licensed cellular IoT across Europe in other sectors, 
+including tracking and logistics.
+2024
+2025
+2026
+2027
+2028
+2029
+2030
+600
+500
+400
+300
+200
+100
+0
+UK
+Germany
+Sweden
+Rest of Europe
+France
+Italy
+82
+138
+67
+40
+36
+58
+34
+55
+48
+30
+180
+100
+545
+322
+14 / 46
+The mobile industry in numbers
+
+
+=== PAGE 17 ===
+Figure 6
+Europe: mobile revenue and year-on-year growth  
+Billion
+Source: GSMA Intelligence
+Mobile revenue 
+growth is expected 
+to remain in the low 
+single digits 
+5G has not yet materially altered mobile revenue 
+growth, which remains in the low single digits 
+in percentage terms in most European markets. 
+Consequently, there is increased pressure on 
+operators to diversify their services and generate 
+new revenue streams in adjacent areas. B2B 
+remains a focus for the industry, with the launch 
+of the next iteration of 5G networks an important 
+underpinning for growth prospects. 
+On the cost side, European mobile operators have 
+invested over €160 billion in mobile capex over the 
+past five years, much of which has been spent on 
+5G networks. Mobile capex/revenue in the region 
+was 16% at the end of 2023, likely marking the 
+peak of the 5G investment cycle. However, mobile 
+capex is still projected to surpass €25 billion in 
+each year to 2030. 
+€200
+€180
+€160
+€140
+€120
+€100
+€80
+€60
+€40
+€20
+€0
+2024
+2025
+2026
+2027
+2028
+2029
+2030
+1.6%
+1.7%
+1.4%
+1.2%
+1.2%
+1.1%
+0.9%
+15 / 46
+The mobile industry in numbers
+Annual growth
+Mobile revenue
+
+
+=== PAGE 18 ===
+Figure 7
+Europe: total economic contribution of mobile, 2023
+Billion, percentage of GDP
+Note: Totals may not add up due to rounding. 
+Source: GSMA Intelligence
+The mobile sector 
+added €1.1 trillion of 
+economic value to 
+the European 
+economy in 2023
+In 2023, mobile technologies and services 
+generated 5% of GDP across Europe, a 
+contribution that amounted to almost €1.1 trillion of 
+economic value added. The greatest benefits came 
+from the productivity effects generated by the 
+use of mobile services across the economy, which 
+reached €700 billion. The direct contribution by 
+the mobile industry ecosystem was also significant 
+at €230 billion.
+The mobile ecosystem comprises three 
+categories: mobile operators; infrastructure and 
+equipment providers; and content and services. 
+The infrastructure and equipment category 
+includes network equipment providers, device 
+manufacturers and IoT companies. Meanwhile, 
+the content and services category encompasses 
+content, mobile application and service providers, 
+distributors and retailers and mobile cloud 
+services.
+Infrastructure  
+and 
+equipment 
+providers
+Mobile  
+operators
+Content and  
+services
+Indirect
+Productivity
+Total
+€80
+€110
+€40
+€700
+€1,080
+Mobile ecosystem
+€130
+5.0%
+3.3%
+0.6%
+0.3%
+0.3%
+0.5%
+16 / 46
+The mobile industry in numbers
+
+
+=== PAGE 19 ===
+Figure 8
+Europe: economic impact of mobile 
+Billion
+Source: GSMA Intelligence
+The mobile ecosystem 
+in Europe supported 
+more than 3 million 
+jobs in 2023
+Mobile operators and the wider mobile 
+ecosystem provided direct employment to 
+around 2 million people in Europe in 2023. In 
+addition, economic activity in the ecosystem 
+generated roughly 1.4 million jobs in other 
+sectors, meaning around 3.3 million jobs in 
+total were directly or indirectly supported. 
+Figure 9
+Europe: employment impact of the mobile industry, 2023
+Jobs (million)
+Source: GSMA Intelligence
+Direct
+Indirect
+Total
+1.9
+1.4
+3.3
+2030
+2023
+By 2030, mobile’s 
+economic contribution 
+in Europe will reach 
+€1.2 trillion
+By 2030, mobile’s contribution will reach 
+€1.2 trillion in Europe, driven mostly by the 
+continued expansion of the mobile ecosystem 
+and verticals increasingly benefiting from the 
+improvements in productivity and efficiency 
+brought about by the take-up of mobile 
+services. This underscores the connectivity 
+sector's role as a core enabler of Europe's 
+digital economy.
+€1,080
+€1,200
+17 / 46
+The mobile industry in numbers
+
+
+=== PAGE 20 ===
+The fiscal 
+contribution of the 
+mobile ecosystem  
+in Europe reached 
+€120 billion in 2023  
+In 2023, the mobile sector in Europe made a 
+substantial contribution to the funding of the 
+public sector, with €120 billion raised through 
+taxes. The largest contribution came from 
+employment taxes and social security, which 
+generated €50 billion, followed by services VAT, 
+sales taxes and excise duties at €40 billion.
+Figure 10
+Europe: fiscal contribution of the mobile ecosystem, 2023 
+Billion
+Note: Totals may not add up due to rounding.  
+Source: GSMA Intelligence
+€120
+€50
+€10
+€20
+€40
+Services VAT, 
+sales taxes and 
+excise duties
+Handset VAT, 
+sales taxes, 
+excise and 
+customs duties
+Corporate taxes 
+on profits
+Employment 
+taxes and social 
+security
+Total
+18 / 46
+The mobile industry in numbers
+
+
+=== PAGE 21 ===
+5G will add more 
+than €160 billion  
+to the European 
+economy in 2030 
+5G’s contribution to the European economy 
+is expected to exceed €160 billion in 2030, 
+accounting for approximately 14% of the overall 
+economic impact of mobile. Much of this will 
+materialise between 2023 and 2028. Towards the 
+end of the decade, 5G’s economic benefits will 
+level off as the technology achieves scale and 
+adoption begins to plateau.
+While 5G is expected to benefit most sectors 
+of the European economy, some industries will 
+benefit more than others due to their ability 
+to incorporate 5G use cases in their business. 
+Between 2023 and 2030, 34% of benefits are 
+expected to originate from the manufacturing 
+sector, driven by applications such as smart 
+factories, smart grids and IoT-enabled products. 
+Other sectors that will experience significant 
+benefits are the public administration and services 
+sectors at 19% and 12%, respectively.
+Figure 11
+Europe: annual 5G contribution by industry   
+Billion
+Source: GSMA Intelligence
+Manufacturing
+Information and communication
+Finance
+Construction and real estate
+Other
+Public administration
+Services
+2023
+2024
+2025
+2026
+2027
+2028
+2029
+2030
+€180
+€160
+€140
+€120
+€100
+€80
+€60
+€40
+€20
+€0
+34%
+12%
+10%
+6%
+6%
+13%
+19%
+19 / 46
+The mobile industry in numbers
+
+
+=== PAGE 22 ===
+02
+Mobile industry 
+trends
+
+
+=== PAGE 23 ===
+2.1  
+5G benchmarking: assessing five years  
+of 5G
+The number of 5G connections worldwide 
+surpassed 2 billion at the end of 2024, five years 
+after the arrival of the technology, making it the 
+fastest-growing mobile broadband technology 
+to date. However, despite this progress, the 
+technology has not yet realised its full potential 
+in terms of digital transformation, economic 
+impact and commercial value. This highlights the 
+imperative for strategic interventions, enabling 
+policies and targeted investments to ensure the 
+evolution of 5G everywhere. 
+Against this backdrop, GSMA Intelligence’s 
+5G Connectivity Index (5GI) provides a 
+comprehensive assessment of 5G in 39 markets, 
+offering valuable insights for informed decision-
+making and investment by the mobile ecosystem 
+and policymakers.2 It is constructed around two 
+categories, 5G infrastructure and 5G services, 
+which are divided into six pillars, which are 
+in turn made up of 17 indicators. In order to 
+ensure comparability across indicators, they are 
+normalised using the ‘minimum-maximisation’ 
+method, which gives all indicators a score between 
+0 to 100, with a higher score always representing 
+stronger performance.
+Figure 12
+5G Connectivity Index structure and weightings: categories, pillars and 
+indicators
+Source: GSMA Intelligence
+2.	
+The 5G Connectivity Index webtool provides overall index scores as well as the underlying score for each indicator.
+Spectrum 
+10%
+Network 
+45%
+Experience 
+45%
+Low-band 
+spectrum 
+45%
+5G base 
+stations 
+40%
+Download 
+speeds 
+40%
+Mid-band 
+spectrum 
+45%
+5G coverage 
+40%
+Upload 
+speeds 
+30%
+mmWave 
+spectrum 
+10%
+5G 
+standalone 
+20%
+Latencies 
+10% 
+Video quality 
+20%
+Affordability 
+30%
+Adoption 
+40%
+Market 
+development 
+30%
+5G data 
+affordability 
+50%
+5G subscriber 
+penetration 
+50%
+Data traffic 
+per user 
+70%
+5G device 
+affordability 
+50%
+5G device 
+shipments 
+30%
+Revenue 
+growth 
+30%
+5G FWA 
+penetration 
+20%
+5G infrastructure
+50%
+5G services
+50%
+21 / 46
+Mobile industry trends
+
+
+=== PAGE 24 ===
+Figure 13
+5G Connectivity Index categories, pillars and indicators
+* The indicators for 5G coverage entail a combination of two additional sub-indicators: 5G population coverage (representing the proportion of the population cov-
+ered by a 5G network, sourced from GSMA Intelligence) and 5G availability (reflecting the proportion of users on 5G-capable devices who spend the majority of their 
+time on 5G, sourced from Ookla Speedtest Intelligence). 
+** The indicators for 5G data affordability entail a combination of three additional sub-indicators: monthly affordability of the cheapest 20, 50 and 100 GB mobile 5G 
+data plan (initially expressed as a percentage of monthly GDP per capita, sourced from Tarifica).
+Source: GSMA Intelligence
+Pillar
+Indicator
+Description
+Source
+Spectrum
+Low-band 
+spectrum
+Amount of spectrum in bands below 1 GHz  
+assigned to mobile network operators
+GSMA Intelligence
+Mid-band 
+spectrum
+Amount of spectrum in bands in 1-7 GHz assigned  
+to mobile network operators
+GSMA Intelligence
+mmWave 
+spectrum
+Amount of spectrum in bands above 24 GHz 
+assigned to mobile network operators
+GSMA Intelligence
+Network
+5G base stations
+Number of 5G base stations deployed per  
+100,000 people
+GSMA Intelligence
+5G coverage*
+Coverage and availability of 5G networks
+Ookla Speedtest 
+Intelligence® and 
+GSMA Intelligence
+5G standalone
+Proportion of 5G connections with operators  
+that have deployed a 5G standalone network
+GSMA Intelligence
+Experience
+Download speeds
+Median download speed for mobile users
+Ookla Speedtest 
+Intelligence
+Upload speeds
+Median upload speed for mobile users
+Ookla Speedtest 
+Intelligence
+Latencies
+Median latency for mobile users
+Ookla Speedtest 
+Intelligence
+Video quality
+Weighted sum of multiple video quality metrics
+Ookla Speedtest 
+Intelligence
+Pillar
+Indicator
+Description
+Source
+Affordability
+5G data 
+affordability**
+Monthly affordability of 5G data plans (based on  
+20 GB, 50 GB and 100 GB mobile 5G data plans)
+Tarifica
+5G device 
+affordability
+Monthly affordability of the cheapest available  
+5G device
+Tarifica
+Adoption
+5G subscriber 
+penetration
+5G connections at the end of the period, expressed 
+as a percentage share of the total population
+GSMA Intelligence
+5G device 
+shipments
+Proportion of new device sales that are 5G-enabled
+Counterpoint 
+Research
+5G FWA 
+penetration
+5G FWA connections as percentage  
+of total households
+GSMA Intelligence
+Market 
+development
+Data traffic per 
+user
+Monthly data traffic per connection
+GSMA Intelligence
+Revenue growth
+The average percentage growth in mobile  
+operator revenues since the launch of 5G networks 
+in the market
+GSMA Intelligence
+5G infrastructure
+5G services
+22 / 46
+Mobile industry trends
+
+
+=== PAGE 25 ===
+Figure 14
+5G Connectivity Index results by market, Q3 2024
+Scores out of 100 
+Source: GSMA Intelligence
+Americas
+Asia Pacific
+Europe
+Middle East
+Sub-Saharan Africa
+18
+21
+24
+31
+33
+47
+57
+21
+26
+33
+38
+41
+41
+51
+54
+54
+56
+58
+59
+42
+51
+64
+64
+67
+42
+50
+55
+50
+49
+59
+59
+61
+47
+44
+43
+47
+43
+47
+47
+Kuwait
+UAE
+Qatar
+Finland
+Hong Kong
+Denmark
+Norway
+Singapore
+US
+South Korea
+Switzerland
+China
+Australia
+Saudi Arabia
+Japan
+Netherlands
+Germany
+Austria
+Canada
+Sweden
+Bulgaria
+France
+UK
+Italy
+Spain
+Greece
+Israel
+Czechia
+Thailand
+Malaysia
+New Zealand
+India
+Chile
+Brazil
+Philippines
+Mexico
+South Africa
+Indonesia
+Nigeria
+23 / 46
+Mobile industry trends
+The results of the 5GI are presented in Figure 14. 
+Leading the way are developed economies in the 
+Middle East, Scandinavia, Asia Pacific and North 
+America. Most European countries included in the 
+index have scores between 40 and 50, scoring well 
+on spectrum and affordability but lagging behind 
+leading markets in multiple indicators across 
+the network, experience, adoption and market 
+development pillars.
+
+
+=== PAGE 26 ===
+Figure 15
+5G Connectivity Index: network, Q3 2024
+Scores out of 100 
+Note: The scores for the GCC states and Europe reflect an average of the countries from these regions included in the 5GI, not all countries. 
+Source: GSMA Intelligence
+3.	
+The network pillar consists of 5G base stations, 5G coverage and 5G standalone. See Figure 13 for more details.
+100
+68
+30
+52
+70
+97
+27
+68
+32
+7
+83
+64
+30
+60
+95
+29
+66
+60
+5G coverage
+5G SA
+5G base stations
+South Korea
+China
+Japan
+GCC states
+US
+Europe
+24 / 46
+Mobile industry trends
+Europe lags behind in the network and experience pillars 
+Europe’s score on the network pillar highlights 
+the need to accelerate the deployment of 5G 
+base stations (with 11 of the 15 European countries 
+included in the 5GI scoring lower than 30 on this 
+indicator).3 Europe fares better on coverage: 
+24 European countries reported over 90% 5G 
+population coverage by the end of 2024. A 
+combination of low- and mid-band spectrum has 
+been deployed by operators to accomplish this. 
+Extending the deployment of mid-band spectrum, 
+particularly in the 3.5 GHz range, is vital for 
+delivering the network performance necessary  
+for advanced applications.
+5G SA is another area where performance in 
+Europe falls short compared to other advanced 
+regions. At the end of Q3 2024, only around 15% 
+of operators in Europe with live 5G networks had 
+launched 5G SA, compared to over 30% in Asia 
+Pacific and North America. This is indicative of 
+the difficult operating conditions facing European 
+operators. Recent 5G SA launches by EE in the UK 
+and Free in France suggest 5G SA deployments 
+are gathering pace, but the speed of rollouts 
+remains slower than many industry players 
+anticipated a few years ago.
+
+
+=== PAGE 27 ===
+Figure 16
+5G Connectivity Index: experience, Q3 2024
+Scores out of 100 
+Note: The scores for GCC states and Europe reflect an average of the countries from these regions included in the 5GI, not all countries.
+Source: GSMA Intelligence
+In all of the markets included in the first edition of 
+the 5GI, the consumer experience on 5G networks 
+is noticeably outperforming that of 4G networks. 
+By the end of 2023, average 5G download speeds 
+had reached approximately 230 Mbps, a more than 
+fivefold increase from the 44 Mbps of 4G speeds. 
+European countries included in the 5GI typically 
+perform better in the 5G experience pillar than in 
+the 5G network pillar. However, they still need to 
+improve their performance to reach the levels seen 
+in leading markets within the GCC states and in 
+developed Asia Pacific, particularly with regard to 
+download speeds.
+48
+35
+36
+31
+81
+16
+59
+50
+30
+48
+77
+28
+69
+18
+52
+59
+65
+77
+Upload speeds
+Latencies
+Download speeds
+GCC states
+China
+Europe
+South Korea
+US
+Japan
+25 / 46
+Mobile industry trends
+
+
+=== PAGE 28 ===
+Figure 17
+Mobile ARPU and mobile capex per capita, 2024 
+ 
+Source: GSMA Intelligence
+European operators face a tough financial outlook 
+In the 5G services category of the 5GI, Europe 
+performs well on affordability but falls behind 
+on the adoption and market development pillars. 
+North America, East Asia and the GCC states 
+lead on 5G adoption (see Figure 3), with only six 
+markets in Europe surpassing the 40% mark at 
+the end of 2024. In the market development pillar, 
+Europe trails on advancements in the data traffic 
+per user and revenue growth indicators, which are 
+crucial for establishing a solid business case for the 
+next phase of 5G.  
+Figure 17 highlights the difficulties faced by 
+European operators as they enter the next phase 
+of the 5G era. The highly competitive mobile 
+market has restricted prospects for revenue 
+growth, leaving mobile ARPUs significantly 
+lower than those in other advanced regions. This 
+constrains the ability of operators in the region to 
+invest, with Europe's revenue weakness mirrored 
+by lower mobile capex per capita. These financial 
+challenges underscore the need for strong policy 
+actions to drive a turnaround in Europe (as 
+detailed in Chapter 4).
+Mobile capex per capita
+Monthly ARPU, by mobile connection
+South Korea
+China
+Japan
+GCC states
+US
+Europe
+€41
+€32
+€21
+€18
+€11
+€6
+€18
+€49
+€73
+€90
+€86
+€105
+26 / 46
+Mobile industry trends
+
+
+=== PAGE 29 ===
+2.2 
+5G’s next wave: focus shifts to 
+5G-Advanced and 5G RedCap
+5G technology is now available in more than 100 
+countries around the world. GSMA Intelligence 
+data shows that the number of 5G connections 
+surpassed 2 billion globally at the end of 2024, 
+equivalent to nearly a quarter of total mobile 
+connections. 5G has reached mass-market levels in 
+several pioneering countries, accounting for more 
+than half of mobile connections. These include 
+Germany and Switzerland in Europe, as well as 
+China, South Korea and the US. 
+5G fixed wireless access (FWA) has emerged 
+as an important use case in the consumer and 
+enterprise segments, complementing operators’ 
+enhanced mobile broadband (eMBB) offerings. 
+To date, operators in 24 countries across Europe 
+have launched 5G FWA services, while 5G FWA 
+household adoption is expected to reach double-
+digit figures in percentage terms in several 
+European countries by 2030, including Austria, 
+Bulgaria and Switzerland. 
+Targeted use cases of 5G FWA services to 
+enterprises include providing point of primary 
+connectivity for selected applications (e.g. mobile 
+payments), providing connectivity for temporary 
+sites (e.g. pop-up stores or construction zones) 
+and back-up connectivity in case of failure of the 
+primary fixed broadband connection. 5G FWA 
+is particularly needed in areas where businesses 
+have little choice of providers or where fibre 
+connections may not be cost effective.
+27 / 46
+Mobile industry trends
+
+
+=== PAGE 30 ===
+Advanced 5G technologies gain traction
+Operators in Europe are increasingly shifting their 
+focus to more advanced forms of 5G to unlock 
+new use cases and monetisation opportunities. 
+In particular, operators have begun deploying 5G 
+networks based on the SA architecture, which 
+offers several capabilities, including network slicing 
+– the flexibility of allocating network resources 
+dynamically to specific service-level agreements. 
+5G SA networks will be pivotal to fully realising the 
+capabilities of 5G technology. 
+In 2024, there was a flurry of 5G SA launches in 
+leading markets across Europe, with the number 
+of live 5G SA networks reaching 18 by the end of 
+September 2024. For example, Deutsche Telekom 
+launched its 5G SA network in tandem with its 
+new 5G+ Gaming option that is based on network 
+slicing. The operator has opted to offer market-
+specific 5G SA–based use cases to its subscribers 
+as opposed to a general 5G SA network launch. In 
+September, French operator Free launched its 5G 
+SA service, offering the service to customers with 
+compatible devices at no extra cost. In November, 
+Virgin Media O2 deployed 5G SA small cells in 
+Birmingham city centre in the UK, with initial 
+performance data showing a better mobile internet 
+experience for customers.
+Beyond the deployment of 5G SA networks, 
+operators in Europe are looking to leverage 
+5G-Advanced and 5G reduced capability 
+(RedCap) technologies to deliver new solutions for 
+enterprises. 5G-Advanced, as part of 3GPP  
+Release 18 in 2024, is the next milestone in the 
+5G era and is set to enhance mobility by enabling 
+uplink and multicast at better latency, increase 
+accuracy for extended reality (XR) applications 
+and improve the reliability of AI/machine-learning 
+(ML) data-driven designs. In the GSMA Intelligence 
+Network Transformation Survey 2024, operators 
+globally most commonly pointed to improved 
+carrier aggregation to deliver higher peak speeds 
+as a main 5G-Advanced feature.
+Figure 18
+5G-Advanced: priority use cases 
+Which 5G-Advanced use cases and applications are most important to your network  
+transformation priorities? (Top two choices)
+Percentage of operators (globally)
+  
+Source: GSMA Intelligence Operators in Focus: Network Transformation Survey 2024
+Rank 2
+Rank 1
+20%
+12%
+15%
+7%
+15%
+6%
+3%
+14%
+5%
+3%
+14%
+7%
+22%
+17%
+7%
+2%
+7%
+14%
+5%
+5%
+Enhanced multi-carrier operations
+5G multicast
+Advanced MIMO
+Enhanced mobility
+Ambient IoT
+NTN integration
+RedCap IoT
+FWA enhancements
+Time-sensitive networking
+Enhanced sidelink and relays
+28 / 46
+Mobile industry trends

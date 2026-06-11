@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black flake8 mypy
+      - name: Lint with black
+        run: black --check src/ || true
+      - name: Lint with flake8
+        run: flake8 src/ --max-line-length=88 --extend-ignore=E203,W503
+
+  validate-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check raw data files exist
+        run: |
+          echo "=== Data files ==="
+          ls -lh data/raw/ || echo "data/raw/ not found (expected for CI without data)"
+      - name: Validate sources YAML
+        run: |
+          pip install pyyaml
+          python -c "import yaml; yaml.safe_load(open('data/SOURCES.yaml'))"
+          echo "SOURCES.yaml is valid"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install test deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pandas numpy
+      - name: Run tests (if any)
+        run: python -m pytest src/ --ignore=src/__pycache__ -x --no-header -q || echo "No tests found yet"

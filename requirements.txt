@@ -1,0 +1,14 @@
+pandas>=2.0
+numpy>=1.25
+python-dotenv>=1.0
+
+# Dev
+black
+flake8
+mypy
+jupyter
+nbconvert
+
+# Test
+pytest>=7
+pytest-cov

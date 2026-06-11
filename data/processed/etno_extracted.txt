@@ -1,0 +1,1948 @@
+
+=== PAGE 1 ===
+1
+State of Digital 
+Communications 
+2025
+
+
+=== PAGE 2 ===
+2
+Published by:
+Connect Europe
+info@connecteurope.org
+www.connecteurope.org
+Media Enquiries: Oscar Berardi (berardi@connecteurope.org)
+Research conducted for Connect Europe by:
+Rupert Wood & Simon Sherrington
+Analysys Mason
+www.analysysmason.com
+Graphic design 
+OKÖ studio
+www.okostudio.be
+January 2025
+
+
+=== PAGE 3 ===
+3
+Contents
+Executive summary	
+4
+There has been solid progress towards ambitious targets
+Revenue growth remains weak and has been falling in real terms since 2016
+Overall capex on European telecoms networks fell in 2023 after a decade of 
+growth
+Connect Europe members invested EUR54.5 billion in 2023	
+Investing in quality employment
+Contributing via general and sector-specific taxation 
+The distribution of profit
+Demand for high speed connectivity
+B2B connectivity services 
+Trends in digital service demand
+Additional investment to reach gigabit target
+Additional investment to reach 5G target 
+Leaner and greener networks
+5G standalone networks
+Open Gateway and Network-as-a-Service
+Integration of space and 5G terrestrial communications networks 
+Operators’ role in the defining and developing 6G 
+Cloud and edge computing
+Fostering the emergence of a sustainable economy
+The underlying financials for the sector remain difficult
+The markets are still unreceptive to the European sector
+Opportunities to strengthen and to scale up must not be squandered
+1.1
+2.1
+3.1
+4.1
+5.1
+6.1
+5.4
+1.2
+2.2
+3.2
+4.2
+5.2
+6.2
+5.5
+1.3
+2.3
+3.3
+4.3
+5.3
+6.3
+5.6
+1.4
+Introduction	
+10
+The digital communications market landscape in Europe	
+14
+16
+46
+58
+82
+130
+112
+17
+25
+34
+36
+48
+56
+57
+60
+73
+74
+83
+87
+92
+131
+137
+141
+113
+116
+118
+120
+123
+128
+Direct benefits of operator investment for Europeans
+01
+Connect Europe members deliver substantial indirect benefits 
+for Europeans
+02
+Changing demand for connectivity and digital services
+03
+Optimising networks for the future
+04
+Connect Europe members play a key role in determining the 
+pace of European technology innovation
+05
+Strengthening telecoms operators as a force in the European 
+digital economy
+06
+
+
+=== PAGE 4 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+4
+Executive summary
+Europe’s connectivity ecosystem 
+represents 4.7% of the GDP, 
+driving competitiveness and 
+societal growth
+•	 This 
+year’s 
+report 
+features 
+new 
+metrics measuring, for the first time, 
+the size and importance of digital 
+communications at large for the 
+European 
+economy 
+and 
+society. 
+The market – comprising telecom 
+services, network equipment and 
+content & applications in Europe – 
+was worth about EUR1 trillion in 2023, 
+which represents around 4.7% of 
+the European GDP. For comparison, 
+agriculture, fisheries and forestry 
+amount to 1.7% of the GDP together, 
+while the automotive sector stands at 
+7%. 
+•	 The total investment in the market 
+(including 
+tangible 
+fixed 
+assets 
+and R&D) amounted to EUR115.5bn, 
+with telecom operators in the lead, 
+representing 60% of the total, followed 
+by content and application providers 
+(just 
+over 
+30%) 
+and 
+equipment 
+manufacturers (almost 10%).
+•	 If we zoom in on telecoms, Connect 
+Europe members and their supply 
+chain employed 1 million people, with 
+537.000 people employed directly, 
+376.000 indirectly, and over 100.000 
+contracted.
+•	 Today, 
+the 
+connectivity 
+services 
+provided 
+by 
+Connect 
+Europe 
+members are used by 276 million 
+Europeans (or 61.5% of the population). 
+Europe’s decisive 
+moment in connectivity
+The European connectivity ecosystem, today, is identified as a 
+major enabler of competitiveness, sustainability, security and 
+resilience for the whole Continent. This year’s report highlights 
+that 2025 is decisive to ensure with the upcoming DNA, if it is to 
+stay in control of its connectivity value chain and drive growth. 
+Leadership on crucial technologies such as 5G, FTTH, 6G and 
+network innovation in AI are at stake. However, figures show 
+that an overly fragmented market, burdened by heavy rules and 
+lack of scalability, has negatively impacted investment growth 
+for the first time in years and increased of unhealthy trends in 
+revenues and return on capital. At the same time, significant 
+opportunities to innovate and become more secure and 
+sustainable are up for grabs.
+
+
+=== PAGE 5 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+5
+Innovation and sovereignty 
+in European connectivity:                  
+a “decisive” moment
+•	 This 
+year’s 
+report 
+shows 
+how 
+the 
+connectivity 
+ecosystem 
+is 
+dramatically 
+transforming, 
+driven 
+by technology. There are sizeable 
+opportunities – and important risks 
+– related to Europe’s ability to stay 
+in control of its own value-chain. 
+The report therefore tracks progress 
+on network innovation and shows 
+Europe as still being weak on critical 
+technologies such as 5G SA and edge 
+cloud, but making inroads – gradually 
+– on Open RAN, network APIs, AI for 
+network operations and R&D for 6G.
+•	 In 
+Europe, 
+the 
+coverage 
+of 
+5G 
+Standalone (SA) – the most advanced 
+form of 5G, able to serve the complex 
+needs 
+of 
+industrial 
+customers 
+–  continues to trail other areas of 
+the world: at the end of 2024, 5G SA 
+coverage of the population reached 
+91% in North America, 45% in Asia-
+Pacific and only 40% in Europe. This 
+happens despite the fact that Europe 
+almost doubled the number of its 
+commercial 5G SA networks, from 10 
+in 2023 to 19 in 2024. 
+•	 In terms of adoption of Open RAN 
+(virtualised and open Radio Access 
+Networks), with a total of 62 trials and 
+commercial deployments by the end 
+of 2024, Europe (16) is ahead of North 
+America (10), but behind Asia and 
+Japan (24). In this context, a survey of 
+European operators shows that 52% of 
+them have already deployed some AI 
+functionality for RAN automation and 
+optimisation, or have started trials. 
+•	 As to edge cloud, by the end of first 
+half of 2024, 8 operators in Europe 
+had launched commercial edge cloud 
+offers. Despite this, Europe trailed the 
+Asia-Pacific region, which counted 
+21 operators with commercial edge 
+cloud offers, but is in line with North 
+America, that counts 7. Meanwhile, 
+edge cloud deployment in Europe 
+remains limited, with just 320 live 
+operator edge nodes and 1100 overall 
+edge nodes, falling short of the EU’s 
+ambitious 10,000-node target.
+•	 On 
+Application 
+Programming 
+Interfaces (APIs) – which are essential 
+enablers of the Network-as-a-service 
+business model – Europe has so far 
+dominated the early stage market, 
+with European operators amounting 
+to almost half of the Network API 
+platform-related announcements by 
+region (followed by the Asia-Pacific 
+and North America).
+•	 R&D in 6G is also tracked in this 
+year’s report, with telecom operators, 
+operator-led industry groups and 
+vendors leading 51% of the over 200 
+projects tracked by Analysys Mason.
+
+
+=== PAGE 6 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+6
+Investment in connectivity 
+decreases for the first time in 
+seven years, in a low revenue 
+context
+•	 With the telecom sector being at the 
+heart of the connectivity ecosystem 
+and of European competitiveness, 
+it should be a cause of concern that 
+historic trends of low profitability 
+and low investment appear to have 
+aggravated.
+•	 For the first time in seven years, the 
+total telecom investment in Europe 
+has declined by 2%, going from 
+EU59.1bn in 2022 to EU57.9bn in 2023. 
+This decline happens at a time in 
+which the EU is still far from achieving 
+the Digital Decade Targets.
+•	 In 2023, when compared to our global 
+peers, telecom investment per capita 
+in Europe, at EUR 117.9, was half that 
+of the USA (EUR 226.4) and lower than 
+in Japan (EUR 187.6) and South Korea 
+(EUR 173.1).
+•	 Revenues and investment remain 
+interlinked. The report finds that 
+European operators have effectively 
+absorbed inflation on behalf of their 
+customers, meaning that revenue 
+decreased in real terms. In 2023, 
+European telecom revenue declined 
+by 4.4% in real terms, as opposed to 
+the Consumer Price Index, which 
+increased by 6.4%.
+•	 Meanwhile, in 2023, Mobile Average 
+Revenue Per User (ARPU) in Europe 
+declined by 5.9% compared to the 
+previous year (real terms). Also, Europe 
+continues to trail all global peers with 
+a mobile ARPU of EUR14.8 compared 
+to EUR41.7 in the USA, EUR26.0 in 
+South Korea, and EUR22.6 in Japan.
+•	 Of the total EUR64.5 billion invested 
+in the European telecoms sector by 
+operators and upstream partners in 
+2023, around 46% was dedicated to 
+FTTH, about 30% to mobile networks, 
+and the rest covered aggregation/
+core transport networks, IT and 
+various non-network assets such as 
+offices and stores.
+•	 Connect Europe members consist-
+ently remain responsible for the 
+largest part of operator investment in 
+Europe, as they represent around 70% 
+of the total sector capex. 
+
+
+=== PAGE 7 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+7
+5G: European coverage grows, 
+but lags all global peers
+Gigabit connectivity: still far from 
+the EU Digital Decade Targets
+•
+In 2024, Europe still trailed all global
+peers 
+on 
+availability 
+of 
+gigabit-
+capable networks, but was ahead in
+terms of FTTH roll-out.
+•
+Europe’s gigabit-capable coverage
+reached an estimated 82.5% in 2024,
+as opposed to 99.0% in China, 97.6%
+in South Korea, 90.3% in the USA and
+93.9% in Japan.
+•
+In 
+comparison, 
+Europe’s 
+FTTH
+coverage of the population (excluding
+FTTB) reached an estimated 70.5%,
+which is better than South Korea’s
+67.4% and the USA’s 54.8%.
+•
+Our estimates confirm that by the
+end of this decade more than 8% of
+the European population – meaning
+at least 45.4 million people – will still
+be without access to a fixed gigabit 
+connection, thus falling short of the 
+corresponding EU Digital Decade 
+target.
+•
+Analysys Mason estimates that, in
+order to reach 99% of the European
+population, an additional EUR109
+billion in FTTH alone would be
+required between now and 2030.
+Data usage keeps growing, with 
+AI as a future driver
+•
+Mobile 
+data 
+usage 
+in 
+Europe
+increased by 26.5% year-on-year in
+2023, and is expected to rise a further
+15.2% in 2024.
+•
+Fixed internet traffic increased by 16%
+year-on-year in 2023 (Figure 6.7) and
+is expected to rise by around 12% in
+2024.
+•
+The report also identifies a series of AI
+applications that have the potential
+to further increase volumes of data
+uploaded or downloaded over fixed
+and mobile networks. Among those
+identified, the following consumer
+applications 
+stand-out: 
+AI-assisted
+creation tools (making it quicker
+and easier to create content), AI
+generated game environments and
+in-game 
+avatars 
+(making 
+games
+more appealing), or AI personal
+assistants (automating the collection
+and sending of data). In the enterprise
+market the collection of additional
+telemetry data from IoT systems for
+AI analysis, and enterprise use of AI-
+enabled AR tools are the most likely
+drivers of future traffic increases.
+•
+The greatest impact on network
+traffic will be felt at data centres,
+where traffic volumes related to AI
+•
+By the end of 2024, 5G in Europe 
+is set to grow to 87% of the 
+population, up from 80% the 
+previous year. However, Europe will 
+still trail behind all its global peers: 
+South Korea (99%), the US (98%), 
+Japan (97%), and China (90%).
+•
+The 
+European 
+median 
+mobile 
+downlink speed of 71.0Mbit/s was lower 
+than that in the USA (107.9Mbit/s), in 
+South Korea (143.1Mbit/s) and in China 
+(105.2Mbit/s).
+•
+By October 2023, European operators 
+had spent a total of EUR29 billion at 
+spectrum auctions for the principal 
+5G bands and about EUR1.5 billion 
+more is expected from operators in 
+the future.
+
+
+=== PAGE 8 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+8
+data ingest and AI-related data centre 
+interconnect will grow fast, with a 
+CAGR uplift of 50% or more.
+Fundamentals of the sector: 
+fragmented markets, low 
+returns, stretched investment 
+capacity
+•	 European retail markets taken as a 
+whole remain uniquely fragmented. 
+In 2024, Europe had 41 mobile 
+operating groups with more than 500 
+000 customers, compared with 5 in 
+the USA, 4 in both China and Japan 
+and only 3 in South Korea.
+•	 ROCE, return on capital employed, is 
+a common metric to determine the 
+return of investment. The ROCE for 
+telecom operators is 0.7 percentage 
+points lower that it was in 2017: in 2017 
+ROCE was 6.6%, while in 2023 it was 
+5.9%, well below the cost of capital. 
+This signals that it is increasingly dif-
+ficult for European telcos to generate 
+adequate returns.
+•	 In parallel, the sector’s investment 
+capacity continues to be stretched. 
+In 2023, capital intensity for Connect 
+Europe members (i.e. capex as a 
+proportion of revenue) remained very 
+high at around 21.4%, a level higher 
+than all its global peers. Coupled 
+with weak revenue this results in an 
+increasingly indebted sector. In 2023, 
+the net debt/EBITDA ratio of Connect 
+Europe members touched 2.57, one 
+of the highest levels it has been in 
+recent years.
+Tackling the challenges of 
+the century: sustainability 
+and security high on Europe’s 
+telecom agenda
+•	 Connect 
+Europe 
+members 
+are 
+accelerating their efforts to reduce 
+their scope 1 and 2 emissions, which 
+are steadily decreasing year-on-year 
+and represent now one-third of those 
+recorded in 2017 (using the market-
+based calculation method).
+•	 In 2023, the levels of total waste 
+generated 
+by 
+Connect 
+Europe 
+members dropped to 481kTonnes, 
+from 508kTonnes in 2020; and the 
+proportion of waste recycled, reused 
+or refurbished rose to 86%, from 82% 
+in 2022. 
+•	 In parallel, the report lists and 
+describes some of the top security 
+challenges currently facing the sector, 
+including the integrity of submarine 
+cables, AI security, vendor embargoes 
+and quantum encryption. 
+From Enrico Letta’s Report on the EU 
+Single Market to Mario Draghi’s Report 
+on European competitiveness, it has now 
+become clear that telecom operators 
+and advanced connectivity services are 
+recognized as key enablers of productivity 
+gains and sustainable growth. The jury is 
+still out on whether adequate reforms 
+will be put in place that allow Europe’s 
+connectivity ecosystem to scale and 
+grow again. 
+
+
+=== PAGE 9 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+9
+
+
+=== PAGE 10 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+10
+Introduction
+Two key reports highlight 
+Europe’s weakened 
+competitive position 
+In November 2024 the European Council 
+issued the Budapest Declaration.1 This 
+declaration is a response to two reports, 
+Much more than a market by Enrico Letta 
+(April 2024) and The future of European 
+competitiveness 
+by 
+Mario 
+Draghi 
+(September 2024), and a set of actions 
+for the Union to implement. These two 
+reports identify a common basic set of 
+shortcomings in the EU economy and 
+the challenges it faces:
+•	 Europe’s diminishing share of 
+the global economy
+•	 the fragmented and subscale 
+nature of European companies
+•	 a widening innovation and 
+productivity gap between 
+Europe and the USA and Asia.
+The Letta report goes on to lay out 
+measures to modernise and strengthen 
+the Single Market; the Draghi report goes 
+on to lay out a new industrial strategy for 
+Europe. 
+The 
+Budapest 
+Declaration 
+states 
+unequivocally: “Business as usual is 
+no longer an option”. As the European 
+Council is the highest political body in 
+the EU, and the body responsible for 
+setting its overall strategic agenda, these 
+calls for action should in theory follow 
+through to concrete implementation. 
+This is welcome, and its implementation 
+is also a matter of urgency.
+Both reports place particular 
+emphasis on the digital 
+communications sector 
+The digital communications sector gets 
+a detailed analysis in both reports. This is 
+because: 
+•	 it is peculiarly beset by the 
+structural problems that have 
+bedevilled other European 
+industries; 
+•	 it is a key industry to drive 
+renewed innovation, improved 
+productivity, and ultimately 
+economic growth while enabling 
+the green transition. 
+What both reports draw attention to 
+in the communications sector is the 
+divergence between the implementation 
+of long-standing European competition 
+policy and the implementation of a pro-
+growth industrial policy that would meet 
+the challenges Europe faces. 
+The Letta report highlights the relative 
+fragmentation of the sector compared 
+with other industries, which hinders its 
+economic sustainability. Hence “due 
+consideration should be given to the 
+necessity of some level of consolidation 
+within national markets”. While the 
+report notes that there are no significant 
+regulatory 
+barriers 
+to 
+geographical 
+expansion within the EU, it points out 
+that without the ability to make a return 
+on investment in any given national 
+market, pan-European consolidation will 
+remain unattractive. 
+1 Budapest Declaration on the New European Competitiveness Deal
+
+
+=== PAGE 11 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+11
+The Draghi report lays great emphasis 
+on the digital sector, which will account 
+for most of the new value created in 
+the global economy, and highlights 
+the deficiencies in the European digital 
+sector. It identifies the gap in digital as 
+the main driver behind the productivity 
+gap between the EU and the US. It 
+emphasises the importance of reducing 
+dependencies 
+on 
+non-European 
+suppliers. Specifically:
+•	 The EU relies on other countries 
+for over 80% of its digital 
+products, services, digital 
+infrastructure and intellectual 
+property.
+•	 The EU’s share of global revenues 
+in ICT dropped from 22% to 18% 
+from 2013 to 2023, while the US 
+share increased from 30% to 38%.
+•	 Only four of the 50 largest 
+tech providers by market 
+capitalisation are EU companies.
+Among the many recommendations for 
+the digital communications sector that 
+the Draghi report makes are: 
+•	 Reform the EU’s regulation and 
+competition stance so as to 
+encourage network operator 
+consolidation thereby helping to 
+achieve the Digital Single Market 
+for Telecoms; 
+•	 Reduce country-level ex ante 
+regulation in favour of ex post 
+competition enforcement;
+•	 Harmonise EU-wide spectrum 
+licensing, support longer licence 
+duration and fewer band reservations;
+•	 Simplify and harmonise cybersecurity 
+and lawful intercept regulations; 
+•	 Establish passporting of B2B services 
+to enable EU operators to provide 
+services across the EU;
+•	 Strengthen EU-based telecoms 
+equipment and software providers;
+•	 Provide central coordination of 
+standards for edge computing, 
+network APIs and IoT;
+•	 Encourage the definition of 
+commercial contractual agreements 
+for terminating data traffic and 
+infrastructure cost-sharing between 
+internet service providers or telecom 
+operators owning the infrastructure 
+and very large online platforms 
+with a safeguard of mandatory final 
+arbitration. 
+In addition the report recommended 
+the adoption of a new EU Telecoms Act 
+to embed the changes in law and to 
+implement a new strategic vision for 
+telecommunication services.
+The Draghi report 
+emphasises the 
+EU relies on other 
+countries for over 80% 
+of its digital products, 
+services, digital 
+infrastructure and 
+intellectual property.
+
+
+=== PAGE 12 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+12
+Towards a stronger European 
+digital communications sector
+The digital communications sector is 
+positioned to play a vital role in delivering 
+improved European competitiveness, 
+scale and resilience. At the same time, 
+the overriding issues facing the sector 
+are broadly aligned with those faced by 
+European industry as a whole.  
+While substantial investments and mod-
+ernisation have achieved a great deal 
+in terms of delivery of infrastructure 
+and innovative services, the underlying 
+structure of the sector (lack of scale/frag-
+mentation, over-regulation, insufficient 
+returns to make major investments for 
+growth) still largely works against the 
+broader aims of strengthening Euro-
+pean industrial competitiveness. Much 
+could still be done to make the sector 
+more competitive, financially healthier, 
+and more productive, so that it can deliv-
+er on sector-specific targets, and at the 
+same time play a pivotal role in deliver-
+ing the broader aims of a stronger, more 
+competitive Europe.
+This report analyses where the sector 
+is now, its development over recent 
+years, and compares it to the digital 
+communications 
+sectors 
+in 
+other 
+countries and regions that naturally 
+compete with Europe. 
+In this report “Europe” 
+means the Connect 
+Europe perimeter, 
+which encompasses 
+the EU27 plus 
+Albania, Bosnia and 
+Herzegovina, Iceland, 
+Montenegro, North 
+Macedonia, Norway, 
+Serbia, Switzerland 
+and the UK.
+
+
+=== PAGE 13 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+13
+
+
+=== PAGE 14 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+14
+The digital communications 
+market landscape in Europe
+The digital communications market is crucially important in the context of European 
+business as a whole. It represents a substantial share of GDP, and its players invest 
+billions of euros per year in tangible assets and research and development. 
+The digital communications market is defined here as including:
+telecoms services;
+telecoms equipment and communications devices;
+content and applications including media (film, TV, and music), software 
+publishing, data centre services and web portals. 
+The market was worth around EUR1 trillion to the European economy in 2023 - around 
+4.7% of European GDP. Turnover in the telecoms services market accounted for 39% of 
+that figure at EUR397 billion.
+FIG 0.1 : Turnover by communications market component, Europe, 2023 
+Source: Eurostat and Analysys Mason estimates,  2024
+39% 
+20%  
+41% 
+Telecoms services
+Network equipment and devices
+Content and applications
+4.7% of
+European
+GDP
+
+
+=== PAGE 15 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+15
+Companies in Europe’s digital communications market invested around EUR115.5 billion 
+in 2023 including investment in tangible fixed assets and in R&D. The majority of this 
+(60%) was invested by the telecoms operators. These figures exclude investment in TV, 
+video and music content.
+FIG 0.2 : Investment in tangible fixed assets and R&D in Europe by communications 
+market player type, 2023 
+Source: Eurostat and Analysys Mason estimates, 2024
+Telecoms operators
+Equipment manufacturers
+Content and application providers
+EUR115.5
+billion
+60%  
+9%  
+31% 
+
+
+=== PAGE 16 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+16
+01
+Direct benefits of 
+operator investment 
+for Europeans
+
+
+=== PAGE 17 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+17
+2 See Digital Decade 2024: Broadband Coverage in Europe 2023
+3 See Report on the state of the Digital Decade 2024, July 2024.
+On the network infrastructure targets the European Commission’s 
+report indicates that “additional investment of up to at least EUR200 
+billion is needed to ensure full gigabit coverage across the EU”.
+1.1	 THERE HAS BEEN SOLID PROGRESS 
+TOWARDS AMBITIOUS TARGETS  
+The European Union’s Digital Decade Policy program sets out a range of targets 
+designed to propel the region along the road towards “a successful digital 
+transformation for people, businesses and the environment”. The targets are aligned 
+along four key themes: digital infrastructure, digital transformation of businesses, 
+digital skills and digital public services. Provision of fixed and mobile broadband 
+services underpin the entire program, but the EU has also set its sights on the next 
+generation of digital applications and services – those that very high-speed broadband 
+networks were specifically designed to enable. 
+Digital infrastructure. The program indicates that there should be universal 
+access to FTTH and 5G services, with 100% coverage by 2030. In its latest 
+report (published September 2024) the EU stated that in 2023, 89% of the 
+EU’s households had 5G coverage and 64% had FTTH coverage. A higher 
+proportion of households (79%) were covered by a fixed very high capacity 
+network. Rural coverage of FTTH in the EU rose from 40.7% to 52.8% between 
+2022 and 2023, and rural coverage of 5G rose from 51.0% to 73.7% over the 
+same period.2 The digital infrastructure program also targets deployment of 10 
+000 edge nodes and that the EU share of global semi-conductor production 
+should double and comprise 20% of the world’s production value by 2030.
+Business. 2030 targets for business include 75% of firms using cloud 
+computing and AI, the number of ‘unicorns’ doubling (equalling 498) and 90% 
+of small and medium-sized enterprises (SMEs) to be using automated, digital 
+processes for operations. In 2023 there were 263 unicorns in the EU, and 64% 
+of the SME digital process target had been achieved, along with 52% of the 
+cloud computing target and 11% of the AI target.3 
+
+
+=== PAGE 18 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+18
+Skills. By 2030 there should be 20 million ICT specialists in Europe. In 2023, 
+48% of this goal had been reached (9.8 million). These targets specify a higher 
+proportion of female ICT specialists, as in 2021 81% of ICT specialists were male. 
+Additionally, 80% of the population should have basic digital skills – 69% of 
+this target had been achieved (55.6% of the population).
+Public services. The EU has a target of 100% of key public services for citizens 
+and businesses being accessible online by 2030; the scores were 79% for 
+citizen-relevant services and 85% for business-relevant services in 2023. In 
+addition to this, all medical records should be accessible online by 2030 and 
+80% of European citizens should have their ID online.
+Progress is reviewed biannually to advise member states on their trajectory. According 
+to the latest report (published in July 2024) progress has been made on many fronts, but 
+the EU is still far from reaching its targets. The digitalisation of businesses targets will 
+not be met if progress continues at its current trajectory, and progress on skills is further 
+off target. Member states are also behind the trajectory needed to achieve the target of 
+100% online accessibility of public services. 
+On the network infrastructure targets the report indicates that “additional investment 
+of up to at least EUR200 billion is needed to ensure full gigabit coverage across the EU”. 
+These financial estimates are for fibre and full 5G. They are calculated on the basis of the 
+capital cost of a single network covering all remaining gaps. Actual build-out will not 
+happen that way; there will be overbuild on the fibre side and overlapping coverage on 
+the mobile side, so real investment levels will be significantly higher.
+In office since December 2024, the newly approved college of Commissioners will work 
+on the renewed focus on EU competitiveness for the next five years. Executive Vice-
+President Teresa Ribera Rodríguez in charge of Clean, Just and Competitive Transition, is 
+responsible for ensuring Europe stays on track with its goals in the European Green Deal 
+and for working towards a new approach to competition policy, enabling companies to 
+innovate and compete in global markets. Executive Vice-President Henna Virkkunen in 
+charge of Tech Sovereignty, Security and Democracy, will oversee the EU path towards 
+reaching Europe’s 2030 Digital Decade targets and lead the review of the implementation 
+strategy and digital targets in 2026. She will work to improve access to secure, fast, and 
+reliable connectivity, as part of a broader strategy for connected collaborative computing, 
+promoting the use of AI, cloud services and quantum computing. To this end, she will 
+be working on a new Digital Networks Act to help boost secure high-speed broadband, 
+both fixed and wireless.
+FTTH coverage and speeds
+Fixed broadband networks are the workhorse of the digital ecosystem, carrying about 
+88% of all combined mobile and broadband traffic in Europe in 2023. This means that 
+improving fixed broadband connectivity is key to achieving the European Commission’s 
+targets for achieving gigabit-capable networks. Multiple connectivity options are 
+available, and they will all be part of a technology-neutral response to the “full gigabit 
+
+
+=== PAGE 19 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+19
+Figures above include non-EU European countries within the Connect Europe perimeter. 
+Fiberising fixed access networks is a huge undertaking and represents the largest single 
+investment in networks for a century. The pace of FTTH build has outstripped that in the 
+USA, although the pace is picking up. By the end of 2024, population coverage of FTTH 
+alone in Europe had reached 70.5%, and for all gigabit-capable networks, 82.5%. 
+connectivity for all” challenge: fibre-to-the-home (FTTH or ‘full fibre’), fibre-to-the-building 
+(FTTB) with LAN-type cabling, and cable HFC with DOCSIS3.1 and, in the future, possibly 
+DOCSIS4.0. While certain variants of 5G fixed-wireless access (FWA) hold the potential 
+for gigabit connectivity, few existing FWA services offer such high downlink speeds. The 
+largest share of new investment in fixed connectivity has, however, been in FTTH.
+FIG 1.1 : Gigabit-capable and FTTH population coverage, China, Europe, Japan, South Korea 
+and the USA, 2013-2024f 
+Source: Analysys Mason, 2024
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024f
+% coverage
+ 
+Europe Gigabit-capable
+Europe FTTH
+USA FTTH
+100%
+90%
+80%
+70%
+60%
+50%
+40%
+30%
+20%
+10%
+0%
+USA Gigabit-capable
+Japan Gigabit-capable
+Japan FTTH
+China Gigabit-capable
+S. Korea Gigabit-capable
+China FTTH
+S.Korea FTTH
+
+
+=== PAGE 20 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+20
+4 Leading operators in their home markets. Home markets are where the operator is the historical incumbent. 
+Connect Europe members can be challenger operators in non-home markets.
+FIG 1.2 : Coverage of gigabit-capable or gigabit-upgradeable networks by leading4, 
+challenger and cable operators, China, Europe, Japan, South Korea and the USA, 2024f  
+Source: Analysys Mason, 2024
+Several FTTH investment models have developed over the recent past. Leading operators 
+have launched joint-ventures and co-investments across key European markets, while 
+infrastructure-focused private equity funds have been backing both wholesale-only 
+operators as well as alternative operators. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Leading operators
+Challenger operators
+Cable
+Leading operators
+Challenger operators
+Cable
+Leading operators
+Challenger operators
+Cable
+Leading operators
+Challenger operators
+Cable
+Leading operators
+Challenger operators
+Cable
+Europe
+USA
+Japan
+South Korea
+China
+Coverage of premises
+ 
+100%
+90%
+80%
+70%
+60%
+50%
+40%
+30%
+20%
+10%
+0%
+49%
+47%
+95%
+87%
+99%
+52%
+16%
+63%
+34%
+91%
+35%
+85%
+58%
+44%
+11%
+
+
+=== PAGE 21 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+21
+
+
+=== PAGE 22 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+22
+5 See Ookla Speedtest Global Index. Data extracted for September 2024. The Europe figure is a calculated as 
+an average weighted by population.
+FIG 1.3 : Median fixed downlink speeds, China, Europe, Japan, South Korea and the USA, 
+September 2024 
+Source: Ookla5, 2024
+5G coverage and speeds
+By the end of 2024 we forecast that around 87% of the population of Europe will live 
+within outdoor range of at least one MNO 5G network, up from 80% at the end of 2023. 
+The equivalent coverage figure for the population of EU member states at the end of 
+2024 is 90%, up from 82% at the end of 2023.  Individual member states, including the 
+three most populous, had coverage well over 95%. Nevertheless, Europe and EU coverage 
+remains lower than in Japan, South Korea and the USA.  
+246  
+199  
+181 
+161 
+137 
+94 
+0
+50
+100
+150
+200
+250
+300
+USA
+Japan
+China
+South
+Korea
+Europe
+average
+Global
+average
+Mbit/s 
+Europe still trails behind its peer countries in terms of median speeds. A higher proportion 
+of Europeans is reliant on xDSL than in comparator Asian markets; and while cable 
+networks, originally installed to deliver multichannel TV, can be upgraded to deliver 
+gigabit internet access; a larger proportion of European households (59%) lack access to 
+those cable networks compared to the USA (15%). 
+
+
+=== PAGE 23 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+23
+FIG 1.4 : Percentage of the population covered by at least one 5G mobile operator, China, 
+Europe, Japan, South Korea and the USA, 2019–2024f 
+Source: Analysys Mason, 2024
+It is important to add nuance to coverage figures, as they should also be viewed in the 
+context of the spectrum used. Low-band spectrum (600MHz in North America but 
+700MHz elsewhere) enables rapid roll-out of networks to provide basic 5G coverage. 
+However, capacity is limited, and a 5G network based on low-band spectrum on its 
+own offers only marginal improvements in end-user experience when compared with 
+LTE networks. Dynamic spectrum sharing (DSS), which allows 4G and 5G services to be 
+provided simultaneously from the same infrastructure, has a similar effect in terms of 
+delivering a 5G service, but provides only for a 4G experience. 5G networks using mid-
+band spectrum at 3.5GHz offer substantially improved capacity and experience. The 
+deployment of 3.5GHz-based capacity is now the focus of most 5G operators worldwide. 
+Where deployment of 5G in mid-band spectrum follows 5G in low-band spectrum, the 
+overall coverage figure will not change, whereas the customer experience changes 
+significantly.
+The average end-user speeds delivered on mobile networks broadly reflect the state of 
+roll-out of mid-band 3.5GHz 5G networks, without which the performance enhancement 
+of 5G would be modest. 
+12,9%
+ 
+30,0%  
+0,0%
+ 
+93,0%  
+13,7%
+ 
+24,4%  
+76,0%  
+34,3%  
+93,0%  
+54,7%  
+62,0%  
+93,1%  
+81,0%  
+93,9%  
+82,0%  
+73,0%  
+95,8%  
+90,0%  
+95,0%  
+86,0%  
+79,7%  
+98,0%  
+94,0%  
+98,0%  
+89,0%  
+86,9%  
+98,2%  
+97,0%  
+99,0%  
+90,0%  
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+Europe
+USA
+Japan
+South
+Korea
+China
+Population covered by 5G
+ 
+2019
+2020
+2021
+2022
+2023
+2024f
+
+
+=== PAGE 24 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+24
+6 See Ookla Speedtest Global Index. Data extracted for September 2024. The Europe figure is a calculated as 
+an average weighted by population.
+FIG 1.5 : Median mobile downlink speeds, China, Europe, Japan, South Korea and the 
+USA, September 2024 
+Source: Ookla6, 2024
+Median European mobile downlink speeds are higher than the global average, but they 
+are lower than those in South Korea, China and the USA. It is important to recognise, 
+however, that with mobile, speed is a complex interplay between installed capacity and 
+usage, and therefore recorded medians can fall as well as rise; China’s median speed is 
+lower in 2024 than in 2023.  
+143,1 
+107,9  
+105,2  
+71,0 
+56,8  
+48,4  
+0
+20
+40
+60
+80
+100
+120
+140
+160
+South
+Korea
+USA
+China
+Europe
+average
+Global
+average
+Japan
+Mbit/s
+ 
+
+
+=== PAGE 25 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+25
+1.2	 REVENUE GROWTH REMAINS WEAK AND 
+HAS BEEN FALLING IN REAL TERMS SINCE 2016 
+Retail revenue growth in the European telecoms sector stood at 1.7% in 2023, a growth-
+rate barely changed since 2022, and in real terms it fell 4.4%. Mobile, just over half of 
+revenue, grew at 2.5% and fixed grew at 0.9%. Given the high level of bundling of 
+fixed and mobile, especially in the consumer segment, accurately assessing the split 
+of revenue is increasingly difficult. Revenue growth was weaker than in China, South 
+Korea and the USA. 
+FIG 1.6 : Revenue growth, China, Europe, Japan, South Korea and the USA, 2016-2023
+Source: Analysys Mason, 2024
+The inflation rate in the EU remained high at 6.4% in 2023, even though it fell from 9.2% 
+in 2022. It was higher than in any of the comparator countries. 
+6,2%
+ 
+1,7%
+ 0,3%
+ 
+3,0%
+ 
+3,1%
+ 
+-4%
+-2%
+0%
+2%
+4%
+6%
+8%
+10%
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+Y-o-Y growth
+ 
+China
+Europe
+Japan
+South Korea
+USA
+
+
+=== PAGE 26 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+26
+
+
+=== PAGE 27 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+27
+FIG 1.7 : Revenue growth compared to inflation, EU, 2016-2023 
+Source: Analysys Mason, 2024
+Since 2017, average spend per capita on telecoms services in the comparator countries 
+has headed in different directions. Spend per capita has increased in the world’s two 
+largest economies, plateaued in South Korea, and fallen in Europe and Japan. The figures 
+for Japan reflect the falling value of the yen in relation to the euro.
+ 
+ 
+ 
+ 
+1,7%
+ 
+6,4%
+ 
+-4,4%
+-10%
+-5%
+0%
+5%
+10%
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+Annual change (%)
+ 
+Retail revenue growth
+CPI, EU
+Retail revenue growth (real values)
+
+
+=== PAGE 28 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+28
+FIG 1.8 : Average spend per capita on mainstream telecoms, nominal and adjusted for 
+GDP/capita (PPP), China, Europe, Japan, South Korea and the USA, 2010, 2017 and 2024f
+Source: Analysys Mason, 2024
+For the first time in Europe, retail telecoms spend7 fell to just below 1% of GDP in 2023, 
+and looks set to fall again in 2024. In 2007 it was close to 2%. The swift decline in the value 
+of telecoms services in relation to GDP is common to most advanced economies: the 
+share declines despite improving quality of services. What sets Europe apart is that retail 
+telecoms has represented a consistently lower share of GDP than elsewhere. 
+7 Excludes non-connectivity related value-added services in B2C and B2B, excludes TV/video, excludes 
+wholesale and interconnect revenue.
+41,0
+58,1
+33,8
+64,8
+5,8
+41,0
+47,4
+31,6
+38,7
+18,3
+33,7
+54,8
+40,8
+70,2
+9,6
+33,7
+49,1
+36,9
+43,2
+25,3
+32,6
+47,1
+40,4
+86,8
+13,3
+32,6
+43,7
+34,2
+51,1
+26,8
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Europe
+Japan
+South Korea
+USA
+China
+Europe - adjusted
+Japan - adjusted
+South Korea - adjusted
+USA - adjusted
+China - adjusted
+EUR/capita/month
+2010
+2017
+2024f
+
+
+=== PAGE 29 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+29
+The discrepancy between telecom services spend as a proportion of GDP in Europe and 
+in the other advanced economies shows that regulatory initiatives have likely resulted in 
+artificially low prices, arguably below consumer valuations.
+Average revenue per user (ARPU) in both mobile and fixed remains low in Europe, 
+particularly so in mobile. Low prices may be good for consumers and businesses in the 
+short term, but they are not fit for encouraging long-term investment in innovative 
+services, network evolutions or for investing in network coverage where the commercial 
+case is marginal: indeed they often make the commercial case for network expansion 
+non-existent.
+FIG 1.9 : Telecoms spend as a proportion of GDP, China, Europe, Japan, South Korea and 
+the USA, 2007–2024f 
+Source: Analysys Mason, 2024
+0,97%
+ 
+1,81%
+ 
+1,54%
+ 
+1,34%
+ 
+1,33%
+ 
+0,0%
+0,5%
+1,0%
+1,5%
+2,0%
+2,5%
+3,0%
+2007
+2008
+2009
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024f
+Telecoms spend as a proportion
+of GDP 
+ 
+Europe
+Japan
+South Korea
+USA
+China
+
+
+=== PAGE 30 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+30
+While the differences between Europe and comparator countries in terms of average 
+mobile data usage per capita are evening out, a reflection of a saturation effect in 
+smartphone usage already evident in the most advanced 5G markets such as South 
+Korea, the differences between how much users pay per gigabyte used remain extremely 
+marked8. Revenue per used gigabyte of mobile data in the USA is 159% higher than in 
+Europe. 
+8 It is important to note that this figure is not based on the retail price of data packages, but revenue divided 
+by data used.
+FIG 1.10 : Mobile ARPU (excluding IoT SIMs), nominal and adjusted for GDP/capita (PPP), 
+and change in real terms (LCU), Europe, USA, Japan, South Korea and China, 2023
+Source: Analysys Mason, 2024
+14,8
+41,7
+22,6
+26,0
+9,5
+14,8
+24,9
+21,1
+22,4
+19,8
+-5,9%
+-3,5%
+-3,0%
+-1,4%
+2,2%
+-6%
+-4%
+-2%
+0%
+2%
+4%
+6%
+-60
+-40
+-20
+0
+20
+40
+60
+Europe
+USA
+Japan
+South
+Korea
+China
+Change in real terms 2022-2023
+EUR/month
+ARPU
+ARPU adjusted for GDP/capita
+Change in real terms (LCU) (%)
+Mobile ARPU in Europe stood at just EUR14.8 in 2023, a decline in real terms of 5.9% 
+compared to 2022, and substantially lower than all comparator countries when adjusted 
+for differences in GDP/capita. This reflects artificially high competition, stagnating 
+demand for larger data bundles, and mobile discounts in European fixed-mobile 
+bundling. 
+
+
+=== PAGE 31 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+31
+FIG 1.11 : Average spend per gigabyte of mobile data used and average mobile data 
+usage per capita, China, Europe, Japan, South Korea and the USA, 2023
+Source: Analysys Mason, 2024
+Figures above are not directly comparable with the figures from last year’s report, due 
+to splitting out the impact on total traffic and on revenue of FWA in this year’s report. 
+FWA is an important component of traffic on mobile networks in the USA (34% of total 
+traffic in 2023), and to a lesser extent in Europe (18% of total traffic in 2023), but has 
+much weaker impact in Japan, South Korea and China. The distinction is an important 
+one to make because FWA – particularly in the USA – is a means of monetising fallow 
+capacity, and has usage levels that come close to fixed broadband usage (around 25 
+times higher than mobile). FWA therefore generates a tiny fraction of the revenue per 
+gigabyte generated by mobile services. Yet even when FWA traffic and revenue is taken 
+into account, revenue per gigabyte of data in the USA is more than double that in Europe. 
+Europe
+Europe - with FWA
+USA
+USA - with FWA
+Japan
+South Korea
+China
+Spend (EUR/GB)
+Usage (GB/capita/month)
+3,50
+3,00
+2,50
+2,00
+1,50
+1,00
+0,50
+-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+15,83 
+19,31 
+ 16,69 
+25,28 
+19,63 
+19,69 
+17,63 
+1,12
+0,94
+2,90
+2,07
+1,51
+1,48
+0,56
+30
+25
+20
+15
+10
+5
+0
+Spend (EUR/GB)
+Usage (GB/capita/month)
+
+
+=== PAGE 32 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+32
+The USA has easily the largest monthly fixed broadband ARPU at EUR58.4. The USA has 
+lower levels of competition in fixed broadband than Europe, although recent investment 
+in FTTH, plus the launch of competitive FWA services, have increased competition for the 
+hitherto dominant cable players. It also, critically, imposes no ex ante SMP regulation in 
+broadband access. The miniscule level of fixed broadband ARPU in China requires some 
+explanation.9 The total of the reported subscriber bases of the main service providers now 
+significantly exceeds the number of premises (residential and business) in China. It is our 
+understanding that fixed broadband (almost invariably FTTH) is normally sold in fixed-
+mobile bundles that carry such a heavy discount that end-users may subscribe to more 
+than one broadband connection. Thus many reported fixed broadband subscriptions 
+are likely to be inactive, and these depress ARPU. It is also likely that FMC bundling in 
+South Korea, where prices are set to encourage churn on mobile, depresses ARPU there. 
+Something of the opposite effect may be felt in Europe (i.e. low additional SIM prices in 
+FMC bundles depresses mobile ARPU).
+9 China continues to have by far the lowest ARPU in both the fixed and mobile markets, but there are a 
+two important market differences to take into account. First, Chinese operators are majority state-owned. 
+This means, despite the Chinese government renouncing direct involvement in telecoms prices in 2014, 
+operators still follow its ‘guidance’. Such guidance aims to improve connectivity speeds while lowering 
+prices, and on occasions the government can request price decreases. Second, regional operating divisions 
+of the mobile companies have the freedom to adjust local prices according to local economic conditions. 
+Taken as a whole, China still has GDP per capita at about a third that in Europe. 
+FIG 1.12 : Fixed broadband ARPU, nominal and adjusted for GDP/capita (PPP), and 
+change in real terms (LCU), Europe, USA, Japan, South Korea and China, 2023
+Source: Analysys Mason, 2024
+23,7
+58,4
+21,2
+12,9
+4,7
+23,7
+34,8
+19,7
+11,1
+9,9
+-2,2%
+-1,1%
+-4,3%
+-1,7%
+-0,4%
+-6%
+-4%
+-2%
+0%
+2%
+4%
+6%
+-60
+-40
+-20
+0
+20
+40
+60
+Europe
+USA
+Japan
+South
+Korea
+China
+Change 2022-2023
+EUR/month
+ARPU
+ARPU adjusted for GDP/capita
+Change in real terms (LCU) (%)
+European fixed broadband ARPU fares a little better in relation to comparators, but 
+remains much less than fixed broadband ARPU in the USA.
+
+
+=== PAGE 33 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+33
+
+
+=== PAGE 34 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+34
+1.3	 OVERALL CAPEX ON EUROPEAN TELECOMS 
+NETWORKS FELL IN 2023 AFTER A DECADE OF 
+GROWTH
+FIG 1.13 : European telecoms capex, FTTH, 5G, 4G and other, 2017-2023 
+Source: Analysys Mason, 2024
+The data is collected by NRAs in differing ways, but typically includes all players in the 
+networks value-chain, including investors purely in passive network infrastructure 
+(towers, passive fibre infrastructure etc.). The total figure is therefore higher than 
+operator capex alone, and the figure for the peak in 2022 (EUR65.8 billion) is higher than 
+our estimate of European capex in 2022 in last year’s report (EUR59.1 billion), which was 
+calculated based on operators alone. 
+An aggregation of NRA reported data shows that in 2023 about 46% of capex went 
+towards FTTH, and a further 20% towards 5G. In other words, two thirds of investment is 
+going towards new, faster and more reliable access networks. The main components of 
+Evidence collated by European national regulatory authorities indicated that the long 
+rise in capital expenditure on telecoms peaked in 2022 and declined by 2% in 2023.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+0
+10
+20
+30
+40
+50
+60
+70
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+EUR (billion)
+ 
+FTTH
+5G mobile
+Other mobile
+Other
+18%
+22%
+24%
+29%
+36%
+44%
+46%
+2%
+9%
+17%
+20%
+20%
+33%
+33%
+27%
+21%
+17%
+13%
+10%
+49%
+45%
+47%
+41%
+30%
+23%
+24%
+
+
+=== PAGE 35 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+35
+the ‘Other’ category are metro and transport networks and IT, as well as various forms of 
+legacy fixed networks (including both copper and cable networks). The figures exclude 
+payments for spectrum and other licences. 
+Clearly, the main factor that has swollen capex in Europe is FTTH, which has seen 
+continuous growth for over a decade. Fibre infrastructure has a very extended useful 
+asset-life, has a ‘one-off investment’ characteristic, and investment will ease off for the 
+rest of the decade. Investment in mobile has historically been more cyclical with each 
+generation. After the first wave of 5G network deployment, capex eased off significantly 
+in 2023. The investment required for 6G, when it appears, is still to be assessed. The fact 
+that several countries have reached, or will soon reach, an investment peak in terms 
+of network roll out, at least in fixed networks, is in line with the guidance given by the 
+majority of larger operators, and is in line with the known investment plans, particularly 
+in fibre infrastructure, by the myriad smaller investors in this area. This does not however 
+mean the end of network capex; there will still be investment required for network 
+evolutions, for capacity increases where it is required, and for cybersecurity.
+
+
+=== PAGE 36 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+36
+1.4	 CONNECT EUROPE MEMBERS INVESTED 
+EUR54.5 BILLION IN 2023
+Connect Europe members are the historical operators in many European markets 
+(‘Home markets’ below), are challenger operators in others (‘Rest of Europe’ below), 
+and own operators in the rest of the world. At a group level, Connect Europe capex fell 
+back in 2023 to EUR54.5 billion from EUR62.8 billion in 2022. A single factor explains 
+much of this decline: capex at Deutsche Telekom group company T-Mobile USA fell by 
+EUR4.1 billion as 5G coverage neared completion. The decline in capex in Europe alone 
+was less marked. The reasons for the decline are not simply to do with the cadence of 
+infrastructure investment needs; a lack of certainty around return on investment in a 
+hyper-competitive market also dampens capex. 
+FIG 1.14 : Connect Europe member capex (excluding spectrum costs), home markets, 
+rest of Europe and rest of the world, 2016–2023 
+Source: Analysys Mason, 202410
+10   The figures are not directly comparable with last year’s report as the membership of Connect Europe has 
+expanded.
+31,3 
+29,9 
+30,9  
+29,8  
+34,4  
+34,4  
+33,9 
+6,7 
+7,0 
+7,0 
+7,2 
+7,3 
+7,5 
+6,5 
+15,1 
+13,2 
+11,8 
+14,2 
+15,5 
+18,9 
+14,1 
+0
+10
+20
+30
+40
+50
+60
+70
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+EUR billion  
+Home market
+Rest of Europe
+Rest of World
+
+
+=== PAGE 37 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+37
+EUR30.8 billion of this sum was invested within the EU, representing about 57% of 
+Connect Europe group capex.
+FIG 1.15 : Connect Europe member capex (excluding spectrum costs), EU and non-EU, 
+2016-2023
+Source: Analysys Mason, 2024
+30,6 
+30,9 
+32,1 
+31,7 
+32,2 
+31,6 
+30,8  
+22,5 
+19,3 
+17,6 
+19,6 
+24,9 
+29,2 
+23,7 
+0
+10
+20
+30
+40
+50
+60
+70
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+EUR (billion)
+ 
+EU
+Non-EU
+
+
+=== PAGE 38 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+38
+
+
+=== PAGE 39 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+39
+Connect Europe members’ share of European operator investment stood 
+at 70% in 2023
+In Europe (including in non-EU states) Connect Europe members’ capex stood at 
+EUR40.5 billion in 2023. Total operator capex stood at EUR57.9 billion and total capex for 
+all European telecoms networks (including non-operator capex) stood at EUR64.5 billion. 
+FIG 1.16 : Connect Europe member capex in Europe only (excluding spectrum costs), 
+total operator capex, and  total capex in Europe, 2017–2023
+Source: Analysys Mason, 2024
+38,0  
+37,0 
+37,9 
+37,1 
+41,6 
+41,8 
+40,5  
+48,3  
+ 48,9  
+ 51,7  
+ 52,6  
+ 56,3  
+ 59,1  
+ 57,9  
+ 49,7  
+ 51,7  
+ 55,2  
+ 58,1  
+ 62,7  
+ 65,8  
+ 64,5  
+0
+10
+20
+30
+40
+50
+60
+70
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+EUR (billion)
+ 
+Connect Europe capex
+Total operator capex
+Total capex
+
+
+=== PAGE 40 ===
+STATE OF DIGITAL COMMUNICATIONS | 2025
+40
+FIG 1.17 : Split of operator capex between Connect Europe members and other operators, 
+Europe, 2023
+Source: Analysys Mason, 2024
+FIG 1.17 shows the split of capex by operators (excluding investments by non-operators) 
+between Connect Europe members and other operators.  
+On the basis of telecoms operator capex alone, Connect Europe represents 69.5% of 
+capex. These proportions are not directly comparable with those in last year’s report as 
+they reflect the enlarged membership of Connect Europe, which now includes Liberty 
+Global and JVs between Connect Europe members. 
+Within the EU, Connect Europe members spent approximately EUR30.8 billion as capex 
+in 2023. That figure represents 67.2% of total operator capex in the EU. These figures and 
+proportions also reflect the enlarged membership of Connect Europe. 
+Connect
+Europe
+69,5% 
+ 
+ 
+Other
+30,5%  

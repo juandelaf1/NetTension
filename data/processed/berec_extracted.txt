@@ -1,0 +1,826 @@
+
+=== PAGE 1 ===
+                                                                           BoR (24) 177      
+ 
+ 
+5 December 2024 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BEREC Report on the IP Interconnection 
+ecosystem 
+ 
+
+
+=== PAGE 2 ===
+ 
+ 
+BoR (24) 177 
+1 
+ 
+Table of Contents 
+ 
+Executive Summary .............................................................................................................................. 3 
+1. 
+Introduction ................................................................................................................................... 5 
+2. 
+IP-IC data analysis overview ........................................................................................................ 6 
+3. 
+Traffic developments .................................................................................................................... 9 
+3.1 General data traffic trends in Europe ....................................................................................................... 9 
+3.2 Focus on specific trends ........................................................................................................................ 10 
+3.2.1 
+IXP traffic developments ........................................................................................................................... 10 
+3.2.2 
+Regionalisation of traffic ........................................................................................................................... 11 
+3.3 Future trends .......................................................................................................................................... 13 
+3.4 Key findings related to traffic developments ........................................................................................... 14 
+4. 
+Pricing and cost developments ................................................................................................. 14 
+4.1 Transit costs ........................................................................................................................................... 15 
+4.2 Cost and price effects of technological developments ........................................................................... 16 
+4.3 Peering prices ........................................................................................................................................ 17 
+4.3.1 
+Public peering .......................................................................................................................................... 17 
+4.3.2 
+Private peering ......................................................................................................................................... 18 
+4.4 Infrastructure costs ................................................................................................................................. 19 
+4.5 Key findings related to pricing and costing developments ...................................................................... 20 
+5. 
+Market developments in IP-IC .................................................................................................... 20 
+5.1 Large CAP establishing own infrastructures .......................................................................................... 20 
+5.1.1 
+Investments in transport infrastructures .................................................................................................... 21 
+5.1.2 
+Investments in CDNs ................................................................................................................................ 21 
+5.2 IAS providers vertically integrated with Tier 1 transit providers .............................................................. 23 
+5.3 Substitutability ........................................................................................................................................ 25 
+5.4 Key findings regarding market developments in IP-IC ........................................................................... 26 
+6. 
+Generic structure of IP-IC issues .............................................................................................. 27 
+7. 
+Bargaining situation (in particular) between CAPs and IAS providers ................................. 33 
+8. 
+Relationship between IP-IC and OIR ......................................................................................... 37 
+9. 
+Conclusions ................................................................................................................................ 40 
+Annex I: Country cases related to IP-IC ............................................................................................ 44 
+A. 
+Switzerland: Init7 vs. Swisscom .......................................................................................................... 44 
+B. 
+Germany: Telekom Deutschland vs. Meta .......................................................................................... 45 
+C. 
+Italy: DAZN live-streaming case .......................................................................................................... 46 
+Annex II: NRA’s activities in the context of IP-IC ............................................................................ 47 
+A. 
+France ................................................................................................................................................. 47 
+B. 
+Germany ............................................................................................................................................. 48 
+C. 
+Italy ..................................................................................................................................................... 49 
+D. 
+The Netherlands.................................................................................................................................. 49 
+Annex III: Methodology ....................................................................................................................... 51 
+A. 
+Definition of terms used in the questionnaire ...................................................................................... 52 
+B. 
+Calculation method used to compute traffic exchanged ...................................................................... 54 
+ 
+ 
+
+
+=== PAGE 3 ===
+ 
+ 
+BoR (24) 177 
+2 
+ 
+Table of Figures and Tables 
+Figure 1. Breakdown of IP-IC services used by IAS providers, Source: BEREC ................... 8 
+Figure 2. Evolution of the aggregated IXP traffic within the Euro-IX membership, Source: 
+European Internet Exchange Association ............................................................................ 11 
+Figure 3. Share of IAS providers with on-net CDNs, Source: BEREC ................................. 12 
+Figure 4. Evolution of network traffic and data unit cost since 2017, Source: Vodafone ...... 15 
+Figure 5. Breakdown of peering used by IAS providers, Source: BEREC............................ 19 
+Figure 6. Average annual investments made by CAPs, Source: Analysys Mason (2022) .... 21 
+Figure 7. Internet traffic by CDN use, Source: Analysys Mason (2018) ............................... 22 
+Figure 8. Breakdown of IP-IC services used by IAS providers by Tier 1 affiliation, Source: 
+BEREC ............................................................................................................................... 24 
+Figure 9. Breakdown of peering used by IAS providers by Tier 1 affiliation, Source: BEREC
+ ........................................................................................................................................... 25 
+Figure 10. Generic structure of IP-IC issues: case I, Source: BEREC ................................. 28 
+Figure 11. Generic structure of IP-IC issues: case II, Source: BEREC ................................ 29 
+Figure 12. Illustration of measured incoming traffic values, average and 95th percentile, 
+Source: BEREC .................................................................................................................. 55 
+Table 1. Peering Prices of Major European IXPs, Source: ACM ......................................... 17 
+Table 2. Definition of terms and explanations on the information to be reported in the 
+questionnaire, Source: BEREC ........................................................................................... 54 
+ 
+ 
+
+
+=== PAGE 4 ===
+ 
+ 
+BoR (24) 177 
+3 
+ 
+Executive Summary 
+The debate about IP interconnection (IP-IC) was revitalised in 2021/2022 and has gained 
+momentum since then. To contribute to the ongoing debate on IP-IC, BEREC has re-evaluated 
+its earlier findings by preparing this report on the IP-IC ecosystem. This is the third BEREC 
+report on this matter following the publication of its reports on IP-IC in the context of Net 
+Neutrality in 20121 and 20172. 
+Although the scope of this report is limited to the IP-IC ecosystem, it is worth noting that there 
+may be some overlap with the debate on payments from large content and application 
+providers (CAPs) to internet access services (IAS) providers. However, the objective of this 
+report is not to replicate that specific debate. In this report, BEREC assesses the current status 
+of IP-IC in Europe and the market developments since the previous reports. The focus of the 
+report is the period from early 2017 to autumn 2023 and it also includes an analysis of the 
+likely trends from 2023 to 2030, where objective data exists. 
+To prepare the report, BEREC conducted comprehensive desk research and carried out a 
+data collection exercise by means of a quantitative and qualitative questionnaire distributed to 
+internet access services (IAS) providers, as well as to RIPE NCC3. Additionally, BEREC 
+organised a series of virtual workshops, where a variety of selected market players were 
+invited to share their views on the current state of play of the IP-IC markets. 
+Based on this data analysis, the report provides observations related to the use of different 
+IP-IC services (e.g. bilateral peering, internet exchange points, transit, on-net content delivery 
+networks (CDNs)4). It is relevant to mention that on-net CDNs are installed in many IAS 
+providers’ networks and are thus important in terms of handling data traffic in the respective 
+networks. Even though the data traffic growth rate has stabilised in the reference period, the 
+increasing diffusion of ultra-high definition (UHD) video content could further contribute to the 
+growth of data traffic and an increase in live-streaming content could potentially have an 
+impact on peak traffic. 
+The report also analyses pricing and cost developments, by revealing that prices and costs 
+for IP-IC services continue to exhibit a downwards trend. The key reasons identified for these 
+falling prices and costs are the technological developments and competitive pressure. 
+Furthermore, BEREC notes that large CAPs have increasingly invested in their own 
+infrastructure in recent years5. In this report, BEREC addresses the economic rationale for the 
+                                               
+1 BoR (12) 130 An assessment of IP interconnection in the context of Net Neutrality (December 2012), (referred to 
+as “2012 IP-IC report”) 
+2 BoR (17) 184 BEREC Report on IP-Interconnection practices in the Context of Net Neutrality (October 2017), 
+(referred to as “2017 IP-IC report”) 
+3 Réseaux IP Européens Network Coordination Centre (RIPE NCC) is the Regional Internet Registry for Europe, 
+Middle East and Central Asia. 
+4 The notion of “on-net CDNs” refers to CAPs placing their cache servers in the IAS providers’ access networks. 
+5 BoR (24) 139 BEREC Report on the entry of large content and application providers into the markets for electronic 
+communications networks and services (October 2024) 
+
+
+=== PAGE 5 ===
+ 
+ 
+BoR (24) 177 
+4 
+ 
+large CAPs to deploy their own infrastructure rather than buying services from providers of 
+electronic communications networks and services (ECN-ECS). The analysis also shows that, 
+when low latency and high bandwidth are required, peering is more likely to be a substitute for 
+transit than vice versa.  
+Furthermore, BEREC reflects on IP-IC disputes, typically between CAPs and IAS providers, 
+that have occurred since 2017. In particular, BEREC describes the generic structure of IP-IC 
+issues outlined by several market players during its workshops.  
+To analyse whether there are issues in IP-IC markets which might require regulatory actions, 
+BEREC has assessed the underlying issue of the relative bargaining power between CAPs 
+and IAS providers. It can be concluded that several factors impact on the relative bargaining 
+power between providers, such as the size of the players, the degree of substitutability 
+between transit and peering, the cost structure of transit and peering, economies of scale, as 
+well as market and technological developments. 
+The report also touches upon the relationship between the Open Internet Regulation (EU) 
+2015/2120 (OIR)6 and IP-IC. In particular, BEREC examines the provisions of the OIR, which 
+aim to ensure an open internet, for the part of the internet value chain for which the IAS 
+provider is responsible. 
+BEREC considers that the IP-IC ecosystem is still driven by functioning market dynamics and 
+by the cooperative behaviour of market players. Despite this, BEREC is aware that a few IP-
+IC disputes have occurred since 2017, and BEREC’s workshops also revealed similar insights. 
+BEREC notes that stakeholders typically did not call for regulation but suggested monitoring 
+and a case-by-case assessment. BEREC will follow up on such issues7, while also considering 
+the relationship between IP-IC and the OIR as analysed in this report.8 This is important as 
+otherwise end-user customers would ultimately suffer from disputes between different market 
+players across the internet value chain9. In this regard, BEREC referenced the NRAs’ capacity 
+to settle disputes between ECN-ECS providers and other undertakings benefitting from 
+access or interconnection obligations for the purpose of providing publicly available ECS in 
+the BEREC’s input to the EC public consultation on the White Paper “How to master Europe’s 
+digital infrastructure needs?”10 
+                                               
+6 Regulation (EU) 2015/2120 of the European Parliament and of the Council of 25 November 2015 laying down 
+measures concerning open internet access and retail charges for regulated intra-EU communications and 
+amending Directive 2002/22/EC and Regulation (EU) No 531/2012 (referred to as “the OIR”) 
+7 For instance, this may involve monitoring by means of data collection exercises. 
+8 BEREC notes that other tools like NRA data collection powers and competition law might be applied. Aside from 
+that, NRAs would have to assess on a case-by-case basis whether Article 26 of the European Electronic 
+Communications Code (EECC) might be applicable in case of IP-IC issues. 
+9 If (e.g.) a CAP and an IAS provider cannot agree to increase the capacity of the IP-IC interface between their 
+networks, this may lead to a lower quality experienced by a user streaming a video. 
+10 BoR (24) 100 provides that “As regards issues that have emerged in a few national markets, the current 
+regulatory framework provides some means to handle problems in areas which are governed by commercial 
+agreements - like IP interconnection. These means include NRAs’ capacity to settle disputes between ECN-ECS 
+
+
+=== PAGE 6 ===
+ 
+ 
+BoR (24) 177 
+5 
+ 
+To conclude, BEREC considers that, since its creation, the internet has managed to cope with 
+both traffic growth and higher peaks of traffic. These trends reflect changing usage patterns 
+as well as increasing diffusion of IAS throughout societies. Against this background, BEREC’s 
+observation that the developments in the IP-IC ecosystem are an “evolution rather than 
+revolution”11 still holds. 
+ 
+1. Introduction 
+BEREC published reports on IP-IC in the context of Net Neutrality12 in 2012 and 2017. In this 
+updated Report on the IP interconnection ecosystem, BEREC re-evaluates its conclusions 
+from 2017, as well as assesses the current status of IP-IC in Europe and the market 
+developments since the previous reports, including the relationships between different parties, 
+use of paid peering and CDNs. 
+The scope of this report is limited to the IP-IC ecosystem. However, it is worth noting that there 
+may be some overlap with the debate on payments from large CAPs to IAS providers, although 
+the objective of this report is not to replicate that specific debate. The focus of the report is the 
+period from early 2017 to autumn 2023 and it also includes an analysis of the likely trends 
+from 2023 to 2030, where objective data exists. 
+This report is organised as follows: 
+• 
+Chapter 2 provides an overview of the data analysis carried out by BEREC; 
+• 
+Chapters 3, 4 and 5 describe the developments with respect to traffic, prices and costs, 
+as well as the services used in the IP-IC markets; 
+• 
+Chapter 6 provides a description of the generic structure of IP-IC issues and elaborates 
+on case studies related to IP-IC disputes; 
+• 
+Chapter 7 contains an assessment of the bargaining situation (in particular) between 
+CAPs and IAS providers13; 
+                                               
+providers and other undertakings benefitting from access or interconnection obligations for the purpose of 
+providing publicly available electronic communications services, and the NRAs’ power to collect data from 
+undertakings active in sectors that are closely related to the electronic communications. In addition, the concept 
+of “non-circumvention” enshrined in the OI Regulation and the BEREC Guidelines provides an available tool to 
+address issues in the IP interconnection market. […] BEREC is open to take on a role in this field in the future, in 
+order to foster consistent practices throughout the Union.” 
+11 See BoR (17) 184, Chapter 7 
+12 BoR (12) 130 An assessment of IP interconnection in the context of Net Neutrality;  
+BoR (17) 184, BEREC Report on IP-Interconnection practices in the Context of Net Neutrality  
+13 In the BoR (22) 81 BEREC Guidelines on the implementation of the Open Internet Regulation (June 2022), 
+BEREC uses the term “ISP” to refer to providers of internet access services (IAS). For the purpose of this report, 
+the notions of “internet access service (IAS) provider” and “internet service provider (ISP)” are used as synonyms. 
+
+
+=== PAGE 7 ===
+ 
+ 
+BoR (24) 177 
+6 
+ 
+• 
+Chapter 8 elaborates on the relationship between IP-IC and the Open Internet 
+Regulation (EU) 2015/2120 (OIR). 
+For the purpose of this report, BEREC circulated a questionnaire on the basis of Article 20(1) 
+of the European Electronic Communications Code (EECC), according to which national 
+regulatory authorities (NRAs) and BEREC have the power to require undertakings who provide 
+electronic communications networks and services (ECN-ECS), associated facilities, 
+associated services, or who are active in closely related sectors, to submit information 
+concerning such networks and services. 
+The questionnaire was distributed by NRAs on behalf of BEREC to IAS providers in their 
+respective countries and to RIPE NCC. BEREC received more than 170 replies, containing 
+data sets of traffic measurements with the majority referring to the months of September and 
+October 2023 (see Annex III for further information). Given the importance of providing a 
+sound and evidence-based analysis of the evolution in the IP-IC markets, BEREC stresses 
+the need for NRAs and BEREC to have the appropriate powers to gather data on relevant 
+services and networks provided by different types of actors. 
+Furthermore, in order to gather relevant feedback and insights, BEREC organised 12 internal 
+virtual workshops in September and October 2023, where a variety of selected stakeholders14 
+were invited to share their views on the current state of play of the IP-IC markets. 
+To follow up on the findings gathered from these workshops, BEREC distributed an ad hoc 
+questionnaire to various stakeholders in May 2024. While the report excludes the results of 
+this additional questionnaire due to scheduling constraints, the results have been documented 
+internally and informed BEREC’s ongoing work. 
+ 
+2. IP-IC data analysis overview 
+To prepare this report, BEREC carried out a data collection exercise by means of a 
+quantitative questionnaire, complemented with qualitative questions. The main objective of 
+this exercise was to support the analysis in the report with empirical data and to provide a 
+better understanding of the interconnection between different actors in the internet 
+ecosystem15 at European level. 
+The analysis of the data in this report takes into account, for each responding IAS provider, 
+up to the top 15 bilateral peering agreements, as well as up to the top 10 on-net CDN caches 
+and up to the top 10 internet exchange point (IXP) agreements. The criterion used by the 
+                                               
+14 Stakeholders of the following categories were invited to the workshops: academics and civil society, internet 
+community, cloud and hosting providers, content and application providers (CAPs), content delivery network 
+(CDN) providers, internet exchange points (IXPs), internet service providers (ISPs), transit providers. 
+15 BoR (22) 167 BEREC Report on the Internet Ecosystem (December 2022) 
+
+
+=== PAGE 8 ===
+ 
+ 
+BoR (24) 177 
+7 
+ 
+respondents for assessing the importance of each agreement was based on the configured 
+capacity. 
+To focus on specific categories and trends in the analysis, IAS providers have been grouped 
+according to the following criteria: 
+• 
+highest – traffic above the 66,6 percentile (849 Gbit/s)16; 
+• 
+medium – traffic included between the 33,3 and 66,6 percentile; 
+• 
+lowest – traffic below the 33,3 percentile (138 Gbit/s). 
+The group categorisation is obtained by ranking the inbound traffic by size (in ascending order) 
+and calculating the values of the 33,3% and 66,6% percentiles, so that there are three groups 
+with approximately the same number of IAS providers responding to the questionnaire. The 
+resulting categorisation therefore is based on the relative size of IAS providers in terms of 
+inbound traffic (and not, e.g. in terms of number of end-users or revenue shares). 
+The figures outlined in the following sections relate to information on inbound traffic of retail 
+networks providing public IAS. In the context of this analysis, the term “transit” refers to global 
+or partial transit services provided to these IAS providers.17 Therefore, the traffic values are 
+considered from the point of view of retail IAS providers.  
+Transit networks (e.g. Tier 1 providers which can reach the entire internet via settlement-free 
+peering and thus do not buy transit), are providing a different service than retail public internet 
+access, are not part of the sample. However, transit networks’ traffic does feed into the 
+empirical data, to the extent that this traffic constitutes inbound traffic for a retail IAS provider. 
+This also holds where the transit network is part of a company group (i.e. when the IAS 
+provider is vertically integrated). 
+                                               
+16 This absolute value in Gbit/s is the threshold of inbound traffic (without traffic from on-net CDN to end-users) of 
+IAS providers which separates the groups. Accordingly, at the threshold of the 66,6 percentile, 66,6% of the 
+responding IAS providers have equal or less inbound traffic and 33,3% have more inbound traffic.     
+17 The questionnaire distinguishes the following types of relationship with interconnection partners: 
+- Global and partial transit [1:E, 1:n]: network #1 (respondent) employs network #2 to supply a transit solution to 
+all or a number of  third-party networks; 
+- Global transit [E:1, n:1]: network #1 provides network #2 with a transit solution to all or a number of third-party 
+networks; 
+- Peering [1:1]: networks #1 and #2 mutually route traffic to their customers, their customers’ customers, etc. 
+ In order to avoid double counting of transit, the figures consider inbound global and partial transit [1:E, 1:n]. 
+
+
+=== PAGE 9 ===
+ 
+ 
+BoR (24) 177 
+8 
+ 
+ 
+Figure 1. Breakdown of IP-IC services used by IAS providers,18 Source: BEREC 
+Figure 1 shows the structure of interconnection and on-net CDN traffic across the total and 
+the three groups of IAS providers.19 The following main findings are worth noting: 
+• 
+The higher the amount of inbound traffic the lower the relative importance of IXPs.20 
+• 
+The relative importance of on-net CDNs is lowest (27%) for those ISPs which have the 
+highest inbound traffic. Instead, they significantly rely more on bilateral peering (37%).  
+• 
+Bilateral peering is increasing in relative importance with the amount of inbound traffic. 
+• 
+The higher the amount of inbound traffic the lower the relative importance of transit. 
+Nevertheless, the considerable share of transit (32%) in the group of highest inbound 
+traffic can also be explained with those IAS providers in this group, which are vertically 
+integrated with a transit provider and exchange a large share of traffic with the Tier 1 
+transit networks in the same company group. 
+ 
+                                               
+18 Reading aid: 35% of all traffic received by customer end-users in the sample (total sum of traffic) is traffic from 
+bilateral peering. 
+19 It is worth to highlight that the on-net CDNs traffic here relates to traffic from the CDN inside of the network of 
+the IAS provider to end-user which does not cross the border of the network (while other traffic categories do).     
+20 The questionnaire defines information on IXPs as referring to agreements with an IXP ("multilateral peering") for 
+traffic across the IXP and not agreements already covered as bilateral interconnections. 
+
+
+=== PAGE 10 ===
+ 
+ 
+BoR (24) 177 
+9 
+ 
+3. Traffic developments 
+In its 2017 IP-IC report, BEREC highlighted, inter alia, that aggregated internet traffic volumes 
+continued to grow significantly, which was mostly attributed to the increasing popularity of 
+video streaming services at that time.21 
+In this chapter, BEREC identifies the main current traffic trends in Europe since 2017, following 
+a thorough desk research exercise, as well as based on the outcomes of the stakeholder 
+workshops and the data analysis. After highlighting the general trends, the analysis focuses 
+on the evolution of IXP traffic and on traffic regionalisation. Finally, BEREC addresses the 
+question of major trends that might occur until 2030. 
+ 
+3.1 General data traffic trends in Europe 
+In its 2017 IP-IC report, BEREC found that IP traffic was increasing but at a declining growth 
+rate, confirming the trend which had been observed in 2012. Specifically, BEREC reported an 
+expected compound annual growth rate (CAGR) of 20% for Western Europe and 27% for 
+Central and Eastern Europe for the years from 2015 to 2020. 
+According to a study published by WIK-Consult in 202222, the trend highlighted by BEREC in 
+2017 is not continuing in Europe, as the growth rate remains constant23. In particular, in the 
+period from 2017 to 2022, traffic volumes were expected to grow in Western Europe by 22% 
+as well as in Central and Eastern Europe by 27% (CAGR). These figures are consistent with 
+the ones reported by a more recent study by Telegeography24 that outlines a +27% CAGR 
+both for average and peak traffic in the period 2019-2023 in Europe. On the other hand, this 
+study also highlights a drop in average and peak traffic growth in the same period, following a 
+spike due to the COVID-19 pandemic. 
+As already analysed in BEREC’s 2017 IP-IC report, traffic growth continues to be mostly driven 
+by video traffic that, according to Sandvine25, constituted about 62% of the total traffic in the 
+EMEA (Europe, Middle East and Africa) region in the first half of 2022, followed by social 
+networking (~14%) and messaging (~5%). A key factor in this context is the growing availability 
+of UHD streaming content (4K) combined with the greater diffusion of devices required to 
+access such content (e.g. 4K smart TV). 4K video requires about 15 to 18 Mbit/s in terms of 
+                                               
+21 BoR (17) 184, Chapter 7, conclusion a) 
+22 WIK-Consult (referred to as “WIK”), Competitive conditions on transit and peering markets – Implications for 
+European digital sovereignty (February 2022) 
+23 See also WIK, Netzentgelte auf dem Prüfstand – Eine Betrachtung der "Fair-Share"-Debatte (December 2023) 
+24 Telegeography, Total International Internet Bandwidth Now Stands at 1,217 Tbps (September 2023)  
+25 Sandvine, Phenomena – The Global Internet Phenomea Report (January 2023), p. 27 
+
+
+=== PAGE 11 ===
+ 
+ 
+BoR (24) 177 
+10 
+ 
+bandwidth, that is twice the bandwidth of traditional HD video and nine times the bandwidth 
+required for SD video26. 
+Regarding the development of the peak-to-average traffic ratio, the data regarding average 
+and peak traffic in Europe outlined in the Telegeography report indicates that this ratio has 
+recorded minimal variations between 2019 and 2023. Live video streaming of high-attendance 
+events, such as football matches, may lead to an increase in peak traffic.27 However, it remains 
+to be seen to what extent this actually happens in practice.  
+Moreover, the analysis carried out by BEREC shows that the inbound-outbound traffic ratio 
+across all respondents is 5,6:1. Thus, inbound traffic is almost six times the outbound 
+traffic.28,29 
+ 
+3.2 Focus on specific trends 
+This part focuses on two specific trends, namely IXP traffic developments (Section 3.2.1) and 
+traffic regionalisation (Section 3.2.2), as well as on the related findings which were highlighted 
+by the data analysis. 
+3.2.1 IXP traffic developments 
+A study issued by Euro-IX30 in 2021 indicates that the aggregated peak IXP traffic within the 
+Euro-IX membership exhibited a growing trend from 2017 to 2021. In particular, peak traffic 
+has more than doubled between 2017 and 2021, with a notable growth during 2020 (+32% 
+YoY) following the pandemic outbreak. 
+                                               
+26 Cisco, Cisco Annual Internet Report (2018–2023) (2020), p. 7 
+27 Arthur D. Little, The evolution of data Growth in Europe – Evaluating the trends fueling data consumption in 
+European Markets (2023), p. 28; Very similarly, one stakeholder during BEREC’s workshops also expected a 
+faster growth for peak than average traffic. 
+28 For instance, in Germany, only the incumbent requires a certain ratio of inbound to outbound traffic for peering, 
+see WIK-Consult, Competitive conditions on transit and peering markets – Implications for European digital 
+sovereignty (February 2022), Table 2-6, p. 46, 
+29 While Deutsche Telekom uses a traffic ratio of max. 1,8:1 as requirement for settlement-free peering (see WIK-
+Consult, p. 43) the speed ratio for their access lines ranges from 2,5:1 to 6,25:1. Against this background as well 
+as BEREC’s finding that the inbound-outbound traffic ratio across all respondents is 5,6:1, a “tight” traffic ratio at 
+the wholesale level will in most cases “automatically” imply that the requirement for settlement-free peering is not 
+met).  
+30 European Internet Exchange Association, IXP Report 2021 (2021) 
+
+
+=== PAGE 12 ===
+ 
+ 
+BoR (24) 177 
+11 
+ 
+ 
+Figure 2. Evolution of the aggregated IXP traffic within the Euro-IX membership, Source: European 
+Internet Exchange Association 
+Despite this growth, in its 2022 study, WIK highlights a decrease in relative importance of IXPs 
+for traffic exchange, noting that there are indications that the growth of bilateral private peering 
+traffic is higher than that of multilateral peering31. To provide further perspective, IXPs may 
+potentially face increasing competition from data centres, as also reported by ACM32. This is 
+because, as reported by Arcep33, data centres can also provide interconnection services, in 
+addition to hosting services, thus competing with IXPs. With regard to IXP traffic, it is also 
+worth noting that the data analysis carried out by BEREC shows that IXP traffic has typically 
+a greater relevance for those operators with lower inbound traffic. 
+3.2.2 Regionalisation of traffic 
+The 2022 WIK study reports evidence of an increasing regionalisation of IP traffic, noting that 
+this trend is primarily driven by low-latency requirements and the consequential deployment 
+of CDN caches inside IAS providers’ networks or IXPs.34 The deployment of on-net caches 
+allows for a reduction in backbone internet traffic and, at the same time, improves latency and 
+thereby the quality perceived by the end-user (quality of experience).  
+In light of the expected growth in video traffic in the coming years, and of the related 
+development of on-net caches for the distribution of such content, both on demand and live, it 
+seems plausible that this reduction in backbone internet traffic will continue.  
+                                               
+31 With bilateral peering two networks negotiate directly with each other and interconnect establishing a direct BGP 
+(Border Gateway Protocol) session. In case of multilateral peering several networks interconnect at an exchange 
+point that offers a route server and each network establishes a single BGP session and receives routes from any 
+other network connected to this exchange. 
+32 ACM, Marktstudie IP interconnectie 2021 (2021), p. 28  
+33 Arcep, The state of the Internet in France – 2021 Edition (2021), p. 38  
+34 Also, Arcep’s Barometer of data interconnection in France (June 2022) shows a stepwise increase of the on-net 
+CDN traffic since 2017, confirming the trend of a wider use of these technologies. 
+
+
+=== PAGE 13 ===
+ 
+ 
+BoR (24) 177 
+12 
+ 
+The high percentage of bilateral peering traffic reported in Figure 1, as well as the competitive 
+pressure exerted by bilateral peering and CDN services on transit services, as highlighted in 
+Chapter 5, can also be considered as indicators of a shift towards a higher level of 
+regionalisation.35 
+With regard to on-net CDNs, BEREC carried out a thorough analysis of the data received from 
+the IAS providers, and the main results are reported below. First of all, on-net caches are 
+reported to be installed by large CAPs as well as by smaller players. Figure 3 shows an 
+analysis of the share of operators with on-net CDNs for each group (see Chapter 2). The 
+presence of on-net CDNs in the IAS providers’ networks ranges from 65% in the group of IAS 
+providers with the lowest incoming traffic up to 92% in the group with medium incoming traffic.  
+ 
+Figure 3. Share of IAS providers with on-net CDNs, Source: BEREC 
+Finally, the analysis has also calculated the ratio of on-net CDN outbound traffic to on-net 
+CDN inbound traffic36. According to the data analysis, this ratio is 7,1:1 for the group of IAS 
+providers with highest incoming traffic. Approximately seven times as much traffic flows from 
+the on-net CDN to the end-user, than flows from the CAP (owning the on-net CDN) to the on-
+net CDN. For the medium group this ratio amounts to 4,2:1, while it is 3,8:1 for the group with 
+lowest incoming traffic. In this regard, it is worth noting that IAS providers with highest 
+incoming traffic also appear to entail a greater use of on-net CDNs, benefiting more from on-
+                                               
+35 Already in its previous reports, BEREC referred to the regionalisation of traffic (e.g. BoR (17) 184, section 3.3.3 
+and BoR (12) 130, section 4.1) and more generally to the flattening of network hierarchies (BoR (12) 130, section 
+4.5). 
+36 In this context, inbound traffic is the traffic to fill in the servers with contents, while outbound traffic is the traffic 
+from the on-net CDNs to the end-users. The ratio between on-net CDN outbound and inbound traffic could 
+therefore be considered as an indication of the capacity saved at the interconnection point. 
+
+
+=== PAGE 14 ===
+ 
+ 
+BoR (24) 177 
+13 
+ 
+net caches. This could be explained by the number of end-users because the more end-users 
+a network has, the more content on an on-net-CDN is requested in terms of frequency.  
+ 
+3.3 Future trends 
+For the period 2022-2030, Arthur D. Little expects an CAGR of 25% and 19% in data 
+consumption on mobile and fixed networks in Europe respectively.37 As video will keep driving 
+traffic growth, it is foreseeable that in the coming years the increasing diffusion of UHD video 
+content will further contribute to the growth of data traffic. An increasing consumption of live-
+streaming content could add to this growth, and could potentially have an impact on peak 
+traffic. It is also worth noting that the increasing efficiency of video codecs is likely to reduce 
+the bandwidth required by UHD video content and, consequently, the relative impact in terms 
+of traffic volumes.38 
+Regarding the evolution of the asymmetry of traffic, as reported previously, BEREC found that 
+the ratio between inbound and outbound interconnection traffic was 5,6:1 (see Section 3.1). It 
+is possible that traffic could tend to develop more symmetrically in the coming years. This may 
+be due to increased usage of video communications or cloud services. However, it remains to 
+be seen whether and to what extent this actually happens.  
+For example, in France, one of the major TV channels uses peer-to-peer39 technologies to 
+stream its content.40 The French NRA Arcep assumed in its 2022 Barometer of data 
+interconnection that an increase in the use of such solutions to stream content, as expected 
+by Cisco41, could explain the recent narrowing of the gap between inbound and outbound 
+traffic.   
+In addition to the points mentioned above, virtual world applications, augmented and virtual 
+reality, as well as artificial intelligence content are also expected to be major factors 
+contributing to the growth of data traffic.42 
+Against the background of all these (possible) developments, BEREC reiterates that the 
+internet has, since it was created, managed to cope with traffic growth and more accentuated 
+peak traffic, all of which reflect changing usage patterns as well as increasing diffusion of IAS 
+                                               
+37 Arthur D. Little (2023), p. 18f  
+38 Analysys Mason, Netflix’s Open Connect program and codec optimisation helped ISPs save over USD1 billion 
+globally in 2021 (July 2022) 
+39 This report is referring to several technologies that enable content to be distributed not only from the CAP server 
+to the end user but also between end users (peers). So, the users are expecting to send more traffic as they serve 
+the content to other users. For example, the one developed by Streamroot, (now Lumen) or WebRTC, 
+implemented notably in the Peertube free software. 
+40 France Télévisions, Streamroot et France télévisions : histoire d'une rencontre (February 2019)  
+41 Cisco, Visual Networking Index: Forecast and Trends, 2017–2022 (2019), p.14  
+42 Arthur D. Little (2023), p. 4  
+
+
+=== PAGE 15 ===
+ 
+ 
+BoR (24) 177 
+14 
+ 
+throughout societies.43 BEREC considers that, due to competition as well as technological 
+progress, there is currently no indication that this is likely to change in the future. 
+ 
+3.4 Key findings related to traffic developments 
+ According to recent studies, the data traffic growth is a confirmed trend, with a 
+stabilisation after a major spike during the COVID-19 pandemic. The peak-to-average 
+traffic ratio appears to be overall stable between 2019 and 2023. 
+ According to BEREC’s analysis, on-net CDNs are installed in the vast majority of the 
+respondent IAS providers’ networks.  
+ It is foreseeable that in the coming years, the increasing diffusion of UHD video content 
+could further contribute to the growth of data traffic, as well as higher consumption of 
+live-streaming content could potentially have an impact on peak traffic and on the peak-
+to-average traffic ratio. In this context, the deployment of on-net CDNs and more 
+efficient compression techniques are expected to offset the overall impact of these 
+developments. 
+ 
+4. Pricing and cost developments 
+Pricing and cost developments in IP-IC markets were examined in BEREC’s reports in 2012 
+and 2017. Both reports concluded that prices for IP-IC services and costs for interconnection 
+infrastructure were falling over longer time horizons. The key reasons identified for these 
+falling prices and costs were competition and technological progress.  
+In this report, BEREC has analysed developments since 2017, including publicly available 
+data and reports, stakeholder workshops and expert evidence to update these conclusions.  
+There are some signs that there are certain geographical regions44 where transit is more 
+expensive, but these observations are not so large as to alter the general trends. Overall, no 
+evidence has emerged which questions the conclusion from the 2017 IP-IC report that 
+“BEREC considers that the Internet ecosystem’s ability to cope with increasing traffic volumes 
+is still given”. Taken together with the observed continuing decline in prices, BEREC can 
+therefore conclude that the European market for peering and transit is still competitive. 
+                                               
+43 See BoR (17) 184, e.g. p. 4 
+44 Analysys Mason, IP interconnection on the Internet: a European perspective for 2022 (September 2022), pp. 21-
+22. 
+
+
+=== PAGE 16 ===
+ 
+ 
+BoR (24) 177 
+15 
+ 
+ 
+4.1 Transit costs 
+Even though data usage has increased rapidly since 2017, downwards pressures on GB/price 
+for transit have continued. Likely, this has been the result of technical improvements and 
+capacity increases. Additionally, this trend is expected to continue, as more advanced and 
+higher capacity ports will be introduced. Public data from Vodafone on the transit GB/price 
+seem to confirm a similar observation by British Telecommunications (BT) in 2018.45 The costs 
+per gigabyte of data in Vodafone’s network have declined from 2017 until 2021 with roughly 
+70% (see Figure 4). BT reported similar results, with 70% reductions in the cost of adding a 
+Mbit/s of capacity between 2012 and 2018. 
+ 
+Figure 4. Evolution of network traffic and data unit cost since 2017, Source: Vodafone 
+BEREC considers that network costs are driven by peak traffic and not total traffic volumes.46 
+This also holds for the price of transit, as transit is usually priced according to capacity rather 
+than total gigabytes of traffic, and a proportion of transit capacity will be required to serve peak 
+traffic. Data on transit costs reported by IAS providers in BEREC’s data collection exercise 
+suggest that technological developments (e.g. CDNs, more efficient infrastructure and codecs) 
+may even prevent an increase in transit costs even if peak traffic were to increase. 
+                                               
+45 BT, Scaling for Ultrafast, G.FAST, FTTP, 5G and the Cloud (2018), p.9 
+46 Analyses of the Disruptive Competition Project confirm this observations, Internet Traffic Growth is Not Out of 
+Control, and Nothing Like Telcos Want you To Believe (November 2022) 
+
+
+=== PAGE 17 ===
+ 
+ 
+BoR (24) 177 
+16 
+ 
+ 
+4.2 Cost and price effects of technological developments 
+There have been a number of technological developments in internet architectures since the 
+BEREC 2017 IP-IC report (see Chapter 5). These changes, which have largely been 
+implemented cooperatively by a variety of market players, have increased the efficiency of 
+networks which transmit data and reduced the distances which it is transmitted, and are a key 
+reason why BEREC continues to observe falling prices and costs.  
+Some stakeholders argue that the evolution of the internet architecture (e.g. the increased 
+prevalence and use of IXPs, and in particular the installation of on-net caches and CDNs which 
+deliver content inside IAS providers’ networks) has reduced the demand for transit, which will 
+in turn reduce the price of transit47. 
+The use of CDNs has increased significantly in the last years.48 According to its data analysis, 
+BEREC has observed that, in the majority of the reported agreements, the on-net CDN service 
+is offered on a free basis (see Section 5.1.2 for further details on the agreements regarding 
+the deployment of on-net CDNs). Paid agreements regarding on-net CDNs are usually in the 
+form of set up fees, flat fees (usually monthly) to the on-net CDN provider for 
+service/equipment rental and rarely revenue-share agreements. Traffic-based usage paid 
+agreements were also rare in the provided answers (e.g. payments towards on-net CDNs 
+owned by IAS providers). A wide variance in these on-net CDN charges was observed, 
+depending on the specific bilateral agreement. Moreover, some IAS providers also reported 
+the need to cover electricity and server cooling as well as rack/co-location costs.   
+The increased prevalence of CDNs in IAS providers’ networks has been a primary reason for 
+the continuing decrease in transit prices that are observed since 2017. Such on-net CDNs 
+exert competitive pressure on these prices, as the demand for long distance transit declines 
+due to local storage of content in CDNs. 
+The continued development and implementation of new technologies, like fibre broadband 
+and more efficient mobile technologies, once deployed, also reduce the marginal costs to 
+deliver transit. These technologies have effectively reduced the marginal costs of adding 
+network capacity for ECS providers, as newer technologies permit higher capacities of data49. 
+Additionally, economies of scale have contributed to decreasing prices, as scaling up to higher 
+capacity equipment results in lower relative price per GB.  
+                                               
+47 Analysys Mason (September 2022) 
+48 WIK (2022) “Globally, it [CDN traffic] almost tripled from 2017 to 2020 and will double again by 2022,  
+according to expert estimates”, p. XIII; Analysys Mason (September 2022), p. 21 
+49 Analysys Mason, The impact of tech companies’ network investment on the economics of broadband ISPs 
+(October 2022), p. 8 
+
+
+=== PAGE 18 ===
+ 
+ 
+BoR (24) 177 
+17 
+ 
+ 
+4.3 Peering prices 
+In this section, further information is outlined related to public and private peering prices 
+(Sections 4.3.1 and 4.3.2 respectively).  
+4.3.1 Public peering  
+The market study published by ACM provides a price comparison of the major European 
+Internet Exchanges.50 Table 1 has been updated with data from the 2022 WIK study51. The 
+average prices of 10 GE (Gigabit Ethernet) per Gbit/s port are 611 EUR and 3035 EUR for a 
+100 GE/Gbit/s. This comes down to an average price of 3,57 EURcts per Mbit/s for a 100 
+Gbit/s port, and 7,18 EURcts for a 10 Gbit/s port.52 
+ 
+Table 1. Peering Prices of Major European IXPs, Source: ACM 
+                                               
+50 ACM (2021) 
+51 WIK (2022), p. 49 
+52 WIK (2022), p. 49 
+
+
+=== PAGE 19 ===
+ 
+ 
+BoR (24) 177 
+18 
+ 
+4.3.2 Private peering  
+The prices of private peering remain non-transparent. Prices for IAS providers are estimated 
+by ACM to be roughly between a few cents and several tens of cents per Mbit/s per month.53 
+Estimations made by Arcep are higher and range between 25 EURcts and several euros per 
+Mbit/s per month.54 ACM considers the total costs for an IAS provider to install and maintain 
+an interconnection with a single CAP to be relatively low, compared to the costs paid to an IXP 
+for public peering. Furthermore, costs of maintaining the access and core networks are a much 
+larger burden for IAS providers.55 
+In the BEREC 2017 IP-IC report, it was outlined that public and private peering continued to 
+expand between 2012 and 2017. Research by Arcep demonstrated that peering relations are 
+still growing, lowering relative demand for transit.56 Using data of inbound traffic of the main 
+ISPs in France, Arcep found that peering increased from 36% in 2012 to 52% in 2021, while 
+transit fell from 64% to 48%. Additionally, Arcep observed that paid peering was applied to 
+48% of traffic of main ISPs.57 
+Furthermore, Packet Clearing House shows that more than 99% of all agreements, analysed 
+in their report, are settlement-free or “handshake” agreements.58 This finding is also supported 
+by BEREC’s data analysis showing that across all IAS providers (settlement-)free peering is 
+by far the dominant form of peering even if traffic volumes are assessed (Figure 5).59 More 
+specifically, the percentage is the lowest (1%) for those IAS providers who have the lowest 
+amount of inbound traffic. Given that an IAS provider’s choice of an interconnection mode (be 
+it settlement-free, paid peering or also transit) is a matter of network planning and cost 
+optimisation this might be, because for this category of IAS providers (“lowest”) it may be 
+economically rational to incur the costs for peering settlement-free at an IXP,60 thereby 
+interconnecting with many other IAS providers or CAPs. In addition, these IAS providers with 
+the lowest amount of inbound traffic may have less bargaining power to conclude paid peering 
+agreements. However, the somewhat higher percentage (4%) of paid peering for the category 
+of IAS providers with highest amount of inbound traffic seems plausible as (e.g.) a paid peering 
+contract between a large CAP and an IAS provider entails large traffic volumes. 
+ 
+                                               
+53 ACM, Study into the Market for IP interconnections 2021 (2021) 
+54 Arcep, The state of the Internet in France – 2021 Edition (June 2021) 
+55 WIK (2022) 
+56 Analysys Mason (September 2022) 
+57 Arcep, The State of Internet in France – 2022 Edition (June 2022) 
+58 Packet Clearing House, 2021 Survey of Internet Carrier Interconnection Agreements (December 2021), Of the 
+total analysed agreements, 99.998% are “handshake” agreements and 99.9996% have symmetric terms, i.e. they 
+are settlement-free (note: this can be inferred as Packet Clearing House does not assess transit agreements in 
+its report). 
+59 In this calculation the answer “Other” is omitted. Different from these European observations, research by Arcep 
+has demonstrated that paid peering is more common among ISPs in France. See Arcep’s Barometer of data 
+interconnection 
+60 BoR (12) 130, section 3.2.1, p. 22, sets out the costs of peering. 
+
+
+=== PAGE 20 ===
+ 
+ 
+BoR (24) 177 
+19 
+ 
+ 
+ 
+Figure 5. Breakdown of peering used by IAS providers, Source: BEREC 
+ 
+4.4 Infrastructure costs 
+It is observed that prices61 for peering and transit relevant network elements, especially for 
+medium sized traffic 10 GE (Gigabit Ethernet), have dropped.62 Prices of LERs (Label Edge 
+Router) relevant for peering, and LSRs (Label Switch Router) partially relevant for transit, have 
+decreased with roughly a 55%-70% drop for 10 GE LERs and with a 48%-71% drop for 10 GE 
+LSRs between 2016 and 2018.63  
+Also, it is observed that prices for equipment for multiplexer systems as ROADM-OTN 
+(Reconfertible Optical Add-Drop Multiplexer/Optical Transport Network) have fallen between 
+2018 and 2020, making transportation cheaper. Between 2018 and 2020, prices for PIUs 
+(plug-in unit) fell by 39%, prices for line cards fell by 58% and prices of repeaters dropped with 
+55%.  
+Overall, it is observed that per Gbit/s prices have continued to decline in the last years. 
+However, not all players in the market benefit equally from reduced prices. Even though prices 
+of equipment for smaller internet capacities have dropped relatively more in price between 
+2016 and 2018, this effect has ceased between 2018 and 2020. Larger players in the market 
+are still more successful in reducing costs than smaller players, because equipment with high 
+capacity strongly reduces prices per Gbit/s. 
+                                               
+61 Technological progress as well as competition induce downward pressure on infrastructure costs as well as 
+prices. 
+62 WIK (2022) 
+63 WIK (2022) 

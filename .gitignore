@@ -1,0 +1,56 @@
+# Raw data — downloadable from public sources
+data/raw/*.csv
+data/raw/*.tsv.gz
+data/raw/*.json
+data/raw/*.pdf
+!data/raw/.gitkeep
+
+# Agent protocol docs (not for delivery)
+docs/00_*.md
+docs/01_*.md
+docs/02_*.md
+docs/03_*.md
+docs/04_*.md
+docs/05_*.md
+docs/06_*.md
+docs/07_*.md
+docs/08_*.md
+docs/BUSINESS_QUESTION_COVERAGE_MATRIX.md
+docs/DATA_SOURCE_INVENTORY.md
+docs/VARIABLE_FEASIBILITY_REPORT.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Power BI binary (build from parquet files)
+*.pbix
+
+# Docker
+.dockerignore

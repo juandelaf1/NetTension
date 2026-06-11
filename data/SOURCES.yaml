@@ -1,0 +1,428 @@
+# NetTension — Data Sources Catalog & Governance
+# Compliant with DEC-007 (4-tier classification) and DEC-008 (governance metadata)
+#
+# Governance Layers:
+#   OBSERVED       — Directly measured, auditable source data
+#   ESTIMATED      — Derived from observed data with transparent assumptions
+#   POLICY_MODEL   — Scenario/forecast under explicit policy assumptions
+#   CONSTANT       — Fixed parameters (inflation, thresholds, etc.)
+
+# =============================================================================
+# LAYER 1: OBSERVED — CNMC (Spain, 2005–2025)
+# =============================================================================
+
+CNMC Mercados:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: CNMC (Comisión Nacional de los Mercados y la Competencia)
+  source_type: PUBLIC_REGULATOR
+  reproducible: TRUE
+  documentation_reference: https://catalogodatos.cnmc.es/dataset/mercados
+  url: "https://catalogodatos.cnmc.es/dataset/mercados"
+  license: CC-BY-SA-4.0
+  coverage:
+    geography: Spain
+    period: 2005T1–2025T4
+    granularity: Operator-level quarterly
+  files:
+    - cnmc_mercados_2005_2009.csv (7,809 rows, 49 cols)
+    - cnmc_mercados_2010_2014.csv (10,397 rows, 49 cols)
+    - cnmc_mercados_2015_2019.csv (10,807 rows, 49 cols)
+    - cnmc_mercados_2020_2024.csv (10,900 rows, 49 cols)
+    - cnmc_mercados_2025T1_2025T4.csv (2,024 rows, 49 cols)
+  total_rows: 41,937
+  key_variables:
+    - ingresos (revenue, Mn EUR)
+    - trafico (voice traffic, minutes)
+    - trafico_de_datos (data traffic, GB/TB)
+    - lineas_o_accesos_por_operador (active lines by operator)
+    - portabilidades (number portings)
+    - tecnologia_de_acceso (FTTH, xDSL, HFC, mobile)
+  encoding: UTF-8 (confirmed by byte analysis)
+  notes: "trafico column = voice minutes only. Data traffic in trafico_de_datos. Methodology change ~2012 in data traffic measurement."
+
+CNMC Datos Generales:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: CNMC
+  source_type: PUBLIC_REGULATOR
+  reproducible: TRUE
+  documentation_reference: https://catalogodatos.cnmc.es/dataset/datos-generales
+  url: "https://catalogodatos.cnmc.es/dataset/datos-generales"
+  license: CC-BY-SA-4.0
+  coverage:
+    geography: Spain
+    period: 2005T1–2025T4
+    granularity: Operator-level quarterly
+  file: cnmc_datos_generales_2005T1_2025T4.csv (3,319 rows, 14 cols)
+  key_variables:
+    - ingresos_por_operador (revenue by operator, Mn EUR)
+    - empleados_por_operador (employees by operator)
+    - paquetes (bundled services)
+  encoding: UTF-8
+
+# =============================================================================
+# LAYER 1: OBSERVED — Eurostat (EU27+ candidates, 1960–2025)
+# =============================================================================
+
+Eurostat demo_pjan:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-03
+  review_owner: Eurostat
+  source_type: PUBLIC_STATISTICAL
+  reproducible: TRUE
+  documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/demo_pjan
+  url: "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan"
+  license: CC-BY-4.0
+  coverage:
+    geography: EU27 + EFTA + candidates (50+ GEOs)
+    period: 1960–2025
+    granularity: Annual by age/sex/country
+  format: SDMX-TSV compact
+  rows: 1,171,170
+  key_variables:
+    - value_num (population count)
+    - age, sex, geo (dimensions)
+  notes: "Includes ES (Spain). Filter: age=TOTAL, sex=T for total population."
+
+Eurostat nama_10_gdp:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-03
+  review_owner: Eurostat
+  source_type: PUBLIC_STATISTICAL
+  reproducible: TRUE
+  documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp
+  url: "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp"
+  license: CC-BY-4.0
+  coverage:
+    geography: EU27 + EFTA + candidates
+    period: 1975–2025
+    granularity: Annual by country
+  format: SDMX-TSV compact
+  rows: 1,861,806
+  key_variables:
+    - value_num (GDP, various units: MIO_EUR, CP_MEUR, etc.)
+    - na_item (GDP, B1GQ for GDP at market prices)
+    - unit (MIO_EUR, CP_MEUR, etc.)
+  notes: "Filter: na_item=B1GQ, unit=CP_MEUR for current prices GDP."
+
+Eurostat ISOC_TF:
+  governance_layer: OBSERVED
+  confidence_level: MEDIUM
+  review_date: 2025-03
+  review_owner: Eurostat
+  source_type: PUBLIC_STATISTICAL
+  reproducible: TRUE
+  documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/isoc_tf
+  url: "https://ec.europa.eu/eurostat/databrowser/view/isoc_tf"
+  license: CC-BY-4.0
+  coverage:
+    geography: EU27
+    period: 2010–2024
+  format: JSON-stat
+  key_variables:
+    - Fixed broadband traffic (PB/month)
+  notes: "Mobile traffic NOT included. Older data, used as cross-reference only."
+
+# =============================================================================
+# LAYER 1: OBSERVED — ETNO State of Digital Communications 2025
+# =============================================================================
+
+ETNO State of Digital Communications 2025:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-01
+  review_owner: Connect Europe (formerly ETNO)
+  source_type: INDUSTRY_ASSOCIATION
+  reproducible: TRUE
+  documentation_reference: https://connecteurope.org/insights/reports/state-digital-communications-2025
+  url: "https://connecteurope.org/sites/default/files/2025-01/State%20of%20Digital%20Communications%20-%202025%20edition.pdf"
+  license: PUBLIC (free download)
+  coverage:
+    geography: Europe (EU27 + UK + NO + CH)
+    period: 2015–2024
+  file: ETNO_State_Digital_Comms_2025.pdf
+  key_findings:
+    - Operator CAPEX Europe: €57.9bn (2023), declining
+    - Investment per capita: Europe €118 vs USA €226
+    - Mobile ARPU: Europe €14.8 vs USA €41.7
+    - Revenue decline: -4.4% real (2023)
+    - ROCE: 5.9% (2023), below cost of capital since 2018
+    - 46% of investment → FTTH, ~30% → mobile
+  notes: "Primary source for European telecom investment gap evidence."
+
+# =============================================================================
+# LAYER 1: OBSERVED — GSMA Mobile Economy Europe 2025
+# =============================================================================
+
+GSMA Mobile Economy Europe 2025:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-01
+  review_owner: GSMA Intelligence
+  source_type: INDUSTRY_ASSOCIATION
+  reproducible: TRUE
+  documentation_reference: https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/europe/
+  url: "https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/wp-content/uploads/2025/01/0125-Mobile-Economy-Europe-2025-web.pdf"
+  license: PUBLIC (free download)
+  coverage:
+    geography: Europe (46 countries)
+    period: 2023–2030
+  file: GSMA_Mobile_Economy_Europe_2025.pdf
+  key_findings:
+    - Mobile contributes 5% of GDP (€1.1T)
+    - 520M mobile subscribers (88% penetration)
+    - 5G adoption: 30% (2024), projected 80% (2030)
+    - Europe lags NA and East Asia in 5G adoption
+    - 44 network sunsets (2G/3G) completed in Europe
+  notes: "Includes country-level data for top 10 European markets."
+
+# =============================================================================
+# LAYER 1: OBSERVED — GSMA Mobile Economy Global 2026
+# =============================================================================
+
+GSMA Mobile Economy Global 2026:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2026-03
+  review_owner: GSMA Intelligence
+  source_type: INDUSTRY_ASSOCIATION
+  reproducible: TRUE
+  documentation_reference: https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/
+  url: "https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/wp-content/uploads/2026/02/The-Mobile-Economy-2026.pdf"
+  license: PUBLIC (free download)
+  coverage:
+    geography: Global
+    period: 2024–2030
+  file: GSMA_Mobile_Economy_Global_2026.pdf
+  key_findings:
+    - Mobile generated $7.6T (6.4% of global GDP) in 2025
+    - 8.8 billion wireless connections, 5.8B unique subscribers
+    - 5G + AI driving next growth phase
+  notes: "Global context for comparison with European figures."
+
+# =============================================================================
+# LAYER 1: OBSERVED — Sandvine Global Internet Phenomena Report 2024
+# =============================================================================
+
+Sandvine Global Internet Phenomena Report 2024:
+  governance_layer: OBSERVED
+  confidence_level: MEDIUM
+  review_date: 2024-03
+  review_owner: AppLogic Networks (formerly Sandvine)
+  source_type: INDUSTRY_VENDOR
+  reproducible: PARTIAL (methodology proprietary)
+  documentation_reference: https://www.applogicnetworks.com/global-internet-phenomena-report-2024
+  url: "https://www.sandvine.com/hubfs/Sandvine_Redesign_2019/Downloads/2024/GIPR/GIPR%202024.pdf"
+  license: PUBLIC (free download via form)
+  coverage:
+    geography: Global (177+ service providers)
+    period: 2024
+  file: Sandvine_GIPR_2024.pdf
+  key_findings:
+    - Video = 65% of global internet traffic
+    - Big 6 (Facebook, Amazon, Google, Apple, Netflix, Microsoft) = ~50% of traffic
+    - Social Media = 35% of mobile downstream traffic
+    - On-demand Streaming = greatest volumetric pressure
+    - "CAPs contributing nothing to infrastructure that fuels profits" (report language)
+  notes: "Used for Capa 2 attribution: % of traffic attributable to OTT platforms."
+
+# =============================================================================
+# LAYER 1: OBSERVED — BEREC IP Interconnection Report 2025
+# =============================================================================
+
+BEREC IP Interconnection Report 2025:
+  governance_layer: OBSERVED
+  confidence_level: HIGH
+  review_date: 2025-01
+  review_owner: BEREC (Body of European Regulators for Electronic Communications)
+  source_type: REGULATORY_BODY
+  reproducible: TRUE
+  documentation_reference: https://www.berec.europa.eu/en/document-categories/berec/reports/berec-report-on-the-ip-interconnection-ecosystem
+  url: "https://www.berec.europa.eu/system/files/2025-01/BoR%20%2824%29%20177_BEREC%20Report%20on%20the%20IP-IC%20ecosystem_0.pdf"
+  license: PUBLIC (free download)
+  coverage:
+    geography: EU27
+    period: 2017–2023
+  file: BEREC_IP_Interconnection_2025.pdf
+  key_findings:
+    - BEREC skeptical of mandatory Fair Share contributions
+    - No evidence of free-riding by CAPs found
+    - Costs are not traffic-sensitive (except mobile)
+    - IP-IC markets function competitively
+    - SPNP (Sending Party Network Pays) could harm net neutrality
+  notes: "Key regulatory counterpoint to operator Fair Share claims."
+
+# =============================================================================
+# LAYER 2: ESTIMATED — KPI Derivatives
+# =============================================================================
+
+HHI (Herfindahl-Hirschman Index):
+  governance_layer: ESTIMATED
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::hhi_quarterly()
+  formula: "HHI = sum(cuota_i^2) * 10000"
+  input_sources: [CNMC Mercados -> ingresos_por_operador]
+  coverage:
+    geography: Spain
+    period: 2005T1–2025T4
+  classification:
+    competitive: "<1000"
+    moderate: "1000–2500"
+    highly_concentrated: ">2500"
+  observed_range: [693, 2405]
+
+Network Stress Index (NSI):
+  governance_layer: ESTIMATED
+  confidence_level: MEDIUM
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::network_stress_index()
+  formula: "NSI = total_traffic / total_active_lines"
+  input_sources: [CNMC Mercados -> trafico_de_datos, lineas_o_accesos]
+  notes: "Uses trafico_de_datos (data traffic), not trafico (voice minutes)."
+
+Infrastructure Elasticity Margin:
+  governance_layer: ESTIMATED
+  confidence_level: MEDIUM
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::infrastructure_elasticity_margin()
+  formula: "revenue_per_traffic_unit = total_revenue / total_data_traffic"
+  input_sources: [CNMC Mercados -> ingresos, trafico_de_datos]
+  notes: "Falling values indicate margin compression = scissors effect."
+
+CAGR Gap (Traffic vs Revenue):
+  governance_layer: ESTIMATED
+  confidence_level: MEDIUM
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::traffic_vs_revenue_cagr()
+  formula: "CAGR_gap = CAGR(traffic) - CAGR(revenue)"
+  input_sources: [CNMC Mercados -> trafico_de_datos, ingresos]
+  observed_value:
+    traffic_cagr: 132.6
+    revenue_cagr: 0.56
+    gap_pp: 132.0
+    period: 2005–2025
+  notes: "Data traffic CAGR pre-2012 inflated by methodology change. Post-2012 CAGR ~73%/year."
+
+Macro Contribution Ratio:
+  governance_layer: ESTIMATED
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::macro_contribution_ratio()
+  formula: "MCR = total_telecom_revenue / GDP"
+  input_sources: [CNMC Datos Generales -> ingresos, Eurostat -> nama_10_gdp]
+
+Digital Density Margin:
+  governance_layer: ESTIMATED
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: DERIVED
+  reproducible: TRUE
+  documentation_reference: kpi_engine.py::digital_density_margin()
+  formula: "DDM = active_lines / population * 100"
+  input_sources: [CNMC Mercados -> lineas_o_accesos, Eurostat -> demo_pjan]
+
+# =============================================================================
+# LAYER 3: POLICY_MODEL — What-If Scenarios
+# =============================================================================
+
+Fair Share Simulator:
+  governance_layer: POLICY_MODEL
+  confidence_level: LOW (scenario-dependent)
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: SCENARIO_MODEL
+  reproducible: TRUE
+  documentation_reference: Power BI What-If parameters
+  formula: "CAPEX_relief = CAPEX_required * OTT_contribution_share"
+  assumptions:
+    - OTT contribution share: 0% (status quo), 25%, 33%, 50%
+    - CAPEX_required derived from ETNO report (€174bn by 2030)
+  input_sources: [ETNO State of Digital Comms 2025]
+  notes: "Illustrates financial impact of Fair Share regulation scenarios."
+
+Chinese Infrastructure Risk Trade-off:
+  governance_layer: POLICY_MODEL
+  confidence_level: LOW
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: SCENARIO_MODEL
+  reproducible: PARTIAL (dependent on vendor data)
+  documentation_reference: Power BI model
+  key_variables:
+    - huawei_share_pct (by country)
+    - cost_savings_pct (Huawei 20-30% cheaper vs Ericsson/Nokia)
+    - security_risk_score (qualitative, based on EU 5G Toolbox)
+  input_sources:
+    - Strand Consult (via Light Reading)
+    - EU 5G Observatory 2025
+    - GSMA Mobile Economy Europe 2025
+  notes: "Trade-off model: lower CAPEX vs higher geopolitical risk."
+
+# =============================================================================
+# LAYER 4: CONSTANT
+# =============================================================================
+
+Constants:
+  governance_layer: CONSTANT
+  confidence_level: HIGH
+  review_date: 2025-12
+  review_owner: NetTension
+  source_type: FIXED_PARAMETER
+  reproducible: TRUE
+  values:
+    HHI_threshold_competitive: 1000
+    HHI_threshold_concentrated: 2500
+    inflation_target: 2.0
+    EU_digital_decade_targets:
+      ftth_coverage: "100% by 2030"
+      5g_coverage: "100% by 2030"
+  notes: "Standard economic thresholds and EU policy targets."
+
+# =============================================================================
+# FUTURE SOURCES (not yet acquired)
+# =============================================================================
+
+future_sources:
+  Ofcom UK Connected Nations:
+    status: NOT_ACQUIRED
+    url: "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-2024/data-downloads-2024"
+    notes: "Free CSV downloads available. UK comparison data."
+  Arcep France Observatoire:
+    status: NOT_ACQUIRED
+    url: "https://www.data.gouv.fr/datasets/observatoire-des-communications-electroniques"
+    notes: "Free open data CSVs. French market comparison."
+  BNetzA Germany:
+    status: NOT_ACQUIRED
+    notes: "German regulator. Jahresbericht / Tätigkeitsbericht available."
+  AGCOM Italy:
+    status: NOT_ACQUIRED
+    notes: "Italian regulator. Osservatorio delle comunicazioni available."
+  Huawei 5G RAN Market Share:
+    status: PAYWALLED
+    notes: "Strand Consult study (~€900-1500). Partial data via Light Reading."
+  VLC Data (academic):
+    status: NOT_ACQUIRED
+    url: "https://zenodo.org/records/15121418"
+    notes: "24GB pcap dataset. Traffic classification by app. Free download."
