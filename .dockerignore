@@ -1,0 +1,10 @@
+data/raw/
+.git/
+.gitignore
+*.md
+*.ipynb
+*.html
+outputs/
+notebooks/
+reports/
+docs/

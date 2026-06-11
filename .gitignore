@@ -34,6 +34,9 @@ venv/
 .ipynb_checkpoints/
 *.ipynb_checkpoints*
 
+# Generated HTML figures (run notebook to regenerate)
+outputs/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -51,6 +54,3 @@ desktop.ini
 
 # Power BI binary (build from parquet files)
 *.pbix
-
-# Docker
-.dockerignore
