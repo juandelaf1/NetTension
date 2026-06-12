@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="NetTension Banner" width="100%">
+  <img src="assets/NetTension_banner.png" alt="NetTension Banner" width="100%">
 </p>
 
 <p align="center">
