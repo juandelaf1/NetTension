@@ -6,7 +6,7 @@
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://powerbi.microsoft.com/"><img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black" alt="Power BI"></a>
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas&logoColor=white" alt="Pandas"></a>
-  <a href="https://github.com/juandelaf1/NetTension/actions"><img src="https://img.shields.io/github/actions/workflow/status/juandelaf1/NetTension/ci.yml?branch=main&label=CI&logo=github" alt="CI"></a>
+  <a href="https://github.com/juandelaf1/NetTension/actions"><img src="https://img.shields.io/github/actions/workflow/status/juandelaf1/NetTension/ci.yml?branch=master&label=CI&logo=github" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Data-CC--BY--SA--4.0-green?logo=creativecommons" alt="License"></a>
   <img src="https://img.shields.io/badge/Status-v1.0.0--release-00bcd4" alt="Status">
 </p>
