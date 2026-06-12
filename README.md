@@ -195,14 +195,15 @@ H6  (Infrastructure Elastic) CONFIRMED    Margin compression confirmed
 │  │ loader/  │──▶│ transform/   │──▶│  pipeline/            │ │
 │  │ cnmc     │   │ data_cleaner │   │  etl_pipeline.py     │ │
 │  │ eurostat │   │ kpi_engine   │   │  export_powerbi.py   │ │
-│  └──────────┘   └──────────────┘   └──────────────────────┘ │
-│                                       │                      │
-│                                       ▼                      │
-│                              ┌────────────────────┐          │
-│                              │ 14 .parquet files  │          │
-│                              │ (star schema)      │          │
-│                              └────────────────────┘          │
-└───────────────────────────────────────┬──────────────────────┘
+│  └──────────┘   └──────────────┘   │  export_duckdb.py    │ │
+│                                    └──┬───────────────────┘ │
+│                        ┌──────────────┴──────────────┐       │
+│                        ▼                             ▼       │
+│               ┌────────────────┐          ┌────────────────┐ │
+│               │ 14 .parquet    │          │ net_tension    │ │
+│               │ (star schema)  │          │ .duckdb (SQL)  │ │
+│               └────────────────┘          └────────────────┘ │
+└──────────────────────────────────────┬───────────────────────┘
                                         │
                                         ▼
 ┌─────────────────────────────────────────────────────────────┐
@@ -243,12 +244,16 @@ Full documentation → [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
 
 | Tool | Version | Purpose | Justification |
 |------|---------|---------|--------------|
-| **Python** | ≥ 3.11 | ETL pipeline + KPI engine | Modularity, reproducibility, open source |
-| **Pandas** | ≥ 2.0 | Data transformation | Industry standard for tabular data |
-| **NumPy** | ≥ 1.25 | Vectorized calculations | Performance on 2M+ rows |
+| **Python** | 3.11 | ETL pipeline + KPI engine | Modularity, reproducibility, open source |
+| **Pandas** | 3.0 | Data transformation | Industry standard for tabular data |
+| **NumPy** | 2.4 | Vectorized calculations | Performance on 2M+ rows |
 | **Power BI Desktop** | Free | Interactive dashboard | DAX for complex measures, What-If params, cloud deploy |
 | **Power BI Service** | — | Cloud deployment | Public URL for remote access |
-| **GitHub Actions** | — | CI pipeline | Automated lint + test + validation |
+| **Docker** | 27+ | Containerized ETL | Build once, run anywhere; CI/CD |
+| **Docker Hub** | — | Image registry | Versioned release (`juandelaf/net-tension-etl`) |
+| **GitHub Actions** | — | CI pipeline | Automated lint + YAML validation |
+| **Git** | — | Version control | Tags v0.1.0 · v1.0.0, semantic versioning |
+| **Kaggle** | — | Portfolio dataset | Community exposure, recruiter visibility |
 
 > **Why Power BI over alternatives?** Power BI provides native cross-filtering, DAX for calculated measures, What-If parameter simulation, and one-click cloud deployment — all without maintaining a web application. For an executive audience with no technical background, Power BI offers superior UX over Streamlit or Tableau Public. See [docs/DATA_MODEL.md](docs/DATA_MODEL.md) for detailed justification.
 
@@ -270,7 +275,7 @@ NetTension/
 ├── src/
 │   ├── loader/            CNMC + Eurostat data loaders
 │   ├── transform/         Data cleaning + KPI computation
-│   └── pipeline/          ETL orchestrator, PDF extraction, Power BI export
+│   └── pipeline/          ETL orchestrator, PDF extraction, Power BI + DuckDB export
 ├── Dockerfile             Containerized ETL pipeline
 ├── pyproject.toml         Project metadata and dependencies
 ├── requirements.txt       Python package requirements
@@ -308,12 +313,18 @@ python -m src.pipeline.export_powerbi
 
 ### Build the Dashboard
 
+```bash
+# Optional: Export data to DuckDB for SQL-based analytics
+python -m src.pipeline.export_duckdb
+```
+
 1. Open Power BI Desktop
-2. Get Data → Parquet → Select all files from `data/processed/`
-3. Create relationships per [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
-4. Add DAX measures from [docs/DATA_MODEL.md#dax-measures](docs/DATA_MODEL.md#dax-measures)
-5. Build 5 pages per layout specification
-6. Publish to Power BI Service for public URL
+2. **Option A (Parquet)**: Get Data → Parquet → Select all files from `data/processed/`
+3. **Option B (DuckDB)**: Get Data → ODBC → DuckDB → Connect to `data/processed/net_tension.duckdb`
+4. Create relationships per [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
+5. Add DAX measures from [docs/DATA_MODEL.md#dax-measures](docs/DATA_MODEL.md#dax-measures)
+6. Build 5 pages per layout specification
+7. Publish to Power BI Service for public URL
 
 ### Docker
 

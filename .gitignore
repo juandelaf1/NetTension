@@ -54,3 +54,6 @@ desktop.ini
 
 # Power BI binary (build from parquet files)
 *.pbix
+
+# DuckDB database (generated from parquet files)
+data/processed/net_tension.duckdb
