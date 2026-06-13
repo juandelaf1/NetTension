@@ -306,5 +306,5 @@ if __name__ == "__main__":
         size_mb = os.path.getsize(f) / 1e6
         print(f"  {f.name}: {size_mb:.1f} MB")
     print(f"\nTotal: {len(list(Path(PROC).glob('*.parquet')))} files")
-    print("\n💡 Import all .parquet files at once using:")
+    print("\nImport all .parquet files at once using:")
     print("   Power BI → Get Data → Parquet → Select ALL files in data/processed/")

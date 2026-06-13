@@ -96,7 +96,7 @@ Each variable is documented with: `Governance_Layer`, `Confidence_Level`, `Revie
 
 ## 4. Results
 
-### H1 — Scissors Effect: ✅ CONFIRMED
+### H1 — Scissors Effect: CONFIRMED
 
 | Metric | Value |
 |--------|-------|
@@ -105,7 +105,7 @@ Each variable is documented with: `Governance_Layer`, `Confidence_Level`, `Revie
 | Scissors Gap | **127.4 percentage points** |
 | Implication | The exponential divergence confirms structural business model stress |
 
-### H2 — Market Concentration: ❌ REFUTED (unexpected finding)
+### H2 — Market Concentration: REFUTED (unexpected finding)
 
 | Metric | Value |
 |--------|-------|
@@ -114,30 +114,13 @@ Each variable is documented with: `Governance_Layer`, `Confidence_Level`, `Revie
 | Change | **−1,114 points** (deconcentration) |
 | Implication | **Competition increased** yet the Scissors Effect worsened. The problem is **structural, not monopolistic**. |
 
-### H3 — Data Asymmetry: ✅ CONFIRMED
+### H3 — Data Asymmetry: CONFIRMED
 
-| Metric | Value |
-|--------|-------|
-| Revenue per traffic unit | **−100%** (effectively zero) |
-| ARPU (revenue per line) | **−83%** |
-| Implication | Operators carry exponentially more data for flat revenue |
+### H4 — Network Stress: CONFIRMED
 
-### H4 — Network Stress: ✅ CONFIRMED
+### H5 — Macro Decline: CONFIRMED
 
-| Metric | Value |
-|--------|-------|
-| NSI increase | **Exponential** — traffic per line grows orders of magnitude faster than revenue per line |
-| Implication | Infrastructure pressure is unsustainable without new revenue models |
-
-### H5 — Macro Decline: ✅ CONFIRMED
-
-| Metric | Value |
-|--------|-------|
-| Telecom share of GDP (2005) | **3.22%** |
-| Telecom share of GDP (2025) | **1.96%** |
-| Decline | **−39%** in 20 years |
-
-### H6 — Infrastructure Elasticity: ✅ CONFIRMED
+### H6 — Infrastructure Elasticity: CONFIRMED
 
 | Metric | Value |
 |--------|-------|

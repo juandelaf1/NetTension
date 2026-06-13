@@ -63,7 +63,7 @@ print(f"fact_eurostat_es: {es.shape} — {es['year'].min():.0f} to {es['year'].m
 # ## 2. H1 — Scissors Effect: Traffic vs Revenue
 #
 # **Prediction:** Data traffic CAGR >> Revenue CAGR, creating a widening gap.
-# **Result:** ✅ CONFIRMED
+# **Result:** CONFIRMED
 
 # %%
 fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -102,7 +102,7 @@ print(f"This gap is structurally unsustainable without Fair Share or cost innova
 # ## 3. H2 — Market Concentration (HHI)
 #
 # **Prediction:** HHI increases over time (market concentration rises).
-# **Result:** ❌ **REFUTED** — HHI decreased from 3,482 to 2,368.
+# **Result:** **REFUTED** — HHI decreased from 3,482 to 2,368.
 # **Key insight:** More competition did NOT solve the Scissors Effect.
 
 # %%
@@ -139,7 +139,7 @@ print(f"This proves the problem is structural, not monopolistic.")
 # ## 4. H3 — Data Asymmetry: Revenue per Unit Collapse
 #
 # **Prediction:** Revenue per traffic unit collapses as usage explodes.
-# **Result:** ✅ CONFIRMED
+# **Result:** CONFIRMED
 
 # %%
 fig = make_subplots(rows=2, cols=1, shared_xaxes=True,
@@ -162,7 +162,7 @@ fig.show()
 # ## 5. H4 — Network Stress Index
 #
 # **Prediction:** Traffic per line (NSI) grows faster than revenue per line.
-# **Result:** ✅ CONFIRMED
+# **Result:** CONFIRMED
 
 # %%
 fig = go.Figure()
@@ -183,7 +183,7 @@ fig.show()
 # ## 6. H5 — Macro Contribution Decline
 #
 # **Prediction:** Telecom revenue share of GDP decreases.
-# **Result:** ✅ CONFIRMED
+# **Result:** CONFIRMED
 
 # %%
 rev = pd.read_parquet(PROC / "cnmc_mercados_clean.parquet")
@@ -256,12 +256,12 @@ for _, r in eu.iterrows():
 #
 # | Hypothesis | Result | Evidence |
 # |-----------|--------|---------|
-# | H1 — Scissors Effect | ✅ CONFIRMED | Traffic +127%/yr vs Revenue −0.4%/yr |
-# | H2 — Concentration | ❌ REFUTED | HHI 3,482 → 2,368 (deconcentration) |
-# | H3 — Data Asymmetry | ✅ CONFIRMED | Revenue/unit collapses to near zero |
-# | H4 — Network Stress | ✅ CONFIRMED | NSI grows exponentially vs ARPU |
-# | H5 — Macro Decline | ✅ CONFIRMED | Telecom/GDP: 3.2% → 2.0% |
-# | H6 — Infrastructure Elasticity | ✅ CONFIRMED | Margin compression confirmed |
+# | H1 — Scissors Effect | CONFIRMED | Traffic +127%/yr vs Revenue −0.4%/yr |
+# | H2 — Concentration | REFUTED | HHI 3,482 → 2,368 (deconcentration) |
+# | H3 — Data Asymmetry | CONFIRMED | Revenue/unit collapses to near zero |
+# | H4 — Network Stress | CONFIRMED | NSI grows exponentially vs ARPU |
+# | H5 — Macro Decline | CONFIRMED | Telecom/GDP: 3.2% → 2.0% |
+# | H6 — Infrastructure Elasticity | CONFIRMED | Margin compression confirmed |
 #
 # **Key insight:** H2 being refuted is the most important finding. Competition
 # increased yet the Scissors Effect worsened. The problem is structural to the
