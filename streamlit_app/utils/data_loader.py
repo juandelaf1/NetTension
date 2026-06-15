@@ -2,8 +2,15 @@ import streamlit as st
 import duckdb
 import pandas as pd
 from pathlib import Path
+import os
 
-DB_PATH = Path(__file__).parents[3] / "data" / "processed" / "net_tension.duckdb"
+_src = Path(__file__).resolve().parent
+# Walk up from utils/ to find project root (contains data/processed/)
+_project_root = _src.parents[2]  # streamlit_app/utils -> streamlit_app -> project
+DB_PATH = _project_root / "data" / "processed" / "net_tension.duckdb"
+# Fallback: try cwd (for when streamlit is run from project root)
+if not DB_PATH.exists():
+    DB_PATH = Path.cwd() / "data" / "processed" / "net_tension.duckdb"
 
 @st.cache_resource
 def get_connection():

@@ -4,7 +4,6 @@ NetTension — Extract key data from downloaded PDFs.
 Sources: ETNO, GSMA, BEREC, Sandvine
 """
 import fitz  # PyMuPDF
-import json
 from pathlib import Path
 
 RAW_DIR = Path(__file__).parents[2] / "data" / "raw"

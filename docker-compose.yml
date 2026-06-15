@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  etl:
+    build: .
+    container_name: nettension-etl
+    volumes:
+      - ./data:/app/data
+    command: python -m pipeline.etl_pipeline
+
+  export:
+    build: .
+    container_name: nettension-export
+    depends_on:
+      - etl
+    volumes:
+      - ./data:/app/data
+    command: >
+      sh -c "python -m pipeline.export_powerbi && python -m pipeline.export_duckdb"
+
+  test:
+    build: .
+    container_name: nettension-test
+    profiles:
+      - ci
+    command: python -m pytest tests/ -v --no-header
+
+  streamlit:
+    build: .
+    container_name: nettension-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./streamlit_app:/app/streamlit_app
+    working_dir: /app/streamlit_app
+    command: streamlit run app.py --server.headless true --server.port 8501

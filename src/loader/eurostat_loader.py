@@ -11,7 +11,6 @@ Licence: CC-BY-4.0
 """
 
 from pathlib import Path
-import gzip
 import pandas as pd
 
 

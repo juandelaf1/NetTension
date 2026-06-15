@@ -35,14 +35,19 @@ def hhi_quarterly(
     """
     mask = (df[value_col] > 0) & df[group_col].notna()
     op_rev = df[mask].groupby([time_col, group_col])[value_col].sum().reset_index()
+    if op_rev.empty:
+        return pd.DataFrame(columns=[time_col, "hhi", "num_operators"])
     totals = op_rev.groupby(time_col)[value_col].sum().rename("total")
     shares = op_rev.merge(totals, on=time_col)
     shares["cuota"] = shares[value_col] / shares["total"]
     hhi = shares.groupby(time_col).apply(
-        lambda g: (g["cuota"] ** 2).sum() * 10000,
+        lambda g: pd.Series({
+            "hhi": (g["cuota"] ** 2).sum() * 10000,
+            "num_operators": g[group_col].nunique(),
+        }),
         include_groups=False,
     )
-    result = hhi.reset_index(name="hhi")
+    result = hhi.reset_index()
     return result[result["hhi"] > 0]
 
 

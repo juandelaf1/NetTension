@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "path": "Report",
+      "type": "report"
+    },
+    {
+      "path": "DataModel",
+      "type": "dataModel"
+    }
+  ]
+}
