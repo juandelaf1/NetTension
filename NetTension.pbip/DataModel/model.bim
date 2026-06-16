@@ -1,0 +1,515 @@
+{
+  "name": "NetTension Model",
+  "compatibilityLevel": 1603,
+  "model": {
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "tables": [
+      {
+        "name": "dim_time",
+        "description": "Calendar dimension: 83 quarters (2005T1-2025T4)",
+        "columns": [
+          {
+            "name": "time_key",
+            "dataType": "DateTime",
+            "isHidden": false
+          },
+          {
+            "name": "trimestre_dt",
+            "dataType": "DateTime",
+            "isHidden": false
+          },
+          {
+            "name": "year",
+            "dataType": "Int64",
+            "isHidden": false
+          },
+          {
+            "name": "quarter",
+            "dataType": "Int64",
+            "isHidden": false
+          },
+          {
+            "name": "year_quarter",
+            "dataType": "String",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_time",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/dim_time.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"time_key\", type datetime}, {\"trimestre_dt\", type datetime}, {\"year\", Int64.Type}, {\"quarter\", Int64.Type}, {\"year_quarter\", type text}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "ESTIMATED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "83"
+          }
+        ]
+      },
+      {
+        "name": "dim_operator",
+        "description": "Operator dimension: 32 operators with group classification",
+        "columns": [
+          {
+            "name": "operator_key",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "operator_group",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "is_incumbent",
+            "dataType": "Boolean",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_operator",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/dim_operator.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"operator_key\", type text}, {\"operator_group\", type text}, {\"is_incumbent\", type logical}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "ESTIMATED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "32"
+          }
+        ]
+      },
+      {
+        "name": "dim_service",
+        "description": "Service/concept dimension: 38 combos with market type and category",
+        "columns": [
+          {
+            "name": "service_key",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "servicio",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "concepto",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "market_type",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "category",
+            "dataType": "String",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_service",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/dim_service.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"service_key\", type text}, {\"servicio\", type text}, {\"concepto\", type text}, {\"market_type\", type text}, {\"category\", type text}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "OBSERVED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "38"
+          }
+        ]
+      },
+      {
+        "name": "dim_geography",
+        "description": "Geography dimension: Spain (ES) as case study",
+        "columns": [
+          {
+            "name": "geography_key",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "pais",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "geo_code",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "region",
+            "dataType": "String",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_geography",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/dim_geography.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"geography_key\", type text}, {\"pais\", type text}, {\"geo_code\", type text}, {\"region\", type text}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "CONSTANT"
+          },
+          {
+            "name": "Row_Count",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "name": "dim_eu_context",
+        "description": "European benchmarking context: ETNO, GSMA, Sandvine indicators",
+        "columns": [
+          {
+            "name": "indicator",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "value",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "unit",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "source",
+            "dataType": "String",
+            "isHidden": false
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_eu_context",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/dim_eu_context.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"indicator\", type text}, {\"value\", type number}, {\"unit\", type text}, {\"source\", type text}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "OBSERVED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "21"
+          }
+        ]
+      },
+      {
+        "name": "fact_observed_agg",
+        "description": "Aggregated quarterly metrics (fact table): traffic, revenue, lines, KPIs",
+        "columns": [
+          {
+            "name": "trimestre_dt",
+            "dataType": "DateTime",
+            "isHidden": false
+          },
+          {
+            "name": "data_traffic",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Total data traffic, GB"
+          },
+          {
+            "name": "voice_traffic",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Total voice traffic, minutes"
+          },
+          {
+            "name": "revenue",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Total revenue, EUR"
+          },
+          {
+            "name": "total_lines",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Active lines/accesos"
+          },
+          {
+            "name": "data_traffic_index",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Normalized (2005T1=100)"
+          },
+          {
+            "name": "revenue_index",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Normalized (2005T1=100)"
+          },
+          {
+            "name": "nsi",
+            "dataType": "Double",
+            "isHidden": false,
+            "description": "Network Stress Index: traffic / lines"
+          },
+          {
+            "name": "revenue_per_traffic",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "revenue_per_line",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "year",
+            "dataType": "Int64",
+            "isHidden": false
+          },
+          {
+            "name": "quarter",
+            "dataType": "Int64",
+            "isHidden": false
+          }
+        ],
+        "measures": [
+          {
+            "name": "Traffic CAGR",
+            "description": "Compound Annual Growth Rate of data traffic",
+            "expression": "VAR StartVal = CALCULATE(SUM(fact_observed_agg[data_traffic]), dim_time[year] = 2005, dim_time[quarter] = 1)\nVAR EndVal = CALCULATE(SUM(fact_observed_agg[data_traffic]), dim_time[year] = 2025, dim_time[quarter] = 4)\nVAR Periods = 20\nRETURN DIVIDE(EndVal, StartVal, 0) ^ (1 / Periods) - 1",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Revenue CAGR",
+            "expression": "VAR StartVal = CALCULATE(SUM(fact_observed_agg[revenue]), dim_time[year] = 2005, dim_time[quarter] = 1)\nVAR EndVal = CALCULATE(SUM(fact_observed_agg[revenue]), dim_time[year] = 2025, dim_time[quarter] = 4)\nVAR Periods = 20\nRETURN DIVIDE(EndVal, StartVal, 0) ^ (1 / Periods) - 1",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "CAGR Gap",
+            "description": "Traffic CAGR minus Revenue CAGR (Scissors Effect)",
+            "expression": "[Traffic CAGR] - [Revenue CAGR]",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Avg NSI",
+            "description": "Average Network Stress Index",
+            "expression": "AVERAGE(fact_observed_agg[nsi])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Avg ARPU",
+            "description": "Average Revenue Per Line",
+            "expression": "AVERAGE(fact_observed_agg[revenue_per_line])",
+            "formatString": "#,##0.00"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_observed_agg",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/fact_observed_agg.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"trimestre_dt\", type datetime}, {\"data_traffic\", type number}, {\"voice_traffic\", type number}, {\"revenue\", type number}, {\"total_lines\", type number}, {\"data_traffic_index\", type number}, {\"revenue_index\", type number}, {\"nsi\", type number}, {\"revenue_per_traffic\", type number}, {\"revenue_per_line\", type number}, {\"year\", Int64.Type}, {\"quarter\", Int64.Type}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "ESTIMATED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "83"
+          }
+        ]
+      },
+      {
+        "name": "fact_eurostat_es",
+        "description": "Spain macroeconomic data: population, GDP (Eurostat)",
+        "columns": [
+          {
+            "name": "year",
+            "dataType": "Int64",
+            "isHidden": false
+          },
+          {
+            "name": "population",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "gdp_meur",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "gdp_per_capita",
+            "dataType": "Double",
+            "isHidden": false
+          }
+        ],
+        "measures": [
+          {
+            "name": "Telecom GDP Share",
+            "description": "Telecom revenue as percentage of GDP",
+            "expression": "VAR TelecomRev = SUM(fact_observed_agg[revenue])\nVAR GDP = SUM(fact_eurostat_es[gdp_meur]) * 1000000\nRETURN DIVIDE(TelecomRev, GDP, 0)",
+            "formatString": "0.00%"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_eurostat_es",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/fact_eurostat_es.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"year\", Int64.Type}, {\"population\", type number}, {\"gdp_meur\", type number}, {\"gdp_per_capita\", type number}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "OBSERVED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "66"
+          }
+        ]
+      },
+      {
+        "name": "kpi_hhi",
+        "description": "Herfindahl-Hirschman Index per quarter with classification",
+        "columns": [
+          {
+            "name": "trimestre",
+            "dataType": "String",
+            "isHidden": false
+          },
+          {
+            "name": "hhi",
+            "dataType": "Double",
+            "isHidden": false
+          },
+          {
+            "name": "trimestre_dt",
+            "dataType": "DateTime",
+            "isHidden": false
+          },
+          {
+            "name": "year",
+            "dataType": "Int64",
+            "isHidden": false
+          },
+          {
+            "name": "classification",
+            "dataType": "String",
+            "isHidden": false
+          }
+        ],
+        "measures": [
+          {
+            "name": "HHI Avg",
+            "description": "Average HHI over selected period",
+            "expression": "AVERAGE(kpi_hhi[hhi])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "HHI Classification",
+            "expression": "MIN(kpi_hhi[classification])",
+            "formatString": ""
+          }
+        ],
+        "partitions": [
+          {
+            "name": "kpi_hhi",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Source = Csv.Document(File.Contents(\"C:/Users/JUAN/Desktop/Proyectos/NetTension/data/csv/kpi_hhi.csv\"),[Delimiter=\";\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\", {{\"trimestre\", type text}, {\"hhi\", type number}, {\"trimestre_dt\", type datetime}, {\"year\", Int64.Type}, {\"classification\", type text}})\nin\n    #\"Changed Type\""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "Source_Type",
+            "value": "ESTIMATED"
+          },
+          {
+            "name": "Row_Count",
+            "value": "83"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "r_fact_time",
+        "fromTable": "fact_observed_agg",
+        "fromColumn": "trimestre_dt",
+        "toTable": "dim_time",
+        "toColumn": "trimestre_dt",
+        "isActive": true,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "r_hhi_time",
+        "fromTable": "kpi_hhi",
+        "fromColumn": "trimestre_dt",
+        "toTable": "dim_time",
+        "toColumn": "trimestre_dt",
+        "isActive": true,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "r_euro_year",
+        "fromTable": "fact_eurostat_es",
+        "fromColumn": "year",
+        "toTable": "dim_time",
+        "toColumn": "year",
+        "isActive": true,
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ]
+  }
+}
