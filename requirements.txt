@@ -1,6 +1,15 @@
 pandas>=2.0
 numpy>=1.25
 python-dotenv>=1.0
+streamlit>=1.35
+plotly>=5.18
+streamlit-echarts>=0.7
+duckdb>=0.10
+streamlit-aggrid>=0.3
+streamlit-option-menu>=0.3
+streamlit-antd-components>=0.1
+qrcode>=8.0
+pillow>=9.0
 
 # Dev
 black
