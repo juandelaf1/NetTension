@@ -206,6 +206,46 @@ _CONTENT = {
             },
         ],
     },
+    "ott_donut": {
+        "title": {"es": "¿Quién usa la red?", "en": "Who uses the network?"},
+        "sections": [
+            {
+                "heading": {"es": "Composición del tráfico", "en": "Traffic composition"},
+                "body": {
+                    "es": "**Video** representa el **65%** de todo el tráfico de internet. El resto (web, gaming, redes sociales sin video) suma el 35%.\n\n• Las plataformas OTT de video (YouTube, Netflix, TikTok) generan la mayor parte de la presión sobre la red.\n• **{name}**: **{value}%**",
+                    "en": "**Video** accounts for **65%** of all internet traffic. The rest (web, gaming, social media without video) makes up 35%.\n\n• OTT video platforms (YouTube, Netflix, TikTok) generate most of the network pressure.\n• **{name}**: **{value}%**",
+                },
+            },
+            {
+                "heading": {"es": "El peso de los gigantes", "en": "The weight of the giants"},
+                "body": {
+                    "es": "Seis plataformas (Google, Meta, Netflix, Apple, Amazon, Microsoft) generan el **50%** del tráfico mundial. Estas empresas no contribuyen significativamente a los costes de red que ellas mismas generan.\n\n• El argumento del Fair Share: quien genera tráfico debe contribuir a la red que lo transporta.",
+                    "en": "Six platforms (Google, Meta, Netflix, Apple, Amazon, Microsoft) generate **50%** of global traffic. These companies do not significantly contribute to the network costs they generate.\n\n• The Fair Share argument: those who generate traffic should contribute to the network that carries it.",
+                },
+                "caption": {"es": "Fuente: Sandvine Global Internet Phenomena Report 2024", "en": "Source: Sandvine Global Internet Phenomena Report 2024"},
+            },
+        ],
+    },
+    "eu_comparison": {
+        "title": {"es": "Europa vs el Mundo", "en": "Europe vs the World"},
+        "sections": [
+            {
+                "heading": {"es": "¿Qué significa este valor?", "en": "What does this value mean?"},
+                "body": {
+                    "es": "Comparativa normalizada a **EU = 100%**.\n\n• **{series}** en **{name}** = **{value}%** del nivel europeo\n• Por ejemplo, USA invierte ~**192%** de lo que invierte Europa per cápita y genera ~**282%** del ARPU europeo.",
+                    "en": "Normalized comparison with **EU = 100%**.\n\n• **{series}** in **{name}** = **{value}%** of EU level\n• For example, the US invests ~**192%** of Europe's per-capita CAPEX and generates ~**282%** of European ARPU.",
+                },
+            },
+            {
+                "heading": {"es": "Implicación", "en": "Implication"},
+                "body": {
+                    "es": "Europa no solo invierte menos en red: también monetiza peor. La combinación de **menos CAPEX y menos ARPU** explica por qué los operadores europeos tienen dificultades para sostener la inversión en 5G y fibra.",
+                    "en": "Europe not only invests less in the network: it also monetizes worse. The combination of **lower CAPEX and lower ARPU** explains why European operators struggle to sustain 5G and fiber investment.",
+                },
+                "caption": {"es": "Fuente: ETNO State of Digital Communications 2025", "en": "Source: ETNO State of Digital Communications 2025"},
+            },
+        ],
+    },
     "scenarios": {
         "title": {"es": "Comparativa de Escenarios", "en": "Scenario Comparison"},
         "sections": [

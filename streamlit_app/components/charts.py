@@ -136,31 +136,39 @@ def traffic_revenue_stacked_echarts(df: pd.DataFrame) -> dict:
     data_traffic = df["data_traffic"].round(0).tolist()
     has_voice = "voice_traffic" in df.columns and df["voice_traffic"].sum() > 0
     voice_traffic = df["voice_traffic"].round(0).tolist() if has_voice else []
-    max_val = max(data_traffic) if data_traffic else 1
 
     series = [
         {
             "name": "📦 Data Traffic",
-            "type": "bar",
+            "type": "line",
             "stack": "total",
             "data": data_traffic,
-            "itemStyle": {"color": "#00BFA5", "opacity": 0.85},
-            "barWidth": "60%",
+            "smooth": True,
+            "symbol": "none",
+            "lineStyle": {"width": 0},
+            "areaStyle": {"color": "rgba(0,191,165,0.6)", "origin": "auto"},
+            "itemStyle": {"color": "#00BFA5"},
+            "emphasis": {"focus": "series"},
         }
     ]
     if has_voice and sum(voice_traffic) > 0:
         series.append({
             "name": "📞 Voice Traffic",
-            "type": "bar",
+            "type": "line",
             "stack": "total",
             "data": voice_traffic,
-            "itemStyle": {"color": "#536DFE", "opacity": 0.6},
+            "smooth": True,
+            "symbol": "none",
+            "lineStyle": {"width": 0},
+            "areaStyle": {"color": "rgba(83,109,254,0.5)", "origin": "auto"},
+            "itemStyle": {"color": "#536DFE"},
+            "emphasis": {"focus": "series"},
         })
 
     return {
         "tooltip": {
             "trigger": "axis",
-            "axisPointer": {"type": "shadow"},
+            "axisPointer": {"type": "cross"},
             "formatter": """function(params) {
                 let tip = '<b>' + params[0].axisValue + '</b><br/>';
                 let total = 0;
@@ -181,6 +189,7 @@ def traffic_revenue_stacked_echarts(df: pd.DataFrame) -> dict:
         "grid": {"left": "3%", "right": "4%", "bottom": "8%", "containLabel": True, "top": "15%"},
         "xAxis": {
             "type": "category",
+            "boundaryGap": False,
             "data": categories,
             "axisLine": {"lineStyle": {"color": "rgba(255,255,255,0.08)"}},
             "axisLabel": {"color": "#90A4AE", "rotate": 45, "fontSize": 10},
@@ -196,6 +205,112 @@ def traffic_revenue_stacked_echarts(df: pd.DataFrame) -> dict:
         },
         "series": series,
     }
+
+
+def ott_donut_echarts() -> dict:
+    return {
+        "tooltip": {"trigger": "item", "formatter": "{b}: {c}% ({d}%)"},
+        "legend": {
+            "orient": "vertical", "right": "5%", "top": "center",
+            "textStyle": {"color": "#90A4AE", "fontSize": 12},
+        },
+        "series": [
+            {
+                "name": "Traffic Share",
+                "type": "pie",
+                "radius": ["50%", "75%"],
+                "avoidLabelOverlap": True,
+                "center": ["35%", "50%"],
+                "label": {"show": False},
+                "emphasis": {"label": {"show": True, "fontSize": 14, "fontWeight": "bold", "color": "#FFFFFF"}},
+                "data": [
+                    {"value": 65, "name": "🎬 Video", "itemStyle": {"color": "#00BFA5"}},
+                    {"value": 35, "name": "🌐 Other Traffic", "itemStyle": {"color": "rgba(0,191,165,0.25)"}},
+                ],
+            },
+            {
+                "name": "OTT Share",
+                "type": "pie",
+                "radius": ["50%", "75%"],
+                "avoidLabelOverlap": True,
+                "center": ["80%", "50%"],
+                "label": {"show": False},
+                "emphasis": {"label": {"show": True, "fontSize": 14, "fontWeight": "bold", "color": "#FFFFFF"}},
+                "data": [
+                    {"value": 50, "name": "🏢 Big 6 (Google, Meta, Netflix, etc.)", "itemStyle": {"color": "#FF5252"}},
+                    {"value": 50, "name": "📡 Other Platforms", "itemStyle": {"color": "rgba(255,82,82,0.2)"}},
+                ],
+            },
+        ],
+    }
+
+
+def eu_comparison_chart(df: pd.DataFrame) -> go.Figure:
+    def _clean_region(indicator: str, keyword: str) -> str:
+        for prefix in ["EU", "USA", "South Korea", "Japan"]:
+            if indicator.startswith(prefix):
+                return prefix
+        return indicator.replace(keyword, "").strip().replace("()", "").strip()
+
+    data = []
+    for _, r in df.iterrows():
+        ind = r["indicator"]
+        val = pd.to_numeric(r["value"], errors="coerce")
+        if pd.isna(val):
+            continue
+        if "per capita" in ind:
+            data.append({"metric": "CAPEX per capita (EUR)", "region": _clean_region(ind, "CAPEX per capita"), "value": val})
+        elif "ARPU" in ind and "Mobile ARPU" in ind:
+            data.append({"metric": "ARPU (EUR/month)", "region": _clean_region(ind, "Mobile ARPU"), "value": val})
+
+    comp = pd.DataFrame(data)
+    if comp.empty:
+        return None
+
+    eu_val = comp[comp["region"] == "EU"]
+    eu_capex = eu_val[eu_val["metric"].str.contains("CAPEX")]["value"].values
+    eu_arpu = eu_val[eu_val["metric"].str.contains("ARPU")]["value"].values
+    eu_capex_base = eu_capex[0] if len(eu_capex) > 0 else 1
+    eu_arpu_base = eu_arpu[0] if len(eu_arpu) > 0 else 1
+
+    comp["normalized"] = comp.apply(
+        lambda r: (r["value"] / eu_capex_base * 100) if "CAPEX" in r["metric"] else (r["value"] / eu_arpu_base * 100),
+        axis=1
+    )
+
+    region_order = ["EU", "USA", "South Korea", "Japan"]
+    comp["order"] = comp["region"].apply(lambda r: region_order.index(r) if r in region_order else 99)
+    comp = comp.sort_values(["metric", "order"])
+
+    fig = go.Figure()
+    for metric in comp["metric"].unique():
+        sub = comp[comp["metric"] == metric]
+        colors = ["#00BFA5" if r == "EU" else "#536DFE" for r in sub["region"]]
+        fig.add_trace(go.Bar(
+            name=metric,
+            x=sub["region"],
+            y=sub["normalized"].round(0),
+            marker_color=colors,
+            text=[f"{v:.0f}%" for v in sub["normalized"]],
+            textposition="outside",
+            textfont=dict(size=13, color="#FFFFFF"),
+            hovertemplate="<b>%{x}</b><br>%{y:.0f}% of EU level<br>Actual: %{customdata}<extra></extra>",
+            customdata=[f"{v:.1f}" for v in sub["value"]],
+        ))
+
+    fig.add_hline(y=100, line_dash="dash", line_color="rgba(255,255,255,0.3)", annotation_text="EU = 100%", annotation_font_color="#90A4AE")
+
+    fig.update_layout(
+        barmode="group",
+        height=320,
+        yaxis_title="% of EU level",
+        yaxis=dict(tickfont=dict(size=12, color="#90A4AE"), range=[0, max(comp["normalized"]) * 1.25]),
+        xaxis=dict(tickfont=dict(size=13, color="#E0E6ED")),
+        legend=dict(font=dict(size=11, color="#90A4AE"), orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
+        margin=dict(l=10, r=10, t=40, b=20),
+        hovermode="x unified",
+    )
+    return apply_corporate_style(fig)
 
 def nsi_vs_arpu_scatter(df: pd.DataFrame) -> go.Figure:
     df = df.dropna(subset=["nsi", "revenue_per_line"]).copy()

@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 from utils.data_loader import load_eu_context
-from components.charts import apply_corporate_style
+from components.charts import apply_corporate_style, eu_comparison_chart
 from components.filters import render_sidebar
 from components.tables import render_aggrid
 from utils.i18n import t, lang
@@ -149,33 +149,19 @@ def render():
             "europe": "#00BFA5",
         }
 
-        # ── ROW 1: CAPEX + ARPU side by side ──
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown(f"""
-            <div style="font-size:0.85rem;color:#00BFA5;text-transform:uppercase;letter-spacing:1px;
-                        margin-bottom:0.3rem;">💶 {t("european_context.capex_desc", L)}</div>
-            """, unsafe_allow_html=True)
-            st.markdown('<div class="chart-container">', unsafe_allow_html=True)
-            fig1 = _bar_chart(eu, "CAPEX", "capex_desc", region_colors)
-            capex_click = st.plotly_chart(fig1, width="stretch", config={"displayModeBar": False}, on_select="rerun", key="capex_chart")
-            if capex_click and capex_click.selection and capex_click.selection.points:
-                pt = capex_click.selection.points[0]
-                maybe_popup("capex", {"name": pt.get("y", ""), "value": pt.get("x", ""), "seriesName": "CAPEX"}, "capex_chart")
-            st.markdown('</div>', unsafe_allow_html=True)
-
-        with col2:
-            st.markdown(f"""
-            <div style="font-size:0.85rem;color:#FF5252;text-transform:uppercase;letter-spacing:1px;
-                        margin-bottom:0.3rem;">📱 {t("european_context.arpu_desc", L)}</div>
-            """, unsafe_allow_html=True)
-            st.markdown('<div class="chart-container">', unsafe_allow_html=True)
-            fig2 = _bar_chart(eu, "ARPU", "arpu_desc", region_colors)
-            arpu_click = st.plotly_chart(fig2, width="stretch", config={"displayModeBar": False}, on_select="rerun", key="arpu_chart")
-            if arpu_click and arpu_click.selection and arpu_click.selection.points:
-                pt = arpu_click.selection.points[0]
-                maybe_popup("arpu", {"name": pt.get("y", ""), "value": pt.get("x", ""), "seriesName": "ARPU"}, "arpu_chart")
-            st.markdown('</div>', unsafe_allow_html=True)
+        # ── ROW 1: EU vs World comparison chart ──
+        st.markdown(f"""
+        <div style="font-size:0.85rem;color:#FFD740;text-transform:uppercase;letter-spacing:1px;
+                    margin-bottom:0.3rem;">🌍 {t("european_context.comparison_title", L)}</div>
+        """, unsafe_allow_html=True)
+        st.markdown('<div class="chart-container">', unsafe_allow_html=True)
+        fig_comp = eu_comparison_chart(eu)
+        if fig_comp is not None:
+            comp_click = st.plotly_chart(fig_comp, width="stretch", config={"displayModeBar": False}, on_select="rerun", key="eu_comparison")
+            if comp_click and comp_click.selection and comp_click.selection.points:
+                pt = comp_click.selection.points[0]
+                maybe_popup("eu_comparison", {"name": pt.get("x", ""), "value": pt.get("y", ""), "seriesName": pt.get("legendgroup", "")}, "eu_comparison")
+        st.markdown('</div>', unsafe_allow_html=True)
 
         # ── ROW 2: Key Metrics + 5G Gauge ──
         col3, col4 = st.columns([1.2, 0.8])

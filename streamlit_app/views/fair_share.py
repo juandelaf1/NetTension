@@ -116,6 +116,16 @@ def render():
 
     st.markdown('<div class="glow-divider"></div>', unsafe_allow_html=True)
 
+    # ── OTT TRAFFIC DONUT ──
+    st.markdown('<div class="chart-container">', unsafe_allow_html=True)
+    st.markdown(f'<div class="chart-title">📊 {t("fair_share.ott_share_title", L)}</div>', unsafe_allow_html=True)
+    from components.charts import ott_donut_echarts
+    from streamlit_echarts import st_echarts
+    donut_result = st_echarts(options=ott_donut_echarts(), height="320px", events={"click": CLICK_FORMAT}, key="ott_donut")
+    maybe_popup("ott_donut", donut_result, "ott_donut")
+    st.markdown(f'<div style="font-size:0.75rem;color:#637381;text-align:center;">{t("fair_share.ott_share_caption", L)}</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
     # ── IMPACT METRICS ──
     st.markdown('<div class="chart-container">', unsafe_allow_html=True)
     st.markdown(f'<div class="chart-title" style="font-size:1rem;">📊 {t("fair_share.scenario_title", L)}</div>', unsafe_allow_html=True)

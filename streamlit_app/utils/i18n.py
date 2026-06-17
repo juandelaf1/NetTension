@@ -62,6 +62,7 @@ T = {
             "market_indicators_title": "Indicadores de Mercado",
             "market_share_title": "Benchmark de Participación de Mercado",
             "full_db_title": "Base de Datos Completa de Benchmarking",
+            "comparison_title": "Europa vs el Mundo — CAPEX y ARPU normalizados",
             "transition": "Europa invierte la mitad que USA. Y las plataformas americanas ocupan el 50% del tráfico sin contribuir. ¿Y si pagaran por lo que usan?",
         },
         "fair_share": {
@@ -92,6 +93,8 @@ T = {
             "reference_note": "Referencia: BEREC 2025, ETNO 2025",
             "limitations_title": "Limitaciones",
             "limitations": "Este es un modelo simplificado basado en datos públicos (ETNO State of Digital Comms 2025, informe BEREC). Los resultados reales dependen de la implementación regulatoria, la estructura del mercado y el comportamiento de los operadores. El modelo asume relaciones lineales por transparencia.",
+            "ott_share_title": "¿Quién usa la red?",
+            "ott_share_caption": "Fuente: Sandvine Global Internet Phenomena Report 2024",
             "transition": "El simulador lo confirma: el Fair Share funciona. Ahora, ¿cómo lo implementamos?",
         },
         "evolution_strategy": {
@@ -228,6 +231,7 @@ T = {
             "market_indicators_title": "Market Indicators",
             "market_share_title": "Market Share Benchmark",
             "full_db_title": "Full Benchmark Database",
+            "comparison_title": "Europe vs the World — Normalized CAPEX & ARPU",
             "transition": "Europe invests half of what the US does. And American platforms occupy 50% of traffic without contributing. What if they paid for what they use?",
         },
         "fair_share": {
@@ -258,6 +262,8 @@ T = {
             "reference_note": "Reference: BEREC 2025, ETNO 2025",
             "limitations_title": "Limitations",
             "limitations": "This is a simplified model based on public data (ETNO State of Digital Comms 2025, BEREC report). Real outcomes depend on regulatory implementation, market structure, and operator behavior. The model assumes linear relationships for transparency.",
+            "ott_share_title": "Who uses the network?",
+            "ott_share_caption": "Source: Sandvine Global Internet Phenomena Report 2024",
             "transition": "The simulator confirms: Fair Share works. Now, how do we implement it?",
         },
         "evolution_strategy": {
