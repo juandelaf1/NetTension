@@ -91,11 +91,15 @@ def _load_table(name: str, query: str) -> pd.DataFrame:
 
 @st.cache_data(ttl=3600)
 def load_fact_observed() -> pd.DataFrame:
-    return _load_table("fact_observed_agg", "SELECT * FROM fact_observed_agg ORDER BY trimestre_dt")
+    df = _load_table("fact_observed_agg", "SELECT * FROM fact_observed_agg ORDER BY trimestre_dt")
+    df["trimestre_dt"] = pd.to_datetime(df["trimestre_dt"])
+    return df
 
 @st.cache_data(ttl=3600)
 def load_hhi() -> pd.DataFrame:
-    return _load_table("kpi_hhi", "SELECT * FROM kpi_hhi ORDER BY trimestre_dt")
+    df = _load_table("kpi_hhi", "SELECT * FROM kpi_hhi ORDER BY trimestre_dt")
+    df["trimestre_dt"] = pd.to_datetime(df["trimestre_dt"])
+    return df
 
 @st.cache_data(ttl=3600)
 def load_eu_context() -> pd.DataFrame:
