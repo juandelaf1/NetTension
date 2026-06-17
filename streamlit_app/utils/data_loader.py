@@ -11,11 +11,22 @@ if not DB_PATH.exists():
     DB_PATH = Path.cwd() / "data" / "processed" / "net_tension.duckdb"
 
 PARQUET_DIR = _project_root / "data" / "processed"
-PARQUET_DIR.mkdir(parents=True, exist_ok=True)
+CSV_DIR = _project_root / "data" / "csv"
+
+CSV_MAP = {
+    "fact_observed_agg": "fact_observed_agg.csv",
+    "kpi_hhi": "kpi_hhi.csv",
+    "dim_eu_context": "dim_eu_context.csv",
+}
 
 @st.cache_resource
 def get_connection():
-    return duckdb.connect(str(DB_PATH), read_only=True)
+    if not DB_PATH.exists():
+        return None
+    try:
+        return duckdb.connect(str(DB_PATH), read_only=True)
+    except Exception:
+        return None
 
 
 def _parquet_path(name: str) -> Path:
@@ -33,23 +44,36 @@ def _load_parquet(name: str) -> Optional[pd.DataFrame]:
         return None
 
 
-def _save_parquet(name: str, df: pd.DataFrame) -> None:
-    path = _parquet_path(name)
+def _load_csv(name: str) -> Optional[pd.DataFrame]:
+    csv_name = CSV_MAP.get(name)
+    if not csv_name:
+        return None
+    path = CSV_DIR / csv_name
+    if not path.exists():
+        return None
     try:
-        con = duckdb.connect()
-        con.register("tmp_df", df)
-        con.execute(f"COPY tmp_df TO '{path.as_posix()}' (FORMAT PARQUET)")
+        return pd.read_csv(path)
     except Exception:
-        pass
+        return None
 
 
 def _load_table(name: str, query: str) -> pd.DataFrame:
     df = _load_parquet(name)
     if df is not None:
         return df
-    df = get_connection().execute(query).df()
-    _save_parquet(name, df)
-    return df
+    con = get_connection()
+    if con is not None:
+        try:
+            return con.execute(query).df()
+        except Exception:
+            pass
+    df = _load_csv(name)
+    if df is not None:
+        return df
+    raise FileNotFoundError(
+        f"No data source found for '{name}'. "
+        "Expected parquet, DuckDB, or CSV at data/csv/"
+    )
 
 @st.cache_data(ttl=3600)
 def load_fact_observed() -> pd.DataFrame:
