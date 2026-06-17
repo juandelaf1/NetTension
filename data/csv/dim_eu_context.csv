@@ -1,22 +1,22 @@
-﻿indicator;value;unit;source
-EU Mobile Revenue (2023);163.0;Bn EUR;GSMA Mobile Economy Europe 2025
-EU Operator CAPEX (2023);57.9;Bn EUR;ETNO State of Digital Comms 2025
-EU CAPEX per capita;118.0;EUR;ETNO State of Digital Comms 2025
-USA CAPEX per capita;226.0;EUR;ETNO State of Digital Comms 2025
-Japan CAPEX per capita;188.0;EUR;ETNO State of Digital Comms 2025
-South Korea CAPEX per capita;173.0;EUR;ETNO State of Digital Comms 2025
-EU Mobile ARPU (2023);14.8;EUR/month;ETNO State of Digital Comms 2025
-USA Mobile ARPU;41.7;EUR/month;ETNO State of Digital Comms 2025
-South Korea Mobile ARPU;26.0;EUR/month;ETNO State of Digital Comms 2025
-Japan Mobile ARPU;22.6;EUR/month;ETNO State of Digital Comms 2025
-EU 5G Adoption (2024);30.0;% of connections;GSMA Mobile Economy Europe 2025
-EU 5G Adoption (2030 projected);80.0;% of connections;GSMA Mobile Economy Europe 2025
-Mobile contribution to EU GDP;5.0;%;GSMA Mobile Economy Europe 2025
-Mobile contribution EU GDP value;1.1;Tn EUR;GSMA Mobile Economy Europe 2025
-EU Mobile Subscribers (2024);520.0;M;GSMA Mobile Economy Europe 2025
-Mobile internet usage gap Europe;19.0;%;GSMA Mobile Economy Europe 2025
-EU 5G population coverage (2024);94.3;%;EU 5G Observatory 2025
-Video share of internet traffic;65.0;%;Sandvine GIPR 2024
-Big 6 share of internet traffic;50.0;%;Sandvine GIPR 2024
-EU ROCE (2023);5.9;%;ETNO State of Digital Comms 2025
-EU Revenue real growth (2023);-4.4;%;ETNO State of Digital Comms 2025
+indicator,value,unit,source
+EU Mobile Revenue (2023),163.0,Bn EUR,GSMA Mobile Economy Europe 2025
+EU Operator CAPEX (2023),57.9,Bn EUR,ETNO State of Digital Comms 2025
+EU CAPEX per capita,118.0,EUR,ETNO State of Digital Comms 2025
+USA CAPEX per capita,226.0,EUR,ETNO State of Digital Comms 2025
+Japan CAPEX per capita,188.0,EUR,ETNO State of Digital Comms 2025
+South Korea CAPEX per capita,173.0,EUR,ETNO State of Digital Comms 2025
+EU Mobile ARPU (2023),14.8,EUR/month,ETNO State of Digital Comms 2025
+USA Mobile ARPU,41.7,EUR/month,ETNO State of Digital Comms 2025
+South Korea Mobile ARPU,26.0,EUR/month,ETNO State of Digital Comms 2025
+Japan Mobile ARPU,22.6,EUR/month,ETNO State of Digital Comms 2025
+EU 5G Adoption (2024),30.0,% of connections,GSMA Mobile Economy Europe 2025
+EU 5G Adoption (2030 projected),80.0,% of connections,GSMA Mobile Economy Europe 2025
+Mobile contribution to EU GDP,5.0,%,GSMA Mobile Economy Europe 2025
+Mobile contribution EU GDP value,1.1,Tn EUR,GSMA Mobile Economy Europe 2025
+EU Mobile Subscribers (2024),520.0,M,GSMA Mobile Economy Europe 2025
+Mobile internet usage gap Europe,19.0,%,GSMA Mobile Economy Europe 2025
+EU 5G population coverage (2024),94.3,%,EU 5G Observatory 2025
+Video share of internet traffic,65.0,%,Sandvine GIPR 2024
+Big 6 share of internet traffic,50.0,%,Sandvine GIPR 2024
+EU ROCE (2023),5.9,%,ETNO State of Digital Comms 2025
+EU Revenue real growth (2023),-4.4,%,ETNO State of Digital Comms 2025

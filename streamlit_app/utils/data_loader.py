@@ -62,7 +62,7 @@ def _load_csv(name: str) -> Optional[pd.DataFrame]:
     if path is None:
         return None
     try:
-        return pd.read_csv(path, sep=";")
+        return pd.read_csv(path)
     except Exception:
         return None
 
