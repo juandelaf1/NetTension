@@ -60,3 +60,4 @@ desktop.ini
 # DuckDB database (generated from parquet files)
 data/processed/net_tension.duckdb
 kaggle_dataset/
+*.whl
