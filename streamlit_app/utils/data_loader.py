@@ -6,6 +6,9 @@ from typing import Optional
 
 _src = Path(__file__).resolve().parent
 _project_root = _src.parents[2]
+if not (_project_root / "data").exists():
+    _project_root = Path.cwd()
+
 DB_PATH = _project_root / "data" / "processed" / "net_tension.duckdb"
 if not DB_PATH.exists():
     DB_PATH = Path.cwd() / "data" / "processed" / "net_tension.duckdb"
@@ -44,12 +47,19 @@ def _load_parquet(name: str) -> Optional[pd.DataFrame]:
         return None
 
 
-def _load_csv(name: str) -> Optional[pd.DataFrame]:
+def _find_csv(name: str) -> Optional[Path]:
     csv_name = CSV_MAP.get(name)
     if not csv_name:
         return None
-    path = CSV_DIR / csv_name
-    if not path.exists():
+    for base in [CSV_DIR, Path.cwd() / "data" / "csv"]:
+        p = base / csv_name
+        if p.exists():
+            return p
+    return None
+
+def _load_csv(name: str) -> Optional[pd.DataFrame]:
+    path = _find_csv(name)
+    if path is None:
         return None
     try:
         return pd.read_csv(path)
