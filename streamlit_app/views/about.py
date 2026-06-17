@@ -1,11 +1,12 @@
 import streamlit as st
 from io import BytesIO
-import qrcode
 from utils.i18n import t, lang
 
 AC = {"es": "#00BFA5", "en": "#536DFE"}
 
-def _qr_img(url: str) -> BytesIO:
+def _qr_img(url: str):
+    from io import BytesIO
+    import qrcode
     qr = qrcode.QRCode(box_size=6, border=2)
     qr.add_data(url)
     qr.make(fit=True)
