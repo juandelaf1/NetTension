@@ -62,24 +62,31 @@ def _load_csv(name: str) -> Optional[pd.DataFrame]:
     if path is None:
         return None
     try:
-        return pd.read_csv(path)
-    except Exception:
+        df = pd.read_csv(path)
+        return df
+    except Exception as e:
         return None
 
 
 def _load_table(name: str, query: str) -> pd.DataFrame:
     df = _load_parquet(name)
     if df is not None:
+        st.error(f"_load_table: parquet OK, columns={list(df.columns)}, shape={df.shape}")
         return df
     con = get_connection()
     if con is not None:
         try:
-            return con.execute(query).df()
-        except Exception:
+            df = con.execute(query).df()
+            st.error(f"_load_table: DuckDB OK, columns={list(df.columns)}")
+            return df
+        except Exception as e:
+            st.error(f"_load_table: DuckDB error: {e}")
             pass
     df = _load_csv(name)
     if df is not None:
+        st.error(f"_load_table: CSV OK, columns={list(df.columns)}, shape={df.shape}, path={_find_csv(name)}")
         return df
+    st.error(f"_load_table: ALL FAILED for {name}")
     raise FileNotFoundError(
         f"No data source found for '{name}'. "
         "Expected parquet, DuckDB, or CSV at data/csv/"
