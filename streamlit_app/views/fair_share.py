@@ -6,7 +6,6 @@ from components.filters import render_sidebar
 from components.kpi_card import kpi_row
 from utils.i18n import t, lang
 import plotly.graph_objects as go
-from streamlit_echarts import st_echarts
 from components.explain_popup import CLICK_FORMAT, maybe_popup
 
 
@@ -90,6 +89,7 @@ def render():
     with col_before:
         st.markdown('<div class="chart-container" style="text-align:center;">', unsafe_allow_html=True)
         st.markdown('<div style="font-size:0.9rem;color:#FF5252;font-weight:700;text-transform:uppercase;letter-spacing:1px;">❌ Sin Fair Share</div>', unsafe_allow_html=True)
+        from streamlit_echarts import st_echarts
         r_before = st_echarts(options=_gauge_chart(original_gap_pp, gauge_max, "#FF5252", ""), height="220px", events={"click": CLICK_FORMAT}, key="fs_before")
         maybe_popup("fair_share_before", r_before, "fs_before")
         st.markdown(f'<div style="font-size:1.3rem;color:#FF5252;font-weight:700;">Brecha: {original_gap_pp:.1f} pp</div>', unsafe_allow_html=True)
@@ -107,6 +107,7 @@ def render():
         st.markdown('<div class="chart-container" style="text-align:center;">', unsafe_allow_html=True)
         st.markdown(f'<div style="font-size:0.9rem;color:#00BFA5;font-weight:700;text-transform:uppercase;letter-spacing:1px;">✅ Con Fair Share ({filters["ott_pct"]*100:.0f}% OTT)</div>', unsafe_allow_html=True)
         remaining = max(impact["remaining_gap_pp"], 0)
+        from streamlit_echarts import st_echarts
         r_after = st_echarts(options=_gauge_chart(remaining, gauge_max, "#00BFA5", ""), height="220px", events={"click": CLICK_FORMAT}, key="fs_after")
         maybe_popup("fair_share_after", r_after, "fs_after")
         st.markdown(f'<div style="font-size:1.3rem;color:#00BFA5;font-weight:700;">Brecha restante: {remaining:.1f} pp</div>', unsafe_allow_html=True)

@@ -6,7 +6,6 @@ from components.charts import apply_corporate_style
 from components.filters import render_sidebar
 from components.tables import render_aggrid
 from utils.i18n import t, lang
-from streamlit_echarts import st_echarts
 from components.explain_popup import CLICK_FORMAT, maybe_popup
 
 
@@ -226,6 +225,7 @@ def render():
             current_5g = eu[eu["indicator"].str.contains("5G Adoption.*2024", case=False, na=False)]
             projected_5g = eu[eu["indicator"].str.contains("5G Adoption.*2030", case=False, na=False)]
             if not current_5g.empty:
+                from streamlit_echarts import st_echarts
                 g5_result = st_echarts(options=_echarts_5g_gauge(current_5g.iloc[0]), height="280px", events={"click": CLICK_FORMAT}, key="g5_gauge")
                 maybe_popup("g5_gauge", g5_result, "g5_gauge")
                 st.markdown(f"""

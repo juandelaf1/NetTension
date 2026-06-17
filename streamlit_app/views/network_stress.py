@@ -1,7 +1,6 @@
 import streamlit as st
 from utils.data_loader import load_fact_observed, load_hhi, filter_by_year, get_kpis
 from components.charts import nsi_vs_arpu_scatter, hhi_chart_echarts
-from streamlit_echarts import st_echarts
 from components.kpi_card import kpi_row
 from components.filters import render_sidebar
 from utils.calculations import calculate_network_stress_metrics
@@ -82,6 +81,7 @@ def render():
     with col1:
         st.markdown('<div class="chart-container">', unsafe_allow_html=True)
         st.markdown(f'<div class="chart-title">📊 {t("network_stress.hhi_title", L)}</div>', unsafe_allow_html=True)
+        from streamlit_echarts import st_echarts
         result_hhi = st_echarts(options=hhi_chart_echarts(hhi), height="400px", events={"click": CLICK_FORMAT}, key="hhi")
         maybe_popup("hhi", result_hhi, "hhi")
         st.markdown('</div>', unsafe_allow_html=True)

@@ -5,7 +5,6 @@ from components.charts import traffic_revenue_stacked_echarts
 from components.kpi_card import kpi_row
 from components.filters import render_sidebar
 from utils.i18n import t, lang
-from streamlit_echarts import st_echarts
 from components.explain_popup import CLICK_FORMAT, maybe_popup
 
 
@@ -118,6 +117,7 @@ def _render_echarts_scissors(fact: pd.DataFrame) -> None:
         ],
     }
     ev_key = "scissors"
+    from streamlit_echarts import st_echarts
     result = st_echarts(options=options, height="500px", events={"click": CLICK_FORMAT}, key=ev_key)
     maybe_popup("scissors", result, ev_key)
 
@@ -215,6 +215,7 @@ def render():
     # ── SECONDARY CHART: Traffic volume ──
     st.markdown('<div class="chart-container">', unsafe_allow_html=True)
     st.markdown(f'<div class="chart-title">📦 {t("market_overview.traffic_volume_title", L)}</div>', unsafe_allow_html=True)
+    from streamlit_echarts import st_echarts
     result2 = st_echarts(options=traffic_revenue_stacked_echarts(fact), height="400px", events={"click": CLICK_FORMAT}, key="traffic_vol")
     maybe_popup("traffic_volume", result2, "traffic_vol")
     st.markdown('</div>', unsafe_allow_html=True)
