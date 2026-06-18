@@ -68,8 +68,8 @@ _CONTENT = {
             {
                 "heading": {"es": "¿Qué significa este valor?", "en": "What does this value mean?"},
                 "body": {
-                    "es": "Muestra el **volumen absoluto** de tráfico de datos (teal) y voz (azul) por trimestre.\n\n• **{series}** en **{name}** = **{value}**\n• El tráfico de datos domina crecientemente sobre la voz.",
-                    "en": "Shows the **absolute volume** of data traffic (teal) and voice (blue) per quarter.\n\n• **{series}** in **{name}** = **{value}**\n• Data traffic increasingly dominates voice.",
+                    "es": "Muestra el **volumen absoluto** de tráfico (en TB) por trimestre: datos (cobre) y voz (rojo).\n\n• **{series}** en **{name}** = **{value}** TB\n• El tráfico de datos domina crecientemente sobre la voz.",
+                    "en": "Shows the **absolute volume** of traffic (in TB) per quarter: data (copper) and voice (red).\n\n• **{series}** in **{name}** = **{value}** TB\n• Data traffic increasingly dominates voice.",
                 },
             },
             {

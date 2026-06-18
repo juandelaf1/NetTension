@@ -16,19 +16,16 @@
 | Remove agent protocol docs from repo | ✅ |
 | Initial commit with tag `v0.1.0` | 🔷 |
 
-## Sprint 2: Power BI Dashboard (Days 1–2)
+## Sprint 2: Streamlit Dashboard (Days 1–2)
 
 | Task | Status |
 |------|--------|
-| Import 14 .parquet files into Power BI | ◻️ |
-| Create star schema relationships | ◻️ |
-| Add DAX measures (CAGR, HHI, Scissors, NSI, Macro) | ◻️ |
-| Build Page 1: Market Overview | ◻️ |
-| Build Page 2: Network Stress & Infrastructure | ◻️ |
-| Build Page 3: European Context & Regulatory | ◻️ |
-| Build Page 4: Fair Share Simulator (What-If) | ◻️ |
-| Build Page 5: Governance & Bias Audit | ◻️ |
-| Deploy to Power BI Service (public URL) | ◻️ |
+| Build Page 1: Market Overview | ✅ |
+| Build Page 2: Network Stress & Infrastructure | ✅ |
+| Build Page 3: European Context & Regulatory | ✅ |
+| Build Page 4: Fair Share Simulator (What-If) | ✅ |
+| Build Page 5: Evolution & Strategy | ✅ |
+| Deploy to Streamlit Cloud (public URL) | ✅ |
 
 ## Sprint 3: Docker & Supplementary (Days 3–4)
 
@@ -60,10 +57,12 @@ NetTension/
 ├── README.md
 ├── ROADMAP.md
 ├── pyproject.toml
-├── requirements.txt
+├── requirements-prod.txt
+├── requirements-test.txt
 ├── Dockerfile
 ├── assets/
-│   └── banner.svg
+│   ├── banner.svg
+│   └── NetTension_banner.png
 ├── data/
 │   ├── processed/     (14 .parquet + extracted .txt)
 │   └── SOURCES.yaml
@@ -71,10 +70,12 @@ NetTension/
 │   └── DATA_MODEL.md
 ├── reports/
 │   └── EDA_SUMMARY.md
+├── streamlit_app/
+│   └── app.py
 └── src/
     ├── loader/
     ├── transform/
     └── pipeline/
 ```
 
-**Excluded:** `data/raw/`, agent protocol docs (`docs/00_*`–`08_*`), `.pbix`, environment files.
+**Excluded:** `data/raw/`, agent protocol docs (`docs/00_*`–`08_*`), environment files, Tableau workbooks.

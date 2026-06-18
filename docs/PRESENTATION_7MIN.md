@@ -54,7 +54,7 @@ Seguimos un **protocolo científico** con 3 pilares:
 - H5: Macro Decline — las telecos pesan menos en el PIB
 - H6: Infrastructure Elasticity — los márgenes se comprimen
 
-**Stack técnico:** Python ETL (pandas + DuckDB) → Parquet → Power BI (opcional) + Streamlit (dashboard interactivo). Datos en Kaggle para la comunidad.
+**Stack técnico:** Python ETL (pandas + DuckDB) → Parquet → Streamlit (dashboard interactivo). Datos en Kaggle para la comunidad.
 
 ---
 
@@ -173,7 +173,7 @@ Código QR → https://nettension.streamlit.app
 
 - [ ] Streamlit corriendo local (`streamlit run streamlit_app/app.py`)
 - [ ] O alternativo: deploy en Streamlit Cloud abierto en Chrome
-- [ ] Power BI .pbip en carpeta por si preguntan
+
 - [ ] Kaggle dataset abierto: kaggle.com/juandelaf/nettension
 - [ ] GitHub repo abierto: github.com/juandelaf1/NetTension
 - [ ] Cronómetro visible (7 min)
@@ -195,7 +195,7 @@ BEREC 2025 cuestiona el free-riding, pero la Net Neutrality regulación EU permi
 El capex 5G está incluido en los datos CNMC. El estrés es mayor porque 5G requiere más inversión para el mismo ingreso por usuario.
 
 **¿Streamlit por qué y no Power BI?**
-Ambos. Power BI para la entrega del módulo (obligatorio), Streamlit para portfolio público y reproducibilidad (código abierto, versionable).
+Streamlit porque todo el pipeline (ETL + dashboard) vive en Python, eliminando la dependencia de DAX y Power BI Desktop. El dashboard es reproducible, versionable con git, y desplegable en Streamlit Cloud sin costo.
 
 **¿Los datos están actualizados?**
 CNMC 2005T1-2025T4. Eurostat hasta 2025. Última revisión: Junio 2026.

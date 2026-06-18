@@ -1,10 +1,10 @@
-# NetTension — Power BI Data Model Specification
+# NetTension — Data Model Specification
 
 ## Quick Start (5 minutos)
 
 ### 1. Importar datos
+Los archivos Parquet se cargan automáticamente al ejecutar el ETL o el dashboard. Archivos disponibles en `data/processed/`:
 ```
-Power BI Desktop → Obtener datos → Parquet → Seleccionar TODOS estos archivos:
   data/processed/fact_observed_agg.parquet   (tabla principal)
   data/processed/dim_time.parquet            (dimensión tiempo)
   data/processed/dim_operator.parquet        (dimensión operadores)
@@ -63,7 +63,7 @@ Source: `data/processed/cnmc_mercados_clean.parquet`
 | tecnologia_de_acceso | String | Access technology (FTTH, xDSL, etc.) |
 
 ### Dim_Time
-Generated from `trimestre_dt` in Power BI or created as lookup table.
+Generated from `trimestre_dt` in the ETL pipeline or created as lookup table.
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -432,20 +432,12 @@ Objetivo: Transparencia metodológica y limitaciones.
 | Governance Legend | Shape | 4 recuadros de colores: OBSERVED/ESTIMATED/POLICY_MODEL/CONSTANT |
 | Limitations | Text box | Lista de limitaciones conocidas (cambio metodología 2012, ISOC_TF sin móvil, Sandvine no peer-reviewed) |
 
-## DAX Measures
+## Streamlit Usage
 
-All DAX measures are defined in the section above. Import them into Power BI using:
+The Streamlit dashboard (`streamlit_app/`) loads these Parquet files directly via `duckdb` and `pandas`. No DAX or Power BI setup needed. Run:
+
+```bash
+streamlit run streamlit_app/app.py
 ```
-Modelado → Nueva medida → Pegar código DAX
-```
 
-## Power BI Setup Instructions
-
-1. Open Power BI Desktop → New file
-2. Get Data → Parquet → Navigate to `data/processed/` → Select ALL .parquet files → Load
-3. Model view → Create relationships per Quick Start table above
-4. Modeling → New parameter → Create 3 What-If parameters
-5. Copy all DAX measures from section above
-6. Build 5 pages per layouts above
-7. File → Publish → Power BI Service → Get embed URL
-8. Share link as public (or embed for portfolio)
+For custom analysis, load any Parquet file with `pandas.read_parquet()` or `duckdb.sql()`.

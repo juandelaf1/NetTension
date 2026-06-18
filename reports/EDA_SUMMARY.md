@@ -134,4 +134,4 @@ Dimensions: `freq`, `unit`, `na_item`, `geo\TIME_PERIOD` (pipe-separated from ye
 | Bundling | No | Yes (paquetes) | No | No | No |
 | Portability | Yes (portabilidades) | No | No | No | No |
 
-**Next phase**: Map CNMC columns to dashboard model variables, design ETL for stacked Mercados table, and load into Power BI as Fact_Observed_Data.
+**Next phase**: Map CNMC columns to dashboard model variables, design ETL for stacked Mercados table, and load into Streamlit dashboard as Fact_Observed_Data.

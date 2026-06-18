@@ -30,7 +30,7 @@ NetTension is a neutral, data-driven framework that models this tension using **
 
 ## Slide 3: Methodology & Data (45s) — EN
 
-> *Slide: Architecture diagram (Data → ETL → Star Schema → Power BI)*
+> *Slide: Architecture diagram (Data → ETL → Star Schema → Streamlit)*
 
 "Methodology in one sentence: **Load real data, clean nothing away, compute every KPI with traceable governance.**
 
@@ -88,7 +88,7 @@ H6 — Infrastructure Elasticity: CONFIRMED. The margin between data transport c
 
 ## Slide 7: Dashboard Demo (1min 15s) — EN
 
-> *Live demo of Power BI dashboard — 5 pages*
+> *Live demo of Streamlit dashboard — 5 pages*
 
 "Let me walk through the dashboard in 60 seconds.
 
@@ -102,7 +102,7 @@ H6 — Infrastructure Elasticity: CONFIRMED. The margin between data transport c
 
 **Page 5 — Governance & Bias Audit:** Every data source with its layer, confidence level, and limitations. Transparency by design.
 
-The dashboard is deployed on Power BI Service at [URL]. Public access. Try it yourself."
+The dashboard is deployed on Streamlit Cloud. Public access. Try it yourself."
 
 ---
 
