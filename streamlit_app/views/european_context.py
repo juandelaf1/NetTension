@@ -155,10 +155,7 @@ def render():
         st.markdown('<div class="chart-container">', unsafe_allow_html=True)
         fig_comp = eu_comparison_chart(eu, L)
         if fig_comp is not None:
-            comp_click = st.plotly_chart(fig_comp, width="stretch", config={"displayModeBar": False}, on_select="rerun", key="eu_comparison")
-            if comp_click and comp_click.selection and comp_click.selection.points:
-                pt = comp_click.selection.points[0]
-                maybe_popup("eu_comparison", {"name": pt.get("x", ""), "value": pt.get("y", ""), "seriesName": pt.get("legendgroup", "")}, "eu_comparison")
+            st.plotly_chart(fig_comp, width="stretch", config={"displayModeBar": False})
         st.markdown('</div>', unsafe_allow_html=True)
 
         # ── ROW 2: Key Metrics + 5G Gauge ──
