@@ -250,7 +250,6 @@ NetTension/
 ├── assets/                Banner, diagrams, branding
 ├── data/
 │   ├── processed/         14 cleaned .parquet files (ETL output)
-│   ├── csv/               CSV exports for portability
 │   └── SOURCES.yaml       Governance metadata (DEC-007/008)
 ├── docs/
 │   └── DATA_MODEL.md      Star schema specification

@@ -14,13 +14,7 @@ if not DB_PATH.exists():
     DB_PATH = Path.cwd() / "data" / "processed" / "net_tension.duckdb"
 
 PARQUET_DIR = _project_root / "data" / "processed"
-CSV_DIR = _project_root / "data" / "csv"
 
-CSV_MAP = {
-    "fact_observed_agg": "fact_observed_agg.csv",
-    "kpi_hhi": "kpi_hhi.csv",
-    "dim_eu_context": "dim_eu_context.csv",
-}
 
 @st.cache_resource
 def get_connection():
@@ -47,30 +41,6 @@ def _load_parquet(name: str) -> Optional[pd.DataFrame]:
         return None
 
 
-def _find_csv(name: str) -> Optional[Path]:
-    csv_name = CSV_MAP.get(name)
-    if not csv_name:
-        return None
-    for base in [CSV_DIR, Path.cwd() / "data" / "csv"]:
-        p = base / csv_name
-        if p.exists():
-            return p
-    return None
-
-def _load_csv(name: str) -> Optional[pd.DataFrame]:
-    path = _find_csv(name)
-    if path is None:
-        return None
-    for sep in [",", ";"]:
-        try:
-            df = pd.read_csv(path, sep=sep)
-            if not df.empty:
-                return df
-        except Exception:
-            continue
-    return None
-
-
 def _load_table(name: str, query: str) -> pd.DataFrame:
     df = _load_parquet(name)
     if df is not None:
@@ -81,12 +51,9 @@ def _load_table(name: str, query: str) -> pd.DataFrame:
             return con.execute(query).df()
         except Exception:
             pass
-    df = _load_csv(name)
-    if df is not None:
-        return df
     raise FileNotFoundError(
         f"No data source found for '{name}'. "
-        "Expected parquet, DuckDB, or CSV at data/csv/"
+        "Expected parquet or DuckDB at data/processed/"
     )
 
 @st.cache_data(ttl=3600)
