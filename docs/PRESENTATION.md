@@ -89,7 +89,7 @@
 
 > _¿Es España un caso aislado? Crucé nuestros datos con benchmarks europeos de ETNO, GSMA y BEREC. Y los números son contundentes._
 >
-> _El ARPU europeo —lo que paga un usuario al mes— es 14,8 euros. En Estados Unidos es 41,7 euros. **Casi el triple.** En Corea del Sur, 32,5 euros. En Japón, 29,1 euros. El consumidor europeo paga menos de la mitad que el asiático y un tercio que el americano. Y con ese margen, se espera que los operadores desplieguen 5G y fibra en todo el continente._
+> _El ARPU europeo —lo que paga un usuario al mes— es 14,8 euros. En Estados Unidos es 41,7 euros. **Casi el triple.** En Corea del Sur, 26,0 euros. En Japón, 22,6 euros. El consumidor europeo paga menos que en cualquier otra economía desarrollada. Y con ese margen, se espera que los operadores desplieguen 5G y fibra en todo el continente._
 >
 > _Construí un timeline regulatorio que muestra los hitos clave: desde la Net Neutrality de 2015 hasta la Ley de Década Digital de 2025 y el debate Fair Share de 2026. La fotografía es clara: el problema lleva décadas gestándose y las soluciones regulatorias van por detrás de la realidad del mercado._
 
@@ -107,9 +107,9 @@
 
 **KPIs que señalas:**
 - ARPU Europa: **14,8 €/mes**
-- ARPU USA: **41,7 €/mes** (3× Europa)
-- ARPU Corea: **32,5 €/mes**
-- ARPU Japón: **29,1 €/mes**
+- ARPU USA: **41,7 €/mes** (2,8× Europa)
+- ARPU Corea: **26,0 €/mes**
+- ARPU Japón: **22,6 €/mes**
 
 ---
 
