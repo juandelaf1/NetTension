@@ -198,11 +198,13 @@ def render():
     st.markdown('</div>', unsafe_allow_html=True)
 
     # ── THE CALL TO ACTION ──
+    remaining_pp = max(impact["remaining_gap_pp"], 0)
     st.markdown(f"""
     <div class="insight-box emerald">
-      <b>🎯 {'La conclusión es inevitable:' if L == 'es' else 'The conclusion is inevitable:'}</b> {'Con una contribución OTT del' if L == 'es' else 'With an OTT contribution of'} <b>30%</b> {'y alivio CAPEX del' if L == 'es' else 'and CAPEX relief of'} <b>20%</b>,
-      {'la brecha se reduce drásticamente.' if L == 'es' else 'the gap is drastically reduced.'}
-      <b>{'Fair Share no es un impuesto. Es inversión en infraestructura digital europea.' if L == 'es' else 'Fair Share is not a tax. It is investment in European digital infrastructure.'}</b>
+      <b>🎯 {'Punto crítico:' if L == 'es' else 'Critical insight:'}</b><br>
+      {'Incluso en el escenario más optimista (25% OTT + 30% CAPEX Relief), solo cerramos ~35pp de los 127pp de brecha.' if L == 'es' else 'Even in the most optimistic scenario (25% OTT + 30% CAPEX Relief), we only close ~35pp of the 127pp gap.'}<br>
+      <b style="color:#D97724;">{'Quedan ~80pp de brecha remanente.' if L == 'es' else 'A massive ~80pp gap remains.'}</b><br>
+      {'Fair Share es una palanca legítima y necesaria, pero no una solución única.' if L == 'es' else 'Fair Share is a legitimate and necessary lever, but not a standalone silver bullet.'}
     </div>
     """, unsafe_allow_html=True)
 

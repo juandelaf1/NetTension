@@ -47,14 +47,14 @@ def render():
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number coral">{stress['nsi_current']:.4f}</div>
-          <div class="label">📶 NSI ({'network stress' if L == 'en' else 'estrés de red'})</div>
+          <div class="label">📶 NSI ({'saturación de nodos' if L == 'es' else 'node saturation'} — {'métrica logarítmica' if L == 'es' else 'log metric'})</div>
         </div>
         """, unsafe_allow_html=True)
     with col_c:
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number blue">€{stress['arpu_current']*1e6:,.2f}</div>
-          <div class="label">💳 ARPU</div>
+          <div class="label">💳 ARPU ({'ingreso promedio ponderado' if L == 'es' else 'weighted avg revenue'})</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -102,6 +102,22 @@ def render():
     st.markdown(f"""
     <div class="insight-box violet">
       <b>🔬 {t('network_stress.key_insight_title', L)}:</b> {t('network_stress.key_insight', L)}
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── SURVIVAL MECHANISMS: How operators have coped ──
+    st.markdown(f"""
+    <div class="insight-box teal">
+      <b>🛠 {'¿Cómo han sobrevivido 20 años?' if L == 'es' else 'How have they survived 20 years?'}</b><br>
+      {'Los operadores han compensado la compresión de márgenes mediante:' if L == 'es' else 'Operators have offset margin compression through:'}
+      <ul style="margin:0.5rem 0 0 1.2rem;color:#8B949E;font-size:0.9rem;">
+        <li><b>{'Reducción agresiva de OPEX' if L == 'es' else 'Aggressive OPEX reduction'}</b> — {'automatización, migración de cobre a fibra (menor coste energético y de mantenimiento)' if L == 'es' else 'automation, copper-to-fiber migration (lower energy and maintenance costs)'}</li>
+        <li><b>{'Monetización de activos' if L == 'es' else 'Asset monetization'}</b> — {'venta y arrendamiento de torres móviles a operadores de infraestructura neutra como Cellnex' if L == 'es' else 'sale & leaseback of mobile towers to neutral infrastructure companies like Cellnex'}</li>
+        <li><b>{'Acuerdos de compartición de red' if L == 'es' else 'Network sharing agreements'}</b> — {'coopetición para reducir a la mitad el CAPEX de despliegue' if L == 'es' else 'coopetition to halve deployment CAPEX'}</li>
+      </ul>
+      <p style="margin-top:0.5rem;color:#CF3B30;font-weight:600;">
+        ⚠ {'El problema es que el ROCE (Retorno sobre Capital Empleado) ahora es menor que el WACC (Coste Medio Ponderado de Capital). La inversión en infraestructura en Europa está destruyendo valor económico porque ha alcanzado su límite físico de optimización.' if L == 'es' else 'The problem: ROCE is now lower than WACC. Infrastructure investment in Europe is fundamentally destroying economic value because it has hit its physical optimization limit.'}
+      </p>
     </div>
     """, unsafe_allow_html=True)
 

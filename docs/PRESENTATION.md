@@ -33,9 +33,12 @@
 >
 > _Eso es exactamente lo que ocurre en las telecos europeas desde hace 20 años. El tráfico de datos se dispara, los ingresos se estancan, y la brecha entre ambos se abre cada trimestre. Se llama **Efecto Tijera** — Scissors Effect — y es el centro del debate regulatorio sobre Fair Share: ¿deben Google, Netflix, Meta pagar por el uso que hacen de las redes?_
 >
-> _Construí NetTension para medir esta brecha con datos reales. 41.937 filas del regulador español, la CNMC. 3 millones de filas de Eurostat. Veinte años de historia trimestral, de 2005 a 2025. Sin simulaciones. Sin datos sintéticos. Solo hechos observados._
+> _Los operadores han sobrevivido dos décadas reduciendo costes operativos (automatización, migración cobre-fibra), monetizando activos (venta de torres a Cellnex) y compartiendo redes. Pero esos mecanismos de supervivencia han llegado a su límite. El ROCE —Return on Capital Employed— está por debajo del WACC —Weighted Average Cost of Capital—. Invertir en infraestructura en Europa destruye valor económico. No es que el margen se reduzca: es que no hay margen._
+> >
+> > _Construí NetTension para medir esta brecha con datos reales. 41.937 filas del regulador español, la CNMC. 3 millones de filas de Eurostat. Veinte años de historia trimestral, de 2005 a 2025. Sin simulaciones. Sin datos sintéticos. Solo hechos observados._
 
 **Lo que muestras en dashboard:** Página 1 — Market Overview
+![Market Overview](../assets/screenshots/01_market_overview.png)
 - Gráfico de líneas: tráfico indexado (azul) vs ingresos indexados (rojo punteado), 2005=100
 - KPI cards superiores: +127% CAGR tráfico, −0.4% CAGR ingresos, 127pp gap, HHI
 
@@ -58,9 +61,10 @@
 >
 > _La hipótesis 2 decía: «el mercado se está concentrando, cada vez hay menos operadores y eso empeora la tijera». Tenía todos los números para esperar eso. El HHI —el índice que mide concentración— empezó en 3.482 en 2005, muy por encima del umbral de concentración. Pero en 2025 el HHI había caído a 2.368. **Bajó 1.114 puntos.** Hay más operadores compitiendo que hace 20 años. Y aún así la tijera empeoró._
 >
-> _Ese hallazgo —H2 refutada— es el más importante de todo el proyecto. Demuestra que **el problema no es de competencia ni de monopolio. Es estructural del modelo de negocio de la conectividad.** Ni más regulación antimonopolio ni más competencia resuelven la asimetría tráfico/ingreso. Por eso el debate Fair Share existe._
+> _Ese hallazgo —H2 refutada— es el más importante de todo el proyecto. Demuestra que **el problema es un fallo estructural del modelo de utilidad, no de poder de mercado.** Los operadores han agotado las palancas de supervivencia: reducción de OPEX, monetización de activos (sale & leaseback a Cellnex), acuerdos de compartición de red. El ROCE está por debajo del WACC. Invertir en conectividad en Europa destruye valor. Ni más competencia ni más regulación antimonopolio resuelven la asimetría tráfico/ingreso. Por eso el debate Fair Share existe._
 
 **Lo que muestras en dashboard:** Página 2 — Network Stress
+![Network Stress](../assets/screenshots/02_network_stress.png)
 - Gráfico HHI con bandas de colores: verde (<1000 competitivo), ámbar (1000-2500 moderado), rojo (>2500 concentrado)
 - Scatter plot animado: NSI (eje X, escala logarítmica) vs ARPU (eje Y), burbujas por operador, animado por año
 
@@ -90,6 +94,7 @@
 > _Construí un timeline regulatorio que muestra los hitos clave: desde la Net Neutrality de 2015 hasta la Ley de Década Digital de 2025 y el debate Fair Share de 2026. La fotografía es clara: el problema lleva décadas gestándose y las soluciones regulatorias van por detrás de la realidad del mercado._
 
 **Lo que muestras en dashboard:** Página 3 — European Context
+![European Context](../assets/screenshots/03_european_context.png)
 - Barras agrupadas: ARPU comparado (UE, USA, Corea, Japón)
 - CAPEX per cápita por país
 - Timeline regulatorio interactivo
@@ -112,7 +117,7 @@
 
 **Lo que dices:**
 
-> _Pasemos del diagnóstico a la acción. Diseñé un simulador con tres palancas que cualquier policy maker podría usar para explorar escenarios._
+> _Pasemos del diagnóstico a la acción. Diseñé un Policy Model —lo etiqueto así intencionadamente— que cualquier policy maker puede usar para explorar escenarios. Aviso: es un modelo lineal simplificado, con limitaciones documentadas. Pero es útil para la discusión._
 >
 > _Primera palanca: contribución OTT. ¿Y si Google, Netflix, Meta, Amazon, Apple y Microsoft —que generan el 50% del tráfico global según Sandvine— contribuyeran a los costes de red?_
 >
@@ -122,9 +127,10 @@
 >
 > _Tercera palanca: ajuste de tráfico. Escenario optimista o pesimista._
 >
-> _En el mejor escenario razonable —25% OTT, 30% CAPEX Relief— cerramos unos 35 puntos de los 127. Siguen quedando 80 puntos de brecha. **Esto demuestra que Fair Share ayuda pero no resuelve todo.** Es una palanca legítima dentro de un debate que necesita más soluciones._
+> _En el mejor escenario razonable —25% OTT, 30% CAPEX Relief— cerramos unos 35 puntos de los 127. **Siguen quedando ~80 puntos de brecha.** Esto demuestra que Fair Share es necesario pero no suficiente. La brecha estructural persiste incluso en el escenario más favorable. El problema de fondo —ROCE < WACC— requiere soluciones más profundas: reforma del marco regulatorio, consolidación del mercado, incentivos a la inversión._
 
 **Lo que muestras en dashboard:** Página 4 — Fair Share
+![Fair Share Simulator](../assets/screenshots/04_fair_share.png)
 - 3 sliders en la barra lateral (OTT, CAPEX, Traffic)
 - 3 gauges tipo velocímetro que se mueven en vivo
 - Donut doble concéntrico: video=65% del tráfico, Big 6=50%
@@ -134,14 +140,14 @@
 > _Los gauges son intencionales: se parecen a los indicadores de un coche. Cualquier ejecutivo entiende que si la aguja se mueve a la derecha, es bueno. El donut doble responde visualmente a la pregunta «¿por qué deberían pagar los OTT?» porque muestra en un solo golpe de vista que 6 empresas generan la mitad del tráfico._
 
 **Sesgo que mencionas:**
-> _Este simulador es lineal y simplificado a propósito. La elasticidad real —cómo reacciona el tráfico al precio— es más compleja. BEREC 2025 cuestiona la premisa del free-riding. Lo documenté como limitación en la gobernanza del modelo._
+> _Este Policy Model es lineal y simplificado a propósito. La elasticidad real —cómo reacciona el tráfico al precio— es más compleja. BEREC 2025 cuestiona la premisa del free-riding. Lo documenté como limitación en la gobernanza del modelo._
 
 **KPIs que señalas:**
 - Video = **65%** del tráfico global
 - Big 6 = **50%** del tráfico
 - OTT 15% cierra **~19pp** de brecha
 - OTT 25% + CAPEX 30% cierra **~35pp**
-- Brecha restante: **~80pp** (sigue siendo grande)
+- Brecha restante: **~80pp** (el gap estructural persiste)
 
 ---
 
@@ -161,6 +167,7 @@
 > _Todo el código es abierto. Los datos están publicados en Kaggle. Cualquier persona puede replicar el análisis, cuestionar mis decisiones o mejorarlo. Esa es la credibilidad que necesita un debate regulatorio._
 
 **Lo que muestras en dashboard:** Página 6 — About
+![About](../assets/screenshots/06_about.png)
 - Secciones de proyecto, fuentes, metodología, resultados, stack técnico
 - Código QR que enlaza al dashboard desplegado
 
@@ -184,9 +191,9 @@
 
 > _Tres ideas para llevar a casa:_
 >
-> **Una: La tijera tráfico-ingreso es real, estructural y empeora.** 20 años de datos, 5 hipótesis confirmadas. No es un ciclo: es una tendencia de fondo que necesita acción regulatoria.
+> **Una: La tijera tráfico-ingreso es real, estructural y empeora.** 20 años de datos, 5 hipótesis confirmadas. El ROCE está por debajo del WACC: invertir en infraestructura en Europa destruye valor económico. Los mecanismos de supervivencia —OPEX, venta de torres a Cellnex, compartición de red— están agotados. No es un ciclo: es una tendencia de fondo que necesita acción regulatoria.
 >
-> **Dos: No es un problema de competencia.** El HHI bajó, hay más operadores, y la tijera empeoró. H2 lo refuta. El debate Fair Share no debe enmarcarse como «monopolio vs competencia», sino como sostenibilidad del modelo de conectividad.
+> **Dos: No es un problema de competencia, es un fallo estructural del modelo de utilidad.** El HHI bajó 1.114 puntos, hay más operadores, y la tijera empeoró. H2 lo refuta. El debate Fair Share no debe enmarcarse como «monopolio vs competencia», sino como sostenibilidad del modelo de conectividad.
 >
 > **Tres: Los datos granulares importan.** Eurostat solo no captura la realidad que se ve en los microdatos de la CNMC. Las decisiones políticas basadas únicamente en estadísticas agregadas subestiman sistemáticamente el estrés de infraestructura en el sur de Europa.
 >
@@ -201,6 +208,9 @@
 - Incorporar CAPEX real por operador
 - Afinar el modelo Fair Share con elasticidades empíricas
 - Publicar los hallazgos en revistas académicas (Telecommunications Policy, Information Economics and Policy)
+
+> **Bonus:** La página 5 — Evolution & Strategy — que no ves en esta demo explora escenarios de salida: consolidación del mercado, re-regulación asimétrica, y modelos alternativos de conectividad.
+![Evolution & Strategy](../assets/screenshots/05_evolution_strategy.png)
 
 ---
 
@@ -241,7 +251,13 @@ Porque la CNMC ofrece datos más granulares que otras NRAs. España como caso de
 BEREC 2025 cuestiona el free-riding, pero la regulación europea de Net Neutrality permite mecanismos de contribución si son transparentes y no discriminatorios.
 
 **¿Qué pasa con 5G?**
-El CAPEX 5G está incluido en los datos de la CNMC. El estrés es mayor porque 5G requiere más inversión para el mismo ingreso por usuario.
+El CAPEX 5G está incluido en los datos de la CNMC. El estrés es mayor porque 5G requiere más inversión para el mismo ingreso por usuario. Y con ROCE < WACC, cada euro invertido en 5G profundiza la destrucción de valor.
+
+**¿ROCE < WACC? ¿Qué significa?**
+El Return on Capital Employed mide cuánto rentabiliza un operador el capital invertido. El WACC es el coste de ese capital (deuda + equity). Si ROCE < WACC, la empresa destruye valor: gana menos de lo que le cuesta financiarse. Es la definición académica de un modelo insostenible.
+
+**¿Los operadores no pueden seguir vendiendo torres?**
+La venta de torres a Cellnex y otras torreras fue un mecanismo de supervivencia puntual. Es venta de activos, no generación de valor recurrente. Una vez vendidas, no hay más torres que vender, y ahora pagan alquiler por lo que antes era suyo. No es una solución estructural.
 
 **¿Por qué Streamlit y no Power BI?**
 Porque todo el pipeline (ETL + dashboard) vive en un solo lenguaje, Python. Elimina la dependencia de herramientas propietarias. El dashboard es versionable con git y desplegable en Streamlit Cloud sin costo.

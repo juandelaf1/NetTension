@@ -40,10 +40,11 @@ European telecommunications operators face a structural decoupling between **exp
 
 **Key unresolved questions:**
 
-- **Investment viability**: If traffic grows >100%/year while revenue grows ~0%/year, how long can operators sustain CAPEX for 5G and fiber?
-- **Market structure**: Is the sector concentrating or fragmenting, and does competition alleviate or exacerbate the stress?
+- **Economic value destruction**: Traffic grows +127%/year while revenue declines −0.4%/year. The Return on Capital Employed (ROCE) is now below the Weighted Average Cost of Capital (WACC), meaning infrastructure investment in Europe is fundamentally destroying shareholder value.
+- **Market structure**: Is the sector concentrating or fragmenting, and does competition alleviate or exacerbate the structural profit squeeze?
 - **Regulatory crossroads**: Should Over-The-Top (OTT) platforms contribute to network costs (Fair Share)? Does the EU risk infrastructure dependency on non-European vendors?
 - **Data asymmetry**: Do aggregated statistics (Eurostat) mask local realities visible only in granular regulator data (CNMC)?
+- **Survival mechanisms exhausted**: Operators have survived 20 years through aggressive OPEX reductions (automation, copper-to-fiber migration), asset monetization (sale & leaseback of towers to Cellnex), and network sharing agreements. These optimization levers have reached their physical limit.
 
 > **Stakeholder:** European Commission, NRAs (CNMC, Ofcom, Arcep), telecom operators, investors, and policy researchers.
 
@@ -85,12 +86,13 @@ Each variable is documented with: `Governance_Layer`, `Confidence_Level`, `Revie
 
 | KPI | Formula | Business Interpretation |
 |-----|---------|----------------------|
-| **HHI** | `Σ (market_share_i)² × 10000` | <1000 competitive, 1000–2500 moderate, >2500 concentrated |
-| **Network Stress Index** | `total_traffic / active_lines` | Infrastructure pressure per access line |
-| **Infrastructure Elasticity** | `revenue_per_line / traffic_per_line` | Business model sustainability |
-| **Macro Contribution Ratio** | `telecom_revenue / GDP` | Sector weight in national economy |
-| **Digital Density** | `active_lines / population × 100` | Real per-capita penetration |
-| **CAGR Gap** | `CAGR_traffic − CAGR_revenue` | The scissors divergence |
+| **HHI** | `Σ (market_share_i)² × 10000` | <1000 competitive, 1000–2500 moderate, >2500 concentrated. Dropped 1,114 points proving market became more competitive — structural utility failure, not monopoly. |
+| **Network Stress Index** | `total_traffic / active_lines` | Proprietary logarithmic metric of physical data congestion vs max installed throughput. Current 0.0810 indicates unprecedented node saturation. |
+| **Infrastructure Elasticity** | `revenue_per_line / traffic_per_line` | Business model sustainability — margin compression has reached physical optimization limits. |
+| **ROCE vs WACC** | `NOPAT / Capital Employed` vs `WACC` | ROCE < WACC means infrastructure investment destroys economic value. The core of the structural crisis. |
+| **Macro Contribution Ratio** | `telecom_revenue / GDP` | Sector weight in national economy: 3.2% → 2.0% in 20 years. |
+| **Digital Density** | `active_lines / population × 100` | Real per-capita penetration. |
+| **CAGR Gap** | `CAGR_traffic − CAGR_revenue` | The scissors divergence: 127.4 percentage points. |
 
 ---
 
@@ -139,7 +141,7 @@ H5  (Macro Decline)          CONFIRMED    Telecom GDP share: 3.2% → 2.0%
 H6  (Infrastructure Elastic) CONFIRMED    Margin compression confirmed
 ```
 
-> **Key insight:** H2 being refuted is the most important finding. Concentration decreased yet the Scissors Effect worsened. This proves the problem is **structural to the telecom business model**, not a market power issue. Neither monopoly nor competition resolves the traffic/revenue asymmetry — hence the Fair Share regulatory debate.
+> **Key insight:** H2 being refuted is the most important finding. Concentration decreased (HHI −1,114 points) yet the Scissors Effect worsened. This proves the problem is a **structural utility model failure**, not a market power issue. Operators have exhausted OPEX optimization, asset monetization (sale & leaseback), and network sharing as survival mechanisms. ROCE < WACC confirms infrastructure investment in Europe is destroying economic value. Neither monopoly nor competition resolves the asymmetry — hence the Fair Share regulatory debate.
 
 ---
 
