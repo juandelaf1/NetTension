@@ -8,36 +8,34 @@ from utils.i18n import t, lang
 from components.explain_popup import CLICK_FORMAT, maybe_popup
 
 
-def _render_echarts_scissors(fact: pd.DataFrame) -> None:
+def _render_echarts_scissors(fact: pd.DataFrame, L: str) -> None:
     categories = fact["trimestre_dt"].dt.strftime("%Y Q%q").tolist()
     traffic = fact["data_traffic_index"].round(1).tolist()
     revenue = fact["revenue_index"].round(1).tolist()
     gap = [(t - r) for t, r in zip(traffic, revenue)]
+    t_traffic = t("charts.traffic_index", L)
+    t_revenue = t("charts.revenue_index", L)
+    t_gap = t("charts.gap", L)
+    t_click = t("charts.click_value", L)
 
     options = {
         "tooltip": {
             "trigger": "axis",
-            "axisPointer": {"type": "cross", "label": {"backgroundColor": "#1A2236"}},
-            "formatter": """function(params) {
+            "axisPointer": {"type": "cross", "label": {"backgroundColor": "#161B22"}},
+            "formatter": f"""function(params) {{
                 let tip = '<b>' + params[0].axisValue + '</b><br/>';
-                let t = params[0].value, r = params[1].value, g = params[2].value;
-                tip += params[0].marker + ' Traffic: <b>' + t.toFixed(1) + '</b> (2005=100)<br/>';
-                tip += params[1].marker + ' Revenue: <b>' + r.toFixed(1) + '</b> (2005=100)<br/>';
+                let tv = params[0].value, rv = params[1].value, gv = params[2].value;
+                tip += params[0].marker + ' {t_traffic}: <b>' + tv.toFixed(1) + '</b> (2005=100)<br/>';
+                tip += params[1].marker + ' {t_revenue}: <b>' + rv.toFixed(1) + '</b> (2005=100)<br/>';
                 tip += '<hr style="margin:4px 0"/>';
-                tip += '✂️ Gap: <b>' + g.toFixed(1) + ' pp</b><br/>';
-                tip += '<span style="font-size:0.75rem;color:#90A4AE;">';
-                if (g > 0) {
-                    tip += '⚠ El tráfico crece ' + g.toFixed(1) + ' pp más que los ingresos';
-                } else {
-                    tip += '📊 Ingresos y tráfico alineados';
-                }
-                tip += '</span>';
+                tip += '✂️ {t_gap}: <b>' + gv.toFixed(1) + ' pp</b><br/>';
+                tip += '<span style="font-size:0.75rem;color:#8B949E;">{t_click}: ' + gv.toFixed(1) + ' pp</span>';
                 return tip;
-            }"""
+            }}"""
         },
         "legend": {
-            "data": ["📈 Traffic Index", "💰 Revenue Index", "✂️ Gap"],
-            "textStyle": {"color": "#90A4AE", "fontSize": 12},
+            "data": ["📈 " + t_traffic, "💰 " + t_revenue, "✂️ " + t_gap],
+            "textStyle": {"color": "#8B949E", "fontSize": 12},
             "top": 5,
         },
         "grid": {"left": "3%", "right": "4%", "bottom": "8%", "containLabel": True, "top": "18%"},
@@ -46,59 +44,59 @@ def _render_echarts_scissors(fact: pd.DataFrame) -> None:
             "boundaryGap": False,
             "data": categories,
             "axisLine": {"lineStyle": {"color": "rgba(255,255,255,0.08)"}},
-            "axisLabel": {"color": "#90A4AE", "rotate": 45, "fontSize": 10},
+            "axisLabel": {"color": "#8B949E", "rotate": 45, "fontSize": 10},
             "splitLine": {"show": False},
         },
         "yAxis": [
             {
                 "type": "value",
-                "name": "Traffic Index (2005 = 100)",
-                "nameTextStyle": {"color": "#00BFA5", "fontSize": 11},
-                "axisLine": {"lineStyle": {"color": "#00BFA5"}},
+                "name": t_traffic + " (2005 = 100)",
+                "nameTextStyle": {"color": "#D97724", "fontSize": 11},
+                "axisLine": {"lineStyle": {"color": "#D97724"}},
                 "splitLine": {"lineStyle": {"color": "rgba(255,255,255,0.04)", "type": "dashed"}},
-                "axisLabel": {"color": "#90A4AE"},
+                "axisLabel": {"color": "#8B949E"},
             },
             {
                 "type": "value",
-                "name": "Revenue Index (2005 = 100)",
-                "nameTextStyle": {"color": "#FF5252", "fontSize": 11},
-                "axisLine": {"lineStyle": {"color": "#FF5252"}},
+                "name": t_revenue + " (2005 = 100)",
+                "nameTextStyle": {"color": "#CF3B30", "fontSize": 11},
+                "axisLine": {"lineStyle": {"color": "#CF3B30"}},
                 "splitLine": {"show": False},
-                "axisLabel": {"color": "#90A4AE"},
+                "axisLabel": {"color": "#8B949E"},
             },
         ],
         "series": [
             {
-                "name": "📈 Traffic Index",
+                "name": "📈 " + t_traffic,
                 "type": "line",
                 "smooth": True,
                 "symbol": "circle",
                 "symbolSize": 4,
                 "data": traffic,
-                "lineStyle": {"color": "#00BFA5", "width": 3, "shadowBlur": 10, "shadowColor": "rgba(0,191,165,0.3)"},
-                "itemStyle": {"color": "#00BFA5"},
-                "areaStyle": {"color": "rgba(0,191,165,0.05)"},
+                "lineStyle": {"color": "#D97724", "width": 3},
+                "itemStyle": {"color": "#D97724"},
+                "areaStyle": {"color": "rgba(217,119,36,0.08)"},
                 "markPoint": {
                     "data": [
-                        {"type": "max", "name": "Max"},
-                        {"type": "min", "name": "Min"},
+                        {"type": "max", "name": t("charts.max", L)},
+                        {"type": "min", "name": t("charts.min", L)},
                     ]
                 },
             },
             {
-                "name": "💰 Revenue Index",
+                "name": "💰 " + t_revenue,
                 "type": "line",
                 "smooth": True,
                 "yAxisIndex": 1,
                 "symbol": "diamond",
                 "symbolSize": 6,
                 "data": revenue,
-                "lineStyle": {"color": "#FF5252", "width": 3, "type": "dashed", "shadowBlur": 10, "shadowColor": "rgba(255,82,82,0.3)"},
-                "itemStyle": {"color": "#FF5252"},
-                "areaStyle": {"color": "rgba(255,82,82,0.05)"},
+                "lineStyle": {"color": "#CF3B30", "width": 3, "type": "dashed"},
+                "itemStyle": {"color": "#CF3B30"},
+                "areaStyle": {"color": "rgba(207,59,48,0.08)"},
             },
             {
-                "name": "✂️ Gap",
+                "name": "✂️ " + t_gap,
                 "type": "bar",
                 "yAxisIndex": 0,
                 "data": gap,
@@ -107,8 +105,8 @@ def _render_echarts_scissors(fact: pd.DataFrame) -> None:
                         "type": "linear",
                         "x": 0, "y": 0, "x2": 0, "y2": 1,
                         "colorStops": [
-                            {"offset": 0, "color": "rgba(255,215,64,0.6)"},
-                            {"offset": 1, "color": "rgba(255,82,82,0.3)"},
+                            {"offset": 0, "color": "rgba(217,119,36,0.6)"},
+                            {"offset": 1, "color": "rgba(207,59,48,0.3)"},
                         ],
                     }
                 },
@@ -129,11 +127,11 @@ def render():
     fact = filter_by_year(load_fact_observed(), filters["year_range"])
 
     # ── OPENING: Bold keynote-style headline ──
-    st.markdown("""
+    st.markdown(f"""
     <div class="story-chapter">
-      <span class="chapter-badge">Capítulo 1</span>
-      <h2 class="chapter-title">El Efecto Tijera</h2>
-      <p class="chapter-subtitle">El tráfico de datos se dispara, los ingresos se estancan. Esta divergencia es la crisis estructural del sector TELCO.</p>
+      <span class="chapter-badge">{t('market_overview.title', L)}</span>
+      <h2 class="chapter-title">{t('market_overview.scissors_title', L).split(':')[0]}</h2>
+      <p class="chapter-subtitle">{t('market_overview.subtitle', L)}</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -146,10 +144,10 @@ def render():
     revenue_total = fact["revenue"].sum()
     st.markdown(f"""
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;align-items:center;">
-      <span class="data-badge">📦 {n_rows} registros · {n_cols} variables</span>
+      <span class="data-badge">📦 {n_rows} {t('market_overview.quarter_col', L)} · {n_cols} {'variables' if L == 'es' else 'variables'}</span>
       <span class="data-badge">📅 {yr_min}–{yr_max}</span>
-      <span class="data-badge">📊 Fuente: CNMC · Eurostat · ETNO · GSMA</span>
-      <span class="data-badge">🔬 5 hipótesis contrastadas</span>
+      <span class="data-badge">📊 CNMC · Eurostat · ETNO · GSMA</span>
+      <span class="data-badge">🔬 5 {'hipótesis' if L == 'es' else 'hypotheses'}</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -159,25 +157,23 @@ def render():
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number teal">+{kpis['traffic_cagr']*100:.0f}%</div>
-          <div class="label">📈 CAGR Tráfico / año</div>
+          <div class="label">📈 {t('market_overview.kpi_traffic_cagr', L)} / {'año' if L == 'es' else 'year'}</div>
         </div>
         """, unsafe_allow_html=True)
     with col_b:
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number coral">{kpis['rev_cagr']*100:.1f}%</div>
-          <div class="label">💰 CAGR Ingresos / año</div>
+          <div class="label">💰 {t('market_overview.kpi_rev_cagr', L)} / {'año' if L == 'es' else 'year'}</div>
         </div>
         """, unsafe_allow_html=True)
     with col_c:
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number amber">✂️ {kpis['cagr_gap']*100:.1f} pp</div>
-          <div class="label">⚠ Brecha de divergencia</div>
+          <div class="label">⚠ {t('market_overview.kpi_cagr_gap', L)}</div>
         </div>
         """, unsafe_allow_html=True)
-
-    st.markdown('<div class="glow-divider"></div>', unsafe_allow_html=True)
 
     # ── KPI Cards ──
     kpi_row([
@@ -201,14 +197,14 @@ def render():
 
     # ── THE BIG CHART: Scissors ECharts ──
     st.markdown('<div class="chart-container">', unsafe_allow_html=True)
-    _render_echarts_scissors(fact)
+    _render_echarts_scissors(fact, L)
     st.markdown('</div>', unsafe_allow_html=True)
 
     # ── INSIGHT BOX: The takeaway ──
-    st.markdown("""
+    cagr_gap_pct = kpis['cagr_gap'] * 100
+    st.markdown(f"""
     <div class="insight-box coral">
-      <b>🔑 La conclusión es demoledora:</b> Por cada €1 que el sector ingresaba en 2005, hoy sigue ingresando ~€1.
-      Pero la red transporta <b>+12.000% más tráfico</b>. El modelo de negocio no solo está roto — está <b>empeorando cada trimestre</b>.
+      <b>🔑 {t('market_overview.kpi_cagr_gap', L)}:</b> {t('market_overview.kpi_cagr_gap_desc', L)}
     </div>
     """, unsafe_allow_html=True)
 
@@ -216,21 +212,20 @@ def render():
     st.markdown('<div class="chart-container">', unsafe_allow_html=True)
     st.markdown(f'<div class="chart-title">📦 {t("market_overview.traffic_volume_title", L)}</div>', unsafe_allow_html=True)
     from streamlit_echarts import st_echarts
-    result2 = st_echarts(options=traffic_revenue_stacked_echarts(fact), height="400px", events={"click": CLICK_FORMAT}, key="traffic_vol")
+    result2 = st_echarts(options=traffic_revenue_stacked_echarts(fact, L), height="400px", events={"click": CLICK_FORMAT}, key="traffic_vol")
     maybe_popup("traffic_volume", result2, "traffic_vol")
     st.markdown('</div>', unsafe_allow_html=True)
 
     # ── "ONE MORE THING" ──
-    st.markdown("""
+    st.markdown(f"""
     <div class="insight-box amber" style="margin-top:1rem;">
-      <b>🎯 One more thing:</b> Si esta brecha sigue creciendo, en 2030 el sector necesitará <b>el doble de inversión</b>
-      para mantener la misma calidad de red. <b>Fair Share no es opcional: es la única salida.</b>
+      <b>🎯 {t('market_overview.title', L)}:</b> {t('market_overview.subtitle', L)}
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown(f"""
-    <div style="text-align:right;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.9rem;color:#90A4AE;font-style:italic;border-top:1px solid rgba(255,255,255,0.04);">
-      {t('market_overview.transition', L)} <span style="color:#00BFA5;">→</span>
+    <div style="text-align:right;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.9rem;color:#8B949E;font-style:italic;border-top:1px solid rgba(255,255,255,0.04);">
+      {t('market_overview.transition', L)} <span style="color:#D97724;">→</span>
     </div>
     """, unsafe_allow_html=True)
 

@@ -187,7 +187,7 @@ PUBLICACIONES = pd.DataFrame({
 
 def render_quick_wins():
     L = lang()
-    st.markdown(f'<p style="color:#90A4AE;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.quick_wins_intro", L)}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:#8B949E;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.quick_wins_intro", L)}</p>', unsafe_allow_html=True)
 
     cols = st.columns(len(QUICK_WINS))
     for col, qw in zip(cols, QUICK_WINS):
@@ -201,14 +201,14 @@ def render_quick_wins():
             <div class="premium-card">
               <div style="font-size:1.5rem;margin-bottom:0.5rem;">{qw["icon"]}</div>
               <h3 style="color:#FFFFFF;font-size:1rem;font-weight:600;margin:0 0 0.5rem;">{title}</h3>
-              <p style="color:#90A4AE;font-size:0.8rem;margin:0 0 0.75rem;">{question}</p>
+              <p style="color:#8B949E;font-size:0.8rem;margin:0 0 0.75rem;">{question}</p>
               <hr style="border-color:rgba(255,255,255,0.08);margin:0.5rem 0;">
               <div style="font-size:0.75rem;color:#637381;">
-                <p style="margin:0.25rem 0;"><b style="color:#00BFA5;">{t('evolution_strategy.method_label', L)}:</b> {method}</p>
-                <p style="margin:0.25rem 0;"><b style="color:#00BFA5;">{t('evolution_strategy.variables_label', L)}:</b> {qw["variables"]}</p>
+                <p style="margin:0.25rem 0;"><b style="color:#D97724;">{t('evolution_strategy.method_label', L)}:</b> {method}</p>
+                <p style="margin:0.25rem 0;"><b style="color:#D97724;">{t('evolution_strategy.variables_label', L)}:</b> {qw["variables"]}</p>
                 <p style="margin:0.25rem 0;">
-                  <span style="background:rgba(0,191,165,0.15);padding:2px 8px;border-radius:4px;color:#00BFA5;font-weight:600;">{difficulty}</span>
-                  <span style="background:rgba(255,82,82,0.15);padding:2px 8px;border-radius:4px;color:#FF5252;font-weight:600;margin-left:0.5rem;">{priority}</span>
+                  <span style="background:rgba(0,191,165,0.15);padding:2px 8px;border-radius:4px;color:#D97724;font-weight:600;">{difficulty}</span>
+                  <span style="background:rgba(255,82,82,0.15);padding:2px 8px;border-radius:4px;color:#CF3B30;font-weight:600;margin-left:0.5rem;">{priority}</span>
                 </p>
               </div>
             </div>
@@ -224,10 +224,10 @@ def render_quick_wins():
         st.markdown(f"""
         <div class="{cls}">
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
-            <span style="background:{"#FF5252" if is_pink else "#00BFA5"};color:#090D1A;font-weight:700;font-size:0.7rem;padding:2px 8px;border-radius:4px;">{h["id"]}</span>
+            <span style="background:{"#CF3B30" if is_pink else "#D97724"};color:#0B0E14;font-weight:700;font-size:0.7rem;padding:2px 8px;border-radius:4px;">{h["id"]}</span>
             <strong style="color:#FFFFFF;">{title}</strong>
           </div>
-          <p style="color:#90A4AE;font-size:0.85rem;margin:0.25rem 0;"><b>{t('evolution_strategy.method_label', L)}:</b> {prediction}</p>
+          <p style="color:#8B949E;font-size:0.85rem;margin:0.25rem 0;"><b>{t('evolution_strategy.method_label', L)}:</b> {prediction}</p>
           <p style="color:#556677;font-size:0.75rem;margin:0.25rem 0 0;"><b>{t('evolution_strategy.variables_label', L)}:</b> {h["variables"]}</p>
         </div>
         """, unsafe_allow_html=True)
@@ -237,10 +237,10 @@ def render_quick_wins():
 
 def render_modelos():
     L = lang()
-    st.markdown(f'<p style="color:#90A4AE;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.models_intro", L)}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:#8B949E;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.models_intro", L)}</p>', unsafe_allow_html=True)
 
     st.markdown('<div class="premium-card">', unsafe_allow_html=True)
-    st.markdown(f'<h4 style="color:#00BFA5;font-size:0.9rem;margin:0 0 1rem;">📊 {t("evolution_strategy.models_title", L)}</h4>', unsafe_allow_html=True)
+    st.markdown(f'<h4 style="color:#D97724;font-size:0.9rem;margin:0 0 1rem;">📊 {t("evolution_strategy.models_title", L)}</h4>', unsafe_allow_html=True)
     model_col = f"Modelo ({'ES' if L == 'es' else 'EN'})"
     modelos_df = pd.DataFrame(MODELOS)
     display_df = modelos_df[[model_col, "Input", "Output", "Técnica"]].rename(columns={model_col: "Modelo" if L == "es" else "Model"})
@@ -257,9 +257,9 @@ def render_modelos():
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <div>
               <h4 style="color:#FFFFFF;font-size:0.95rem;margin:0 0 0.25rem;">{sim[sim_col]}</h4>
-              <p style="color:#90A4AE;font-size:0.85rem;margin:0;">{sim[desc_col]}</p>
+              <p style="color:#8B949E;font-size:0.85rem;margin:0;">{sim[desc_col]}</p>
             </div>
-            <span style="background:rgba(0,191,165,0.1);color:#00BFA5;font-size:0.7rem;padding:4px 10px;border-radius:4px;white-space:nowrap;">{sim["Datos"]}</span>
+            <span style="background:rgba(0,191,165,0.1);color:#D97724;font-size:0.7rem;padding:4px 10px;border-radius:4px;white-space:nowrap;">{sim["Datos"]}</span>
           </div>
         </div>
         """, unsafe_allow_html=True)
@@ -269,7 +269,7 @@ def render_modelos():
 
 def render_roadmap():
     L = lang()
-    st.markdown(f'<p style="color:#90A4AE;font-size:0.9rem;margin-bottom:0.5rem;">{t("evolution_strategy.roadmap_intro", L)}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:#8B949E;font-size:0.9rem;margin-bottom:0.5rem;">{t("evolution_strategy.roadmap_intro", L)}</p>', unsafe_allow_html=True)
 
     horizon_options = list(ROADMAPS.keys())
     horizon_labels = [ROADMAPS[k][L] for k in horizon_options]
@@ -286,17 +286,17 @@ def render_roadmap():
     st.markdown(f"""
     <div class="premium-card" style="margin-top:1rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-        <h3 style="color:#00BFA5;font-size:1.1rem;margin:0;">🗺️ {ROADMAPS[horizon][L]}</h3>
-        <span style="background:rgba(0,191,165,0.15);color:#00BFA5;font-weight:600;font-size:0.75rem;padding:4px 12px;border-radius:20px;">{len(milestones)} hitos</span>
+        <h3 style="color:#D97724;font-size:1.1rem;margin:0;">🗺️ {ROADMAPS[horizon][L]}</h3>
+        <span style="background:rgba(0,191,165,0.15);color:#D97724;font-weight:600;font-size:0.75rem;padding:4px 12px;border-radius:20px;">{len(milestones)} {'hitos' if L == 'es' else 'milestones'}</span>
       </div>
       <div style="position:relative;padding-left:1.5rem;">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#00BFA5,rgba(255,255,255,0.08));"></div>
+        <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#D97724,rgba(255,255,255,0.08));"></div>
     """, unsafe_allow_html=True)
 
     for i, milestone in enumerate(milestones):
         st.markdown(f"""
         <div style="position:relative;padding:0 0 1rem 1rem;border-left:2px solid transparent;margin-left:-1px;">
-          <div style="position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:{"#00BFA5" if i < 3 else "#1A2236"};border:2px solid #00BFA5;"></div>
+          <div style="position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:{"#D97724" if i < 3 else "#121620"};border:2px solid #D97724;"></div>
           <p style="color:#{"FFFFFF" if i < 3 else "8899AA"};font-size:0.85rem;margin:0;font-weight:{"600" if i < 3 else "400"};">{milestone}</p>
         </div>
         """, unsafe_allow_html=True)
@@ -316,13 +316,13 @@ def render_roadmap():
 
 def render_monetizacion():
     L = lang()
-    st.markdown(f'<p style="color:#90A4AE;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.monetization_intro", L)}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:#8B949E;font-size:0.9rem;margin-bottom:1.5rem;">{t("evolution_strategy.monetization_intro", L)}</p>', unsafe_allow_html=True)
 
     col1, col2 = st.columns([3, 2])
 
     with col1:
         st.markdown('<div class="premium-card">', unsafe_allow_html=True)
-        st.markdown(f'<h4 style="color:#00BFA5;font-size:0.9rem;margin:0 0 1rem;">💰 {t("evolution_strategy.revenue_title", L)}</h4>', unsafe_allow_html=True)
+        st.markdown(f'<h4 style="color:#D97724;font-size:0.9rem;margin:0 0 1rem;">💰 {t("evolution_strategy.revenue_title", L)}</h4>', unsafe_allow_html=True)
         stream_col = f"Stream ({'ES' if L == 'es' else 'EN'})"
         year_cols = ["Año 1 / Year 1", "Año 2 / Year 2", "Año 3 / Year 3"]
         display_df = MONETIZACION[[stream_col] + year_cols].rename(columns={stream_col: "Stream"})
@@ -330,7 +330,7 @@ def render_monetizacion():
         st.markdown('</div>', unsafe_allow_html=True)
 
         st.markdown('<div class="premium-card" style="margin-top:1rem;">', unsafe_allow_html=True)
-        st.markdown(f'<h4 style="color:#00BFA5;font-size:0.9rem;margin:0 0 1rem;">📚 {t("evolution_strategy.publications_title", L)}</h4>', unsafe_allow_html=True)
+        st.markdown(f'<h4 style="color:#D97724;font-size:0.9rem;margin:0 0 1rem;">📚 {t("evolution_strategy.publications_title", L)}</h4>', unsafe_allow_html=True)
         pub_cols = ["Paper", f"Revista / Journal", f"Cuartil / Quartile", f"Prob. / Prob."]
         pub_rename = {"Paper": "Paper", f"Revista / Journal": "Journal" if L == "en" else "Revista",
                       f"Cuartil / Quartile": "Quartile" if L == "en" else "Cuartil",
@@ -341,7 +341,7 @@ def render_monetizacion():
 
     with col2:
         st.markdown('<div class="premium-card">', unsafe_allow_html=True)
-        st.markdown(f'<h4 style="color:#00BFA5;font-size:0.9rem;margin:0 0 1rem;">🏢 {t("evolution_strategy.consulting_title", L)}</h4>', unsafe_allow_html=True)
+        st.markdown(f'<h4 style="color:#D97724;font-size:0.9rem;margin:0 0 1rem;">🏢 {t("evolution_strategy.consulting_title", L)}</h4>', unsafe_allow_html=True)
         cons_cols = ["Cliente / Client", "Servicio / Service", "Valor / Value €"]
         cons_rename = {"Cliente / Client": "Client" if L == "en" else "Cliente",
                        "Servicio / Service": "Service" if L == "en" else "Servicio",
@@ -351,14 +351,14 @@ def render_monetizacion():
         st.markdown('</div>', unsafe_allow_html=True)
 
         st.markdown('<div class="premium-card" style="margin-top:1rem;">', unsafe_allow_html=True)
-        st.markdown(f'<h4 style="color:#00BFA5;font-size:0.9rem;margin:0 0 0.75rem;">🚀 {t("evolution_strategy.saas_title", L)}</h4>', unsafe_allow_html=True)
+        st.markdown(f'<h4 style="color:#D97724;font-size:0.9rem;margin:0 0 0.75rem;">🚀 {t("evolution_strategy.saas_title", L)}</h4>', unsafe_allow_html=True)
         st.markdown(f"""
-        <div style="font-size:0.85rem;color:#90A4AE;">
+        <div style="font-size:0.85rem;color:#8B949E;">
           <p style="margin:0.5rem 0;"><b style="color:#FFFFFF;">NetTension SaaS</b><br>{t('evolution_strategy.saas_desc', L)}</p>
           <p style="margin:0.5rem 0;"><b style="color:#FFFFFF;">Fair Share Calculator</b><br>{t('evolution_strategy.fsc_desc', L)}</p>
           <p style="margin:0.5rem 0;"><b style="color:#FFFFFF;">API Regulatoria</b><br>{t('evolution_strategy.api_desc', L)}</p>
           <hr style="border-color:rgba(255,255,255,0.08);margin:0.75rem 0;">
-          <p style="margin:0.5rem 0;color:#637381;"><b>{t('evolution_strategy.diff_title', L)}:</b> <b style="color:#FF5252;">{t('evolution_strategy.diff_text', L)}</b></p>
+          <p style="margin:0.5rem 0;color:#637381;"><b>{t('evolution_strategy.diff_title', L)}:</b> <b style="color:#CF3B30;">{t('evolution_strategy.diff_text', L)}</b></p>
         </div>
         """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -370,7 +370,7 @@ def render():
 
     st.markdown(f"""
     <div class="story-chapter violet">
-      <span class="chapter-badge">Capítulo 5</span>
+      <span class="chapter-badge">{t('evolution_strategy.title' if L == 'en' else 'evolution_strategy.title', L)}</span>
       <h2 class="chapter-title">{t('evolution_strategy.title', L)}</h2>
       <p class="chapter-subtitle">{t('evolution_strategy.subtitle', L)}</p>
     </div>
@@ -400,7 +400,7 @@ def render():
         display_cols = [c for c in cols if c in sources.columns]
         st.dataframe(sources[display_cols], width="stretch", hide_index=True, height=250)
         st.markdown(f"""
-        <div style="font-size:0.8rem;color:#90A4AE;margin-top:0.5rem;">
+        <div style="font-size:0.8rem;color:#8B949E;margin-top:0.5rem;">
           <p><b>🔬 {t('governance.methodology_title', L)}</b></p>
           <p>{t('governance.methodology_pipeline', L)}</p>
           <p>{t('governance.methodology_dashboard', L)}</p>

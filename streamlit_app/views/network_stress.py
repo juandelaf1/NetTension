@@ -40,14 +40,14 @@ def render():
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number amber">{first_hhi:.0f} → {last_hhi:.0f}</div>
-          <div class="label">📊 HHI: menos concentración ({hhi_change:+.0f})</div>
+          <div class="label">📊 HHI: {'less concentration' if L == 'en' else 'menos concentración'} ({hhi_change:+.0f})</div>
         </div>
         """, unsafe_allow_html=True)
     with col_b:
         st.markdown(f"""
         <div class="showcase-stat">
           <div class="number coral">{stress['nsi_current']:.4f}</div>
-          <div class="label">📶 NSI (estrés de red)</div>
+          <div class="label">📶 NSI ({'network stress' if L == 'en' else 'estrés de red'})</div>
         </div>
         """, unsafe_allow_html=True)
     with col_c:
@@ -58,7 +58,7 @@ def render():
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown('<div class="glow-divider"></div>', unsafe_allow_html=True)
+
 
     # ── KPI Cards ──
     kpi_row([
@@ -72,7 +72,7 @@ def render():
              delta=f"vs 2005", delta_color="negative",
              icon="💳", help_text=t("network_stress.kpi_arpu_desc", L), color="coral"),
         dict(label=t("network_stress.kpi_lines", L), value=f"{stress['lines_current']:,.0f}",
-             delta="total accesses", delta_color="neutral",
+             delta="total accesos" if L == "es" else "total accesses", delta_color="neutral",
              icon="📡", help_text=t("network_stress.kpi_lines_desc", L), color="teal"),
     ])
 
@@ -99,27 +99,22 @@ def render():
         st.markdown('</div>', unsafe_allow_html=True)
 
     # ── THE BIG INSIGHT: H2 refuted ──
-    st.markdown("""
+    st.markdown(f"""
     <div class="insight-box violet">
-      <b>🔬 Hipótesis H2 — REFUTADA:</b> La concentración del mercado <b>disminuyó</b> (HHI -1.114 puntos),
-      pero el Efecto Tijera <b>empeoró</b>. Esto demuestra que el problema no es de poder de mercado —
-      es <b>estructural del modelo de negocio TELCO</b>. Ni el monopolio ni la competencia resuelven
-      la asimetría tráfico/ingresos.
+      <b>🔬 {t('network_stress.key_insight_title', L)}:</b> {t('network_stress.key_insight', L)}
     </div>
     """, unsafe_allow_html=True)
 
     # ── "ONE MORE THING" ──
-    st.markdown("""
+    st.markdown(f"""
     <div class="insight-box coral">
-      <b>🎯 Esto cambia todo:</b> Si la estructura del mercado no es la causa, entonces la única palanca
-      efectiva es <b>redefinir quién paga por la red</b>. Fair Share no es una opción política —
-      es la <b>conclusión lógica</b> de este análisis.
+      <b>🎯 {t('network_stress.transition', L)}</b>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown(f"""
-    <div style="text-align:right;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.9rem;color:#90A4AE;font-style:italic;border-top:1px solid rgba(255,255,255,0.04);">
-      {t('network_stress.transition', L)} <span style="color:#FF5252;">→</span>
+    <div style="text-align:right;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.9rem;color:#8B949E;font-style:italic;border-top:1px solid rgba(255,255,255,0.04);">
+      {t('network_stress.transition', L)} <span style="color:#CF3B30;">→</span>
     </div>
     """, unsafe_allow_html=True)
 

@@ -3,8 +3,8 @@ from typing import Optional, List
 import plotly.graph_objects as go
 
 CARD_COLORS = {
-    "teal": "#00BFA5", "coral": "#FF5252", "amber": "#FFD740",
-    "blue": "#536DFE", "violet": "#7C4DFF", "emerald": "#00E676",
+    "teal": "#D97724", "coral": "#CF3B30", "amber": "#D97724",
+    "blue": "#9A6AFF", "violet": "#9A6AFF", "emerald": "#2EA043",
 }
 
 def kpi_card(

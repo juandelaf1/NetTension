@@ -74,8 +74,8 @@ with st.sidebar:
     st.markdown(
         """
         <div style="padding:1.25rem 1.25rem 0.5rem;text-align:center;">
-          <h1 style="font-size:1.55rem;font-weight:800;color:#00BFA5;margin:0;letter-spacing:-0.5px;">NetTension</h1>
-          <p style="font-size:0.78rem;color:#90A4AE;margin:0.35rem 0 0;letter-spacing:0.3px;">Network Stress & Fair Share Dashboard</p>
+          <h1 style="font-size:1.55rem;font-weight:800;color:#D97724;margin:0;letter-spacing:-0.5px;">NetTension</h1>
+          <p style="font-size:0.78rem;color:#8B949E;margin:0.35rem 0 0;letter-spacing:0.3px;">Network Stress & Fair Share Dashboard</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -115,18 +115,18 @@ with st.sidebar:
             menu_icon="signal",
             default_index=0,
             styles={
-                "container": {"padding": "0.25rem", "background-color": "#1A2236"},
-                "icon": {"color": "#00BFA5", "font-size": "1rem"},
+                "container": {"padding": "0.25rem", "background-color": "#121620"},
+                "icon": {"color": "#D97724", "font-size": "1rem"},
                 "nav-link": {
                     "font-size": "0.85rem",
                     "font-weight": "500",
-                    "color": "#90A4AE",
+                    "color": "#8B949E",
                     "--hover-color": "#111827",
                     "padding": "0.6rem 1rem",
                 },
                 "nav-link-selected": {
-                    "background-color": "#00BFA5",
-                    "color": "#090D1A",
+                    "background-color": "#D97724",
+                    "color": "#F0F6FC",
                     "font-weight": "600",
                 },
             },
@@ -140,7 +140,7 @@ with st.sidebar:
         <div style="padding:1rem 1.25rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;">
           <p style="font-size:0.72rem;color:#637381;margin:0;">
             Data: CNMC + Eurostat • Jun 2026<br>
-            <a href="https://github.com/juandelaf1/NetTension" target="_blank" style="color:#00BFA5;">github.com/juandelaf1/NetTension</a>
+            <a href="https://github.com/juandelaf1/NetTension" target="_blank" style="color:#D97724;">github.com/juandelaf1/NetTension</a>
           </p>
         </div>
         """,
@@ -158,8 +158,8 @@ st.markdown("""
 
 st.markdown("""
 <style>
-  .hero-logo { font-size: 4rem !important; animation: gradientShift 3s ease infinite !important; background-size: 300% 300% !important; }
-  .hero-banner { padding: 3rem 1rem 1.5rem !important; }
+  .hero-logo { font-size: 3.5rem !important; }
+  .hero-banner { padding: 2.5rem 1rem 1rem !important; }
 </style>
 """, unsafe_allow_html=True)
 

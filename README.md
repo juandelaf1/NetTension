@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" alt="Python"></a>
-  <a href="https://powerbi.microsoft.com/"><img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black" alt="Power BI"></a>
+  <a href="https://streamlit.io/"><img src="https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit"></a>
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas&logoColor=white" alt="Pandas"></a>
   <a href="https://github.com/juandelaf1/NetTension/actions"><img src="https://img.shields.io/github/actions/workflow/status/juandelaf1/NetTension/ci.yml?branch=master&label=CI&logo=github" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Data-CC--BY--SA--4.0-green?logo=creativecommons" alt="License"></a>
@@ -68,7 +68,7 @@ Six scientific hypotheses are formulated and tested against observed data (2005�
 
 ## 3. Solution
 
-**NetTension** is an interactive executive dashboard (Power BI + Python ETL) that transforms 41,937 rows of CNMC regulatory microdata and 1.8M+ rows of Eurostat macroeconomic data into a **neutral Network Stress Simulation Framework**.
+**NetTension** is an interactive executive dashboard (Streamlit + Python ETL) that transforms 41,937 rows of CNMC regulatory microdata and 1.8M+ rows of Eurostat macroeconomic data into a **neutral Network Stress Simulation Framework**.
 
 ### Data Governance (DEC-007)
 
@@ -190,17 +190,17 @@ H6  (Infrastructure Elastic) CONFIRMED    Margin compression confirmed
                                         │
                                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   DASHBOARD LAYER (Power BI)                  │
+│                   DASHBOARD LAYER (Streamlit)                 │
 │                                                              │
 │  ┌───────────────────────────────────────────────────────┐  │
 │  │  Page 1: Market Overview  (Scissors Effect, KPIs)      │  │
 │  │  Page 2: Network Stress   (NSI, HHI, Elasticity)       │  │
 │  │  Page 3: European Context (EU vs USA vs Asia)          │  │
 │  │  Page 4: Fair Share What-If (Scenario Simulator)       │  │
-│  │  Page 5: Governance & Bias Audit                       │  │
+│  │  Page 5: Evolution & Strategy                          │  │
 │  └───────────────────────────────────────────────────────┘  │
 │                                                              │
-│  ▼ Deploy to Power BI Service (public URL)                   │
+│  ▼ Run: streamlit run streamlit_app/app.py                   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -230,15 +230,15 @@ Full documentation → [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
 | **Python** | 3.11 | ETL pipeline + KPI engine | Modularity, reproducibility, open source |
 | **Pandas** | 3.0 | Data transformation | Industry standard for tabular data |
 | **NumPy** | 2.4 | Vectorized calculations | Performance on 2M+ rows |
-| **Power BI Desktop** | Free | Interactive dashboard | DAX for complex measures, What-If params, cloud deploy |
-| **Power BI Service** | — | Cloud deployment | Public URL for remote access |
+| **Streamlit** | 1.35+ | Interactive dashboard | Python-native, Plotly/ECharts, AG Grid, dark theme |
+| **Streamlit Cloud** | — | Cloud deployment | Public URL via Streamlit Community Cloud |
 | **Docker** | 27+ | Containerized ETL | Build once, run anywhere; CI/CD |
 | **Docker Hub** | — | Image registry | Versioned release (`juandelaf/net-tension-etl`) |
 | **GitHub Actions** | — | CI pipeline | Automated lint + YAML validation |
 | **Git** | — | Version control | Tags v0.1.0 · v1.0.0, semantic versioning |
 | **Kaggle** | — | Portfolio dataset | Community exposure, recruiter visibility |
 
-> **Why Power BI over alternatives?** Power BI provides native cross-filtering, DAX for calculated measures, What-If parameter simulation, and one-click cloud deployment — all without maintaining a web application. For an executive audience with no technical background, Power BI offers superior UX over Streamlit or Tableau Public. See [docs/DATA_MODEL.md](docs/DATA_MODEL.md) for detailed justification.
+> **Why Streamlit over alternatives?** Streamlit lets the entire ETL pipeline and dashboard live in a single Python codebase, eliminating the Power BI / DAX dependency. Plotly and ECharts provide rich interactivity, AG Grid enables spreadsheet-like filtering, and the dark theme matches the executive aesthetic. Deployment via Streamlit Community Cloud requires no separate VM or CI/CD pipeline. See [streamlit_app/](streamlit_app/) for the full application source.
 
 ---
 
@@ -250,26 +250,33 @@ NetTension/
 ├── assets/                Banner, diagrams, branding
 ├── data/
 │   ├── processed/         14 cleaned .parquet files (ETL output)
+│   ├── csv/               CSV exports for portability
 │   └── SOURCES.yaml       Governance metadata (DEC-007/008)
 ├── docs/
-│   └── DATA_MODEL.md      Star schema specification, DAX measures
+│   └── DATA_MODEL.md      Star schema specification
 ├── reports/
 │   └── EDA_SUMMARY.md     Exploratory data analysis results
 ├── src/
 │   ├── loader/            CNMC + Eurostat data loaders
 │   ├── transform/         Data cleaning + KPI computation
-│   └── pipeline/          ETL orchestrator, PDF extraction, Power BI + DuckDB export
+│   └── pipeline/          ETL orchestrator, PDF extraction, DuckDB export
+├── streamlit_app/         Interactive dashboard (Streamlit)
+│   ├── app.py             Entry point
+│   ├── views/             Page renders
+│   ├── components/        Reusable UI components
+│   └── utils/             Data loading, i18n, calculations
 ├── Dockerfile             Containerized ETL pipeline
 ├── pyproject.toml         Project metadata and dependencies
-├── requirements.txt       Python package requirements
+├── requirements-prod.txt  ETL production dependencies
+├── requirements-test.txt  Test dependencies
 ├── ROADMAP.md             Sprint plan and milestones
 └── README.md              This file
 ```
 
 **What is NOT in this repository:**
 - Raw source CSVs/PDFs (downloadable from public sources — see `data/SOURCES.yaml`)
-- Power BI `.pbix` file (build from parquet files using `docs/DATA_MODEL.md`)
-- Virtual environments, caches, or IDE configs
+- Streamlit virtual environment or cache
+- IDE configs, `.env` files, or pycache directories
 
 ---
 
@@ -285,29 +292,18 @@ cd NetTension
 # Set up Python environment
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+# Install ETL dependencies
+pip install -r requirements-prod.txt
+
+# Install Streamlit dashboard dependencies
+pip install -r streamlit_app/requirements.txt
 
 # Run the ETL pipeline
 python -m src.pipeline.etl_pipeline
 
-# Export Power BI datasets
-python -m src.pipeline.export_powerbi
+# Launch the Streamlit dashboard
+streamlit run streamlit_app/app.py
 ```
-
-### Build the Dashboard
-
-```bash
-# Optional: Export data to DuckDB for SQL-based analytics
-python -m src.pipeline.export_duckdb
-```
-
-1. Open Power BI Desktop
-2. **Option A (Parquet)**: Get Data → Parquet → Select all files from `data/processed/`
-3. **Option B (DuckDB)**: Get Data → ODBC → DuckDB → Connect to `data/processed/net_tension.duckdb`
-4. Create relationships per [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
-5. Add DAX measures from [docs/DATA_MODEL.md#dax-measures](docs/DATA_MODEL.md#dax-measures)
-6. Build 5 pages per layout specification
-7. Publish to Power BI Service for public URL
 
 ### Docker
 
@@ -315,6 +311,14 @@ python -m src.pipeline.export_duckdb
 docker build -t net-tension-etl .
 docker run --rm -v $(pwd)/data:/app/data net-tension-etl
 ```
+
+### Streamlit Cloud Deployment
+
+1. Push the repository to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub repo and set the main file path to `streamlit_app/app.py`
+4. Add `streamlit_app/requirements.txt` as the dependency file
+5. Deploy — no additional configuration needed
 
 ---
 

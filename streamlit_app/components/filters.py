@@ -26,6 +26,11 @@ def render_sidebar(lang=None) -> dict:
     if lang is None:
         lang = st.session_state.get("lang", "es")
     labels = LABELS.get(lang, LABELS["es"])
+    L = lang
+    help_period = "Filtra el periodo de análisis" if L == "es" else "Filter the analysis period"
+    help_ott = "% de contribución OTT a costes de red" if L == "es" else "% OTT contribution to network costs"
+    help_capex = "% reducción CAPEX por eficiencias" if L == "es" else "% CAPEX reduction through efficiencies"
+    help_traffic = "Ajuste crecimiento tráfico futuro (puntos porcentuales)" if L == "es" else "Traffic growth adjustment (percentage points)"
 
     with st.sidebar:
         st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
@@ -40,7 +45,7 @@ def render_sidebar(lang=None) -> dict:
             value=(min(years), max(years)),
             step=1,
             key="slider_year",
-            help="Filtra el periodo de análisis",
+            help=help_period,
         )
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -50,19 +55,19 @@ def render_sidebar(lang=None) -> dict:
             labels["ott"],
             0, 50, 15, 1,
             key="slider_ott",
-            help="% de contribución OTT a costes de red",
+            help=help_ott,
         ) / 100
         capex_relief = st.slider(
             labels["capex"],
             0, 50, 20, 1,
             key="slider_capex",
-            help="% reducción CAPEX por eficiencias",
+            help=help_capex,
         ) / 100
         traffic_adj = st.slider(
             labels["traffic"],
             -30, 30, 0, 1,
             key="slider_traffic",
-            help="Ajuste crecimiento tráfico futuro (puntos porcentuales)",
+            help=help_traffic,
         ) / 100
         st.markdown('</div>', unsafe_allow_html=True)
 

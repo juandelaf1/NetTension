@@ -3,7 +3,7 @@ primaryColor = "#00E5FF"
 backgroundColor = "#0A0E17"
 secondaryBackgroundColor = "#161F30"
 textColor = "#FFFFFF"
-font = "Inter"
+font = "sans serif"
 base = "dark"
 
 [server]

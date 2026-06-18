@@ -55,7 +55,12 @@ desktop.ini
 # Power BI binary (build from parquet files)
 *.pbix
 
+# Power BI Project (legacy — migrated to Streamlit)
+NetTension.pbip/
 
+# Tableau workbooks (legacy — migrated to Streamlit)
+*.twb
+*.tds
 
 # DuckDB database (generated from parquet files)
 data/processed/net_tension.duckdb
