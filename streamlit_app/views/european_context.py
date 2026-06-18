@@ -153,7 +153,7 @@ def render():
                     margin-bottom:0.3rem;">🌍 {t("european_context.comparison_title", L)}</div>
         """, unsafe_allow_html=True)
         st.markdown('<div class="chart-container">', unsafe_allow_html=True)
-        fig_comp = eu_comparison_chart(eu)
+        fig_comp = eu_comparison_chart(eu, L)
         if fig_comp is not None:
             comp_click = st.plotly_chart(fig_comp, width="stretch", config={"displayModeBar": False}, on_select="rerun", key="eu_comparison")
             if comp_click and comp_click.selection and comp_click.selection.points:
@@ -239,12 +239,6 @@ def render():
                 r = gap_row.iloc[0]
                 _key_metric_card("Internet Usage Gap", f"{r['value']:.1f}%", "🌐", "#CF3B30")
             st.markdown('</div>', unsafe_allow_html=True)
-
-        # ── ROW 3: Full data table ──
-        st.markdown('<div class="chart-container" style="margin-top:1.5rem;">', unsafe_allow_html=True)
-        st.markdown(f'<div class="chart-title" style="font-size:1rem;">📋 {t("european_context.full_db_title", L)}</div>', unsafe_allow_html=True)
-        render_aggrid(eu, key="eu_context_aggrid", height=400)
-        st.markdown('</div>', unsafe_allow_html=True)
 
         st.markdown(f"""
         <div style="text-align:right;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.9rem;color:#8B949E;font-style:italic;border-top:1px solid rgba(255,255,255,0.04);">

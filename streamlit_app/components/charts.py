@@ -206,7 +206,7 @@ def traffic_revenue_stacked_echarts(df: pd.DataFrame, L: str) -> dict:
                     var v = Number(p.value);
                     tip += '<div style=\"display:flex;justify-content:space-between;gap:24px;font-size:0.85rem;\">'
                         + '<span>' + p.marker + ' ' + p.seriesName + '</span>'
-                        + '<span style=\"font-family:SF Mono,Cascadia Code,Consolas,monospace;color:#F0F6FC;\">' + v.toFixed(1) + '</span>'
+                        + '<span style=\"font-family:SF Mono,Cascadia Code,Consolas,monospace;color:#F0F6FC;\">' + v.toFixed(1) + ' TB</span>'
                         + '</div>';
                 }});
                 return tip;
@@ -231,11 +231,11 @@ def traffic_revenue_stacked_echarts(df: pd.DataFrame, L: str) -> dict:
         },
         "yAxis": {
             "type": "value",
-            "name": t("charts.traffic_volume", L),
+            "name": t("charts.traffic_volume", L) + " (TB)",
             "nameTextStyle": {"color": "#8B949E", "fontSize": 11},
             "axisLine": {"lineStyle": {"color": "#262F41"}},
             "splitLine": {"lineStyle": {"color": "#21262D", "type": "dashed"}},
-            "axisLabel": {"color": "#8B949E"},
+            "axisLabel": {"color": "#8B949E", "formatter": "{value} TB"},
         },
         "series": series,
     }
