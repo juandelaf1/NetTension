@@ -63,6 +63,21 @@ NetTension.pbip/
 *.tds
 
 # DuckDB database (generated from parquet files)
-data/processed/net_tension.duckdb
+data/processed/*.duckdb
+
+# Generated Parquet files (ETL artifacts — re-run pipeline to regenerate)
+data/processed/*.parquet
+!data/processed/.gitkeep
+
+# Generated CSV exports (Power BI compatibility)
+data/csv/
+
+# raspal cache database
+raspal_cache.sqlite
+
+# External test script
+test_raspal.py
+
+# Kaggle dataset (mirror of processed data for publication)
 kaggle_dataset/
 *.whl

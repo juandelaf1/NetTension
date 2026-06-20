@@ -10,11 +10,26 @@ Creates:
   6. dim_operator.parquet — Operator reference table (31 operators)
   7. dim_service.parquet — Service/concept dimension
 """
+import sys
 import pandas as pd
 import numpy as np
 from pathlib import Path
 
+SRC_DIR = Path(__file__).parents[1]
+sys.path.insert(0, str(SRC_DIR))
+from loader.cnmc_loader import load_mercados
+from transform.data_cleaner import clean_mercados
+from transform.kpi_engine import hhi_quarterly
+
 PROC = Path(__file__).parents[2] / "data" / "processed"
+CSV_DIR = Path(__file__).parents[2] / "data" / "csv"
+
+
+def _save_parquet_csv(df, parquet_name):
+    """Save a DataFrame as both Parquet and semicolon-delimited CSV."""
+    df.to_parquet(PROC / parquet_name, index=False)
+    csv_name = parquet_name.replace(".parquet", ".csv")
+    df.to_csv(CSV_DIR / csv_name, sep=";", index=False, encoding="utf-8-sig")
 
 
 def export_fact_observed():
@@ -77,7 +92,7 @@ def export_fact_observed():
     result["year"] = result["trimestre_dt"].dt.year
     result["quarter"] = result["trimestre_dt"].dt.quarter
 
-    result.to_parquet(PROC / "fact_observed_agg.parquet", index=False)
+    _save_parquet_csv(result, "fact_observed_agg.parquet")
     print(f"fact_observed_agg: {len(result)} rows, {len(result.columns)} cols")
     print(f"  Period: {result['trimestre_dt'].min()} -> {result['trimestre_dt'].max()}")
     return result
@@ -116,7 +131,7 @@ def export_eurostat_es():
     result = pop_es.merge(gdp_es, on="year", how="outer")
     result["gdp_per_capita"] = result["gdp_meur"] / result["population"] * 1_000_000
 
-    result.to_parquet(PROC / "fact_eurostat_es.parquet", index=False)
+    _save_parquet_csv(result, "fact_eurostat_es.parquet")
     print(f"\nfact_eurostat_es: {len(result)} rows")
     print(f"  Years: {int(result['year'].min())} -> {int(result['year'].max())}")
     print(f"  Population 2025: {result[result['year']==2025]['population'].values[0]:.0f}")
@@ -126,12 +141,6 @@ def export_eurostat_es():
 
 def export_hhi():
     """Compute and export HHI with classification."""
-    import sys
-    sys.path.insert(0, str(Path(__file__).parents[1]))
-    from loader.cnmc_loader import load_mercados
-    from transform.data_cleaner import clean_mercados
-    from transform.kpi_engine import hhi_quarterly
-
     df = clean_mercados(load_mercados())
     hhi_raw = hhi_quarterly(df)
 
@@ -149,7 +158,7 @@ def export_hhi():
         labels=["Competitive", "Moderately Concentrated", "Highly Concentrated"],
     )
 
-    hhi_raw.to_parquet(PROC / "kpi_hhi.parquet", index=False)
+    _save_parquet_csv(hhi_raw, "kpi_hhi.parquet")
     print(f"\nkpi_hhi: {len(hhi_raw)} rows, range [{hhi_raw['hhi'].min():.0f}, {hhi_raw['hhi'].max():.0f}]")
     print(f"  First: HHI={hhi_raw['hhi'].iloc[0]:.0f} ({hhi_raw['classification'].iloc[0]}, {hhi_raw['trimestre'].iloc[0]})")
     print(f"  Last:  HHI={hhi_raw['hhi'].iloc[-1]:.0f} ({hhi_raw['classification'].iloc[-1]}, {hhi_raw['trimestre'].iloc[-1]})")
@@ -201,11 +210,8 @@ def export_eu_context():
         {"indicator": "EU Revenue real growth (2023)", "value": -4.4, "unit": "%",
          "source": "ETNO State of Digital Comms 2025"},
     ])
-    context.to_parquet(PROC / "dim_eu_context.parquet", index=False)
+    _save_parquet_csv(context, "dim_eu_context.parquet")
     print(f"\ndim_eu_context: {len(context)} indicators")
-
-    # Also save as CSV for easy reference
-    context.to_csv(PROC / "dim_eu_context.csv", index=False)
 
 
 def export_dimensions():
@@ -219,7 +225,7 @@ def export_dimensions():
     time_df["year_quarter"] = time_df["year"].astype(str) + " Q" + time_df["quarter"].astype(str)
     time_df["time_key"] = time_df["trimestre_dt"]
     time_df = time_df[["time_key", "trimestre_dt", "year", "quarter", "year_quarter"]]
-    time_df.to_parquet(PROC / "dim_time.parquet", index=False)
+    _save_parquet_csv(time_df, "dim_time.parquet")
     print(f"\ndim_time: {len(time_df)} quarters ({time_df['year'].min()}-{time_df['year'].max()})")
 
     # Dim_Operator: distinct operators with group classification
@@ -252,7 +258,7 @@ def export_dimensions():
     op_df["operator_group"] = op_df["operador"].map(operator_map).fillna("Other")
     op_df["is_incumbent"] = op_df["operator_group"] == "Incumbent"
     op_df = op_df.rename(columns={"operador": "operator_key"})
-    op_df.to_parquet(PROC / "dim_operator.parquet", index=False)
+    _save_parquet_csv(op_df, "dim_operator.parquet")
     print(f"dim_operator: {len(op_df)} operators")
 
     # Dim_Service: distinct service/concept combos
@@ -281,14 +287,14 @@ def export_dimensions():
 
     svc_df["category"] = svc_df["concepto"].apply(categorize_concept)
     svc_df = svc_df[["service_key", "servicio", "concepto", "market_type", "category"]]
-    svc_df.to_parquet(PROC / "dim_service.parquet", index=False)
+    _save_parquet_csv(svc_df, "dim_service.parquet")
     print(f"dim_service: {len(svc_df)} service/concept combos")
 
     # Dim_Geography
     geo_df = pd.DataFrame([{
         "geography_key": "ES", "pais": "España", "geo_code": "ES", "region": "EU"
     }])
-    geo_df.to_parquet(PROC / "dim_geography.parquet", index=False)
+    _save_parquet_csv(geo_df, "dim_geography.parquet")
     print(f"dim_geography: {len(geo_df)} country")
 
 
@@ -300,11 +306,18 @@ if __name__ == "__main__":
     export_eu_context()
     export_dimensions()
 
-    print("\n\nFiles ready for Power BI import (select all .parquet):")
+    print("\n\nFiles ready for Power BI import:")
     import os
+    print("\n  Parquet (data/processed/):")
     for f in sorted(Path(PROC).glob("*.parquet")):
-        size_mb = os.path.getsize(f) / 1e6
-        print(f"  {f.name}: {size_mb:.1f} MB")
-    print(f"\nTotal: {len(list(Path(PROC).glob('*.parquet')))} files")
-    print("\nImport all .parquet files at once using:")
-    print("   Power BI → Get Data → Parquet → Select ALL files in data/processed/")
+        if any(t in f.name for t in ("fact_", "dim_", "kpi_")):
+            size_mb = os.path.getsize(f) / 1e6
+            print(f"    {f.name}: {size_mb:.1f} MB")
+    print("\n  CSV (data/csv/):")
+    for f in sorted(Path(CSV_DIR).glob("*.csv")):
+        size_kb = os.path.getsize(f) / 1e3
+        print(f"    {f.name}: {size_kb:.0f} KB")
+    print(f"\nTotal: {len(list(Path(PROC).glob('*.parquet')))} parquet + {len(list(Path(CSV_DIR).glob('*.csv')))} csv files")
+    print("\nImport in Power BI:")
+    print("  Parquet: Get Data -> Parquet -> Select ALL files in data/processed/")
+    print("  CSV:     PBIP project uses relative paths (auto-resolved)")

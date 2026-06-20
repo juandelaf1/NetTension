@@ -77,6 +77,7 @@ Eurostat demo_pjan:
   documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/demo_pjan
   url: "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan"
   license: CC-BY-4.0
+  file: eurostat_demo_pjan.tsv.gz
   coverage:
     geography: EU27 + EFTA + candidates (50+ GEOs)
     period: 1960–2025
@@ -98,6 +99,7 @@ Eurostat nama_10_gdp:
   documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp
   url: "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp"
   license: CC-BY-4.0
+  file: eurostat_nama_10_gdp.tsv.gz
   coverage:
     geography: EU27 + EFTA + candidates
     period: 1975–2025
@@ -120,6 +122,7 @@ Eurostat ISOC_TF:
   documentation_reference: https://ec.europa.eu/eurostat/databrowser/view/isoc_tf
   url: "https://ec.europa.eu/eurostat/databrowser/view/isoc_tf"
   license: CC-BY-4.0
+  file: eurostat_isoc_tf.json
   coverage:
     geography: EU27
     period: 2010–2024
