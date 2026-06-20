@@ -1,69 +1,86 @@
 # NetTension — Data Model Specification
 
-## Quick Start (5 minutos)
-
-### 1. Importar datos
-Los archivos Parquet se cargan automáticamente al ejecutar el ETL o el dashboard. Archivos disponibles en `data/processed/`:
-```
-  data/processed/fact_observed_agg.parquet   (tabla principal)
-  data/processed/dim_time.parquet            (dimensión tiempo)
-  data/processed/dim_operator.parquet        (dimensión operadores)
-  data/processed/dim_service.parquet         (dimensión servicios)
-  data/processed/dim_geography.parquet       (dimensión geografía)
-  data/processed/fact_eurostat_es.parquet    (PIB/población)
-  data/processed/kpi_hhi.parquet             (HHI trimestral)
-  data/processed/dim_eu_context.parquet      (benchmarks UE)
-```
-
-### 2. Crear relaciones (Vista Modelo)
-
-| Tabla 1 | Cardinalidad | Tabla 2 | Columna de unión |
-|---------|-------------|---------|-----------------|
-| fact_observed_agg | * → 1 | dim_time | trimestre_dt → time_key |
-| fact_observed_agg | * → 1 | dim_operator | (no hay FK directa — para drill-down usar cnmc_mercados_clean) |
-| fact_observed_agg | * → 1 | dim_service | (no hay FK directa) |
-| fact_eurostat_es | * → 1 | dim_time | year → year |
-| kpi_hhi | * → 1 | dim_time | trimestre_dt → time_key |
-
-### 3. Crear medidas DAX
-Copia-pega todas las medidas de la sección "DAX Measures" abajo.
-
-### 4. Crear parámetros What-If (Página 4)
-```
-Modelado → Nuevo parámetro → What-If:
-  1. "OTT Contribution"     | 0% – 50% | Incremento: 1 | Default: 0
-  2. "CAPEX Shock"          | -20% – 20% | Incremento: 1 | Default: 0
-  3. "Traffic Growth Mult." | 0.5x – 3.0x | Incremento: 0.1 | Default: 1.0
-```
-
-### 5. Construir 5 páginas (ver layouts abajo)
+Star-schema data model powering the Streamlit dashboard. All data is processed by the Python ETL pipeline (`src/pipeline/etl_pipeline.py`) and persisted as compressed Parquet files + DuckDB SQL database.
 
 ---
 
-## Architecture: Star Schema
+## Architecture
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                    DATA SOURCES                             │
+│  CNMC Mercados (5 CSVs, 41,937 rows)                       │
+│  CNMC Datos Generales (1 CSV, 3,319 rows)                  │
+│  Eurostat demo_pjan (TSV.GZ, 1.17M rows)                   │
+│  Eurostat nama_10_gdp (TSV.GZ, 1.86M rows)                 │
+│  ETNO/GSMA/BEREC/Sandvine PDFs (extracted)                 │
+└──────────────────────────┬─────────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────────┐
+│                    ETL PIPELINE (Python)                     │
+│  Loaders → Cleaners → KPI Engine → Export                   │
+│  Output: 14 Parquet files + net_tension.duckdb              │
+└──────────────────────────┬─────────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────────┐
+│                  STREAMLIT DASHBOARD                         │
+│  data_loader.py (cached via DuckDB/Parquet)                 │
+│  → 6 interactive pages (ECharts + Plotly + AG Grid)        │
+└────────────────────────────────────────────────────────────┘
+```
+
+All Parquet files are in `data/processed/`. The dashboard loads them through `streamlit_app/utils/data_loader.py` using DuckDB's native Parquet scanning or `pandas.read_parquet()`.
+
+---
+
+## Star Schema
+
+```
+dim_time ───── fact_observed_agg ───── dim_operator
+                │
+ dim_geography ─┤
+                │
+ dim_service ───┘
+
+ fact_eurostat_es ───── dim_time (via year)
+ kpi_hhi ────────────── dim_time (via trimestre_dt)
+ kpi_nsi
+ kpi_elasticity
+```
+
+---
 
 ## Table Definitions
 
-### Fact_Observed (CNMC Mercados)
-Source: `data/processed/cnmc_mercados_clean.parquet`
+### Fact Tables
+
+**fact_observed_agg** — Quarterly aggregated CNMC market metrics (83 rows)
 
 | Column | Type | Description |
 |--------|------|-------------|
-| trimestre_dt | Date | Period start date (2005-01-01) |
-| operador | String | Operator name |
-| servicio | String | Service type |
-| concepto | String | Metric type |
-| ingresos | Float | Revenue (Mn EUR) |
-| ingresos_por_operador | Float | Revenue by operator (Mn EUR) |
-| trafico | Float | Voice traffic (minutes) |
-| trafico_de_datos | Float | Data traffic (GB/TB) |
-| lineas_o_accesos | Float | Total active lines |
-| lineas_o_accesos_por_operador | Float | Active lines by operator |
-| portabilidades | Float | Number portings |
-| tecnologia_de_acceso | String | Access technology (FTTH, xDSL, etc.) |
+| trimestre_dt | Date | Quarter start (2005-01-01) |
+| total_revenue | Float | Total revenue (Mn EUR) |
+| total_data_traffic | Float | Total data traffic |
+| total_voice_traffic | Float | Total voice traffic (minutes) |
+| total_lines | Float | Total active lines |
+| traffic_per_line | Float | Data traffic per active line (NSI) |
+| revenue_per_line | Float | Revenue per active line |
+| revenue_per_traffic | Float | Revenue per data unit |
 
-### Dim_Time
-Generated from `trimestre_dt` in the ETL pipeline or created as lookup table.
+**fact_eurostat_es** — Spain macroeconomic indicators (66 rows)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| year | Int | 2005–2025 |
+| population | Float | Spain population count |
+| gdp_meur | Float | GDP (million EUR, current prices) |
+| gdp_per_capita | Float | GDP per capita (EUR) |
+
+### Dimension Tables
+
+**dim_time** — Calendar quarter dimension (83 rows)
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -71,373 +88,144 @@ Generated from `trimestre_dt` in the ETL pipeline or created as lookup table.
 | year | Int | 2005–2025 |
 | quarter | Int | 1–4 |
 | year_quarter | String | "2005 Q1" |
-| year_label | String | "2005" |
 
-### Dim_Operator
-From distinct operators in Fact_Observed.
+**dim_operator** — Telecom operators in Spain (31 operators)
 
 | Column | Type | Description |
 |--------|------|-------------|
 | operator_key | String | Operator name |
-| operator_group | String | Group classification (Incumbent, Competitor, Wholesale, Regional, Other) |
-| is_incumbent | Boolean | True if Movistar/Telefónica |
+| operator_group | String | Incumbent, Competitor, Wholesale, Regional, Other |
+| is_incumbent | Boolean | True if Telefónica/Movistar |
 
-### Dim_Service
-From distinct service/concept combinations.
+**dim_service** — Service/concept combinations
 
 | Column | Type | Description |
 |--------|------|-------------|
 | service_key | String | servicio + concepto |
-| servicio | String | Retail, wholesale, etc. |
-| concepto | String | Metric name |
+| servicio | String | Retail, Wholesale, etc. |
+| concepto | String | Metric name (Ingresos, Traffic, etc.) |
 | market_type | String | Minorista / Mayorista |
 | category | String | Voice, Data, Access, Audiovisual |
 
-### Dim_Geography
+**dim_geography** — Country dimension
+
 | Column | Type | Description |
 |--------|------|-------------|
 | geography_key | String | Country code (ES) |
 | pais | String | Country name |
 | geo_code | String | Eurostat code (ES) |
-| region | String | EU, EFTA, etc. |
 
-### Fact_Eurostat
-Source: `data/processed/eurostat_demo_pjan_tidy.parquet`, `eurostat_nama_10_gdp_tidy.parquet`
+**dim_eu_context** — European benchmark indicators (21 indicators)
 
 | Column | Type | Description |
 |--------|------|-------------|
-| time_period | Int | Year |
-| geo | String | Country code |
-| population | Float | Population count |
-| gdp_meur | Float | GDP (million EUR, current prices) |
-| gdp_per_capita | Float | GDP per capita (EUR) |
+| indicator | String | Metric name (ARPU, CAPEX per capita, etc.) |
+| value | Float | Metric value |
+| unit | String | EUR, %, etc. |
+| source | String | ETNO, GSMA, BEREC, etc. |
+| geography | String | Country or region |
 
-### Fact_KPI
-Pre-computed KPIs for dashboard charts.
+### KPI Tables
+
+**kpi_hhi** — Herfindahl-Hirschman Index per quarter (83 rows)
 
 | Column | Type | Description |
 |--------|------|-------------|
-| trimestre_dt | Date | Period |
-| hhi | Float | Herfindahl-Hirschman Index |
-| nsi | Float | Network Stress Index |
+| trimestre_dt | Date | Quarter |
+| hhi | Float | HHI value (0–10000) |
+| classification | String | Competitive / Moderate / Concentrated |
+
+**kpi_nsi** — Network Stress Index per quarter (83 rows)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| trimestre_dt | Date | Quarter |
+| nsi | Float | Traffic per active line |
+
+**kpi_elasticity** — Infrastructure Elasticity Margin per quarter (83 rows)
+
+| Column | Type | Description |
+|--------|------|-------------|
+| trimestre_dt | Date | Quarter |
 | revenue_per_traffic | Float | Revenue per data unit |
-| traffic_per_line | Float | Data traffic per active line |
 | revenue_per_line | Float | Revenue per active line |
+| traffic_per_line | Float | Traffic per active line |
 
-## DAX Measures
+---
 
-```dax
--- ============================================================
--- CORE METRICS
--- ============================================================
+## Key Performance Indicators
 
--- Total Revenue (Mn EUR)
-Total Revenue = SUM(Fact_Observed[ingresos])
+All KPIs are pre-computed by `src/transform/kpi_engine.py` during the ETL pipeline run, then stored as Parquet for the dashboard to consume.
 
--- Total Data Traffic
-Total Data Traffic = SUM(Fact_Observed[trafico_de_datos])
+| KPI | Formula | Source | Interpretation |
+|-----|---------|--------|----------------|
+| **HHI** | `Σ(market_share_i)² × 10000` | CNMC Mercados | Concentration: <1000 competitive, 1000–2500 moderate, >2500 concentrated |
+| **NSI** | `total_traffic / active_lines` | CNMC Mercados | Network congestion pressure |
+| **Infrastructure Elasticity** | `revenue_per_line / traffic_per_line` | CNMC Mercados | Business model sustainability (margin compression) |
+| **CAGR** | `(Vₜ/V₀)^(1/t) − 1` | CNMC Mercados | Growth rate over period |
+| **CAGR Gap** | `CAGR_traffic − CAGR_revenue` | Derived | Scissors Effect divergence (127.4pp) |
+| **Macro Contribution** | `telecom_revenue / GDP` | CNMC + Eurostat | Sector weight in economy |
+| **Digital Density** | `active_lines / population × 100` | CNMC + Eurostat | Real per-capita penetration |
 
--- Total Voice Traffic
-Total Voice Traffic = SUM(Fact_Observed[trafico])
+---
 
--- Total Active Lines
-Total Lines = SUM(Fact_Observed[lineas_o_accesos])
+## Data Governance Layers
 
--- Data Traffic per Line (NSI)
-Network Stress Index = 
-    DIVIDE(
-        [Total Data Traffic],
-        [Total Lines],
-        0
-    )
+Per DEC-007 and DEC-008 compliance (see `data/SOURCES.yaml` for full catalog):
 
--- Revenue per Data Unit
-Revenue per Traffic Unit = 
-    DIVIDE(
-        [Total Revenue],
-        [Total Data Traffic],
-        0
-    )
+| Layer | Description | Example Variables |
+|-------|------------|-------------------|
+| `OBSERVED` | Directly from official source | CNMC revenue, Eurostat GDP |
+| `ESTIMATED` | Derived from observed data | HHI, CAGR, NSI, Elasticity |
+| `POLICY_MODEL` | Scenario under regulatory assumptions | Fair Share impact, CAPEX relief |
+| `CONSTANT` | Fixed documented thresholds | HHI threshold (2500), GDP deflator (2%) |
 
--- ============================================================
--- HHI (Herfindahl-Hirschman Index)
--- ============================================================
-HHI = 
-    VAR RevenueByOperator = 
-        SUMMARIZE(
-            Fact_Observed,
-            Dim_Operator[operator_key],
-            "OpRevenue", SUM(Fact_Observed[ingresos_por_operador])
-        )
-    VAR TotalRevenue = SUMX(RevenueByOperator, [OpRevenue])
-    VAR ShareSquared = 
-        SUMX(
-            RevenueByOperator,
-            DIVIDE([OpRevenue], TotalRevenue, 0) ^ 2
-        )
-    RETURN
-        ShareSquared * 10000
+Every variable is documented with: Governance_Layer, Confidence_Level (HIGH/MEDIUM/LOW), Review_Date, Review_Owner, Source_Type, Reproducible (TRUE/PARTIAL), and Documentation_Reference.
 
--- ============================================================
--- CAGR CALCULATION (using time intelligence)
--- ============================================================
-CAGR Traffic = 
-    VAR FirstPeriod = FIRSTDATE(Dim_Time[time_key])
-    VAR LastPeriod = LASTDATE(Dim_Time[time_key])
-    VAR FirstValue = 
-        CALCULATE(
-            [Total Data Traffic],
-            Dim_Time[time_key] = FirstPeriod,
-            ALL(Dim_Time)
-        )
-    VAR LastValue = 
-        CALCULATE(
-            [Total Data Traffic],
-            Dim_Time[time_key] = LastPeriod,
-            ALL(Dim_Time)
-        )
-    VAR Years = DATEDIFF(FirstPeriod, LastPeriod, YEAR)
-    RETURN
-        IF(
-            FirstValue > 0 && LastValue > 0 && Years > 0,
-            (LastValue / FirstValue) ^ (1 / Years) - 1,
-            BLANK()
-        )
+---
 
-CAGR Revenue = 
-    VAR FirstPeriod = FIRSTDATE(Dim_Time[time_key])
-    VAR LastPeriod = LASTDATE(Dim_Time[time_key])
-    VAR FirstValue = 
-        CALCULATE(
-            [Total Revenue],
-            Dim_Time[time_key] = FirstPeriod,
-            ALL(Dim_Time)
-        )
-    VAR LastValue = 
-        CALCULATE(
-            [Total Revenue],
-            Dim_Time[time_key] = LastPeriod,
-            ALL(Dim_Time)
-        )
-    VAR Years = DATEDIFF(FirstPeriod, LastPeriod, YEAR)
-    RETURN
-        IF(
-            FirstValue > 0 && LastValue > 0 && Years > 0,
-            (LastValue / FirstValue) ^ (1 / Years) - 1,
-            BLANK()
-        )
+## Storage
 
--- ============================================================
--- SCISSORS EFFECT (Traffic vs Revenue indexed to 100)
--- ============================================================
-Traffic Index (Base=100) = 
-    VAR BaseValue = 
-        CALCULATE(
-            [Total Data Traffic],
-            Dim_Time[year] = MIN(Dim_Time[year]),
-            ALL(Dim_Time)
-        )
-    RETURN
-        DIVIDE([Total Data Traffic], BaseValue, 0) * 100
+### Parquet files (default)
+14 compressed, columnar files in `data/processed/`. Loaded by the dashboard with zero SQL setup:
 
-Revenue Index (Base=100) = 
-    VAR BaseValue = 
-        CALCULATE(
-            [Total Revenue],
-            Dim_Time[year] = MIN(Dim_Time[year]),
-            ALL(Dim_Time)
-        )
-    RETURN
-        DIVIDE([Total Revenue], BaseValue, 0) * 100
-
--- ============================================================
--- MACRO CONTRIBUTION
--- ============================================================
-Macro Contribution Ratio = 
-    DIVIDE(
-        [Total Revenue] * 1000000,  -- Convert Mn EUR to EUR
-        SUM(Fact_Eurostat[gdp_meur]) * 1000000,
-        0
-    )
-
--- ============================================================
--- DIGITAL DENSITY
--- ============================================================
-Digital Density (per 100 pop) = 
-    VAR TotalPop = SUM(Fact_Eurostat[population])
-    RETURN
-        DIVIDE([Total Lines], TotalPop, 0) * 100
-
--- ============================================================
--- WHAT-IF PARAMETER MEASURES (Fair Share Simulator)
--- ============================================================
-Fair Share CAPEX Relief = 
-    -- CAPEX_required from ETNO: €174bn by 2030 (€17.4bn/year)
-    VAR CAPEX_Annual_Bn = 17.4  -- billion EUR
-    VAR OTT_Share = 
-        DIVIDE(
-            SELECTEDVALUE(Scenario_FairShare[ott_contribution_pct], 0),
-            100
-        )
-    RETURN
-        CAPEX_Annual_Bn * OTT_Share
-
-Revenue Impact with Fair Share = 
-    [Total Revenue] + [Fair Share CAPEX Relief] * 1000  -- Convert Bn to Mn
-
--- ============================================================
--- MARKET CONCENTRATION CLASSIFICATION
--- ============================================================
-Market Concentration Level = 
-    SWITCH(
-        TRUE(),
-        [HHI] < 1000, "Competitive",
-        [HHI] <= 2500, "Moderately Concentrated",
-        "Highly Concentrated"
-    )
+```python
+import pandas as pd
+df = pd.read_parquet("data/processed/fact_observed_agg.parquet")
 ```
 
-## Dashboard Page Layout
+### DuckDB SQL database (optional)
+`data/processed/net_tension.duckdb` bundles all tables into a portable SQL database with 6 validation queries. Generated by `src/pipeline/export_duckdb.py`.
 
-### Page 1: Market Overview (España)
-```
-┌──────────────────────────────────────────────────────────┐
-│  Header: NetTension — EU Telecom Market Stress Model     │
-│  KPI Cards: Revenue | Traffic | HHI | CAGR Gap          │
-├────────────────┬────────────────┬───────────────────────┤
-│ Traffic vs Rev │  HHI Over Time │  Revenue by Service   │
-│ (Index 100)    │  (Line Chart)  │  (Treemap/Bar)        │
-│ (Line Chart)   │                │                       │
-├────────────────┴────────────────┴───────────────────────┤
-│  Filters: Year Range | Service Type | Operator           │
-└──────────────────────────────────────────────────────────┘
+```python
+import duckdb
+con = duckdb.connect("data/processed/net_tension.duckdb")
+con.sql("SELECT * FROM fact_observed_agg").df()
 ```
 
-### Page 2: Network Stress & Infrastructure
+### CSV export (Power BI compatibility)
+8 CSV files in `data/csv/` for direct import into external tools. Generated by `src/pipeline/export_powerbi.py`.
+
+### Source data
+Raw CSVs (CNMC), TSV.GZ (Eurostat), and PDFs (ETNO, GSMA, BEREC, Sandvine) in `data/raw/`. See `data/SOURCES.yaml` for download links and license information.
+
+---
+
+## Loading in the Dashboard
+
+The Streamlit dashboard (`streamlit_app/`) loads data via `streamlit_app/utils/data_loader.py`:
+
+- DuckDB connection is cached with `@st.cache_resource`
+- DataFrame queries are cached with `@st.cache_data(ttl=3600)`
+- Falls back to parquet directly if DuckDB is unavailable (Cloud deployment)
+
+```python
+# From streamlit_app/utils/data_loader.py
+@st.cache_resource
+def get_connection():
+    return duckdb.connect(str(DB_PATH))
+
+@st.cache_data(ttl=3600)
+def load_fact_observed():
+    return _load_table("fact_observed_agg")
 ```
-┌──────────────────────────────────────────────────────────┐
-│  Header: Network Stress & Infrastructure Pressure        │
-│  KPI: NSI | Revenue/Traffic | CAGR Traffic | CAGR Rev    │
-├────────────────┬────────────────┬───────────────────────┤
-│ Network Stress │  Lines by Tech │  Revenue per Traffic   │
-│ Index Over Time│  (Stacked Area)│  Unit (Line Chart)     │
-├────────────────┴────────────────┴───────────────────────┤
-│  Data Traffic Growth (Year-over-Year %)                  │
-│  (Column Chart with trendline)                           │
-└──────────────────────────────────────────────────────────┘
-```
-
-### Page 3: European Context & Regulatory Crossroads
-```
-┌──────────────────────────────────────────────────────────┐
-│  Header: European Regulatory Crossroads                  │
-├────────────┬──────────────────┬─────────────────────────┤
-│ EU vs USA  │ 5G Adoption by   │ Investment per Capita    │
-│ ARPU       │ Country (Map)    │ (Bar Chart)              │
-│ (Bar Chart)│                  │                          │
-├────────────┴──────────────────┴─────────────────────────┤
-│  Key Regulatory Milestones Timeline                      │
-│  2020: EU 5G Toolbox | 2023: BEREC Fair Share Report    │
-│  2025: DNA Proposal Art.189 | 2026: Debate continues     │
-└──────────────────────────────────────────────────────────┘
-```
-
-### Page 4: Fair Share Simulator (What-If)
-```
-┌──────────────────────────────────────────────────────────┐
-│  Header: Scenario Simulator — Fair Share Impact          │
-├────────────────────────┬────────────────────────────────┤
-│  Controls:             │  Output Charts:                 │
-│  OTT Contribution: 0%  │  Revenue Impact (Before/After)  │
-│     [====●=========]   │  Investment Gap Closure %       │
-│  CAPEX Shock: 0%       │  Traffic Growth Scenarios       │
-│     [====●=========]   │                                  │
-│  Traffic Growth: 1.0x  │                                  │
-│     [====●=========]   │                                  │
-├────────────────────────┴────────────────────────────────┤
-│  Scenario Comparison Table (Base vs Policy vs Mixed)     │
-└──────────────────────────────────────────────────────────┘
-```
-
-### Page 5: Governance & Bias Audit
-```
-┌──────────────────────────────────────────────────────────┐
-│  Header: Governance, Methodology & Bias Audit            │
-├────────────────────────┬────────────────────────────────┤
-│ Data Source Inventory  │ Governance Layer Legend         │
-│ (Table: Source, Layer,  │  OBSERVED (green)              │
-│  Confidence, Reproduc.)│  ESTIMATED (yellow)             │
-│                        │  POLICY_MODEL (orange)          │
-│                        │  CONSTANT (gray)                │
-├────────────────────────┴────────────────────────────────┤
-│  Limitations & Known Issues                              │
-│  • CNMC methodology change ~2012 in data traffic        │
-│  • Eurostat ISOC_TF: fixed broadband only, no mobile    │
-│  • Sandvine data: vendor methodology, not peer-reviewed │
-│  • Huawei market share: paywalled (Strand Consult)      │
-└──────────────────────────────────────────────────────────┘
-```
-
-## Detailed Page Build Instructions
-
-### Page 1: Market Overview
-Objetivo: Mostrar el Efecto Tijera (tráfico vs ingresos) y KPIs principales.
-
-| Visual | Tipo | Datos |
-|--------|------|-------|
-| KPI Cards (4) | Card | Total Revenue, Total Data Traffic, HHI, CAGR Gap |
-| Scissors Effect | Line Chart | X: dim_time[year_quarter], Y: Traffic Index e Revenue Index |
-| HHI Timeline | Line Chart | X: dim_time[year_quarter], Y: kpi_hhi[hhi] |
-| YoY Traffic Growth | Column Chart | X: dim_time[year], Y: % cambio anual de tráfico |
-| Slicers (top) | Slicer | dim_time[year] (range), dim_time[quarter] |
-
-### Page 2: Network Stress
-Objetivo: Presión sobre la infraestructura por operador y tecnología.
-
-| Visual | Tipo | Datos |
-|--------|------|-------|
-| NSI over time | Line Chart | X: year_quarter, Y: fact_observed_agg[nsi] |
-| Revenue per Traffic | Line Chart | X: year_quarter, Y: fact_observed_agg[revenue_per_traffic] |
-| Revenue per Line | Area Chart | X: year_quarter, Y: fact_observed_agg[revenue_per_line] |
-| Data Traffic by Operator | Bar Chart | (usar cnmc_mercados_clean si está importada) |
-
-### Page 3: European Context
-Objetivo: Comparativa UE vs USA vs Asia usando datos ETNO/GSMA.
-
-| Visual | Tipo | Datos |
-|--------|------|-------|
-| ARPU Comparison | Bar Chart | dim_eu_context, filtrar por "ARPU" |
-| CAPEX per capita | Bar Chart | dim_eu_context, filtrar por "CAPEX" |
-| Key Indicators | Table | dim_eu_context[indicator, value, unit, source] |
-| Regulatory Timeline | Text box | Hitos: 2020 5G Toolbox → 2023 BEREC → 2025 DNA Art.189 |
-
-### Page 4: Fair Share Simulator
-Objetivo: Simular impacto de contribución OTT, shock CAPEX y crecimiento.
-
-This page uses the What-If parameters created earlier.
-
-| Visual | Tipo | Datos |
-|--------|------|-------|
-| Slicers (3) | What-If Slider | OTT Contribution, CAPEX Shock, Traffic Growth |
-| Revenue Impact | Gauge | Measure: [Revenue Impact with Fair Share] |
-| Investment Gap | Gauge | Measure: [Fair Share CAPEX Relief] |
-| Scenario Table | Table | Comparativa Base vs Policy vs Mixed |
-
-### Page 5: Governance & Bias Audit
-Objetivo: Transparencia metodológica y limitaciones.
-
-| Visual | Tipo | Datos |
-|--------|------|-------|
-| Data Sources | Table | Crear tabla manual con: Source, Layer, Confidence, Reproducible |
-| Governance Legend | Shape | 4 recuadros de colores: OBSERVED/ESTIMATED/POLICY_MODEL/CONSTANT |
-| Limitations | Text box | Lista de limitaciones conocidas (cambio metodología 2012, ISOC_TF sin móvil, Sandvine no peer-reviewed) |
-
-## Streamlit Usage
-
-The Streamlit dashboard (`streamlit_app/`) loads these Parquet files directly via `duckdb` and `pandas`. No DAX or Power BI setup needed. Run:
-
-```bash
-streamlit run streamlit_app/app.py
-```
-
-For custom analysis, load any Parquet file with `pandas.read_parquet()` or `duckdb.sql()`.
