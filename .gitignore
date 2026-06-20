@@ -65,9 +65,12 @@ NetTension.pbip/
 # DuckDB database (generated from parquet files)
 data/processed/*.duckdb
 
-# Generated Parquet files (ETL artifacts — re-run pipeline to regenerate)
-data/processed/*.parquet
-!data/processed/.gitkeep
+# Large raw data parquets (re-run ETL to regenerate — not needed by dashboard)
+# Dashboard uses small fact/dim/kpi parquets (~60KB total, tracked in git)
+data/processed/cnmc_mercados_clean.parquet
+data/processed/cnmc_datos_generales_clean.parquet
+data/processed/eurostat_demo_pjan_tidy.parquet
+data/processed/eurostat_nama_10_gdp_tidy.parquet
 
 # Generated CSV exports (Power BI compatibility)
 data/csv/

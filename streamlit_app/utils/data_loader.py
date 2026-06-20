@@ -9,9 +9,9 @@ _project_root = _src.parents[2]
 if not (_project_root / "data").exists():
     _project_root = Path.cwd()
 
-DB_PATH = _project_root / "data" / "processed" / "net_tension.duckdb"
+DB_PATH = _project_root / "data" / "processed" / "nettension.duckdb"
 if not DB_PATH.exists():
-    DB_PATH = Path.cwd() / "data" / "processed" / "net_tension.duckdb"
+    DB_PATH = Path.cwd() / "data" / "processed" / "nettension.duckdb"
 
 PARQUET_DIR = _project_root / "data" / "processed"
 
