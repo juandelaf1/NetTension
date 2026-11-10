@@ -223,6 +223,12 @@ kpi_hhi ────────────── dim_time (via trimestre_dt)
 
 Full documentation → [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
 
+### SQL layer & data quality (traceability)
+
+- **Versioned SQL (KPIs/validation):** `sql/` contains auditable queries executed against `data/processed/net_tension.duckdb` (see `sql/README.md`). Run via `python -m src.pipeline.export_duckdb`.
+- **Data quality checks:** `python -m src.quality.data_quality` validates processed outputs and writes `reports/quality/data_quality_report.(json|md)` (also invoked at the end of the ETL pipeline when outputs are available).
+- **Visualization/results registry:** Streamlit is the visualization platform (`streamlit_app/`). Evidence of key views/results is registered in `docs/visualizations/` (see `docs/visualizations/README.md`) with reproducible steps and metadata.
+
 ---
 
 ## 7. Technology Stack

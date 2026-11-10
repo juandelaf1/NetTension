@@ -87,6 +87,17 @@ def run_pipeline():
     elasticity.to_parquet(PROCESSED_DIR / "kpi_elasticity.parquet", index=False)
 
     print(f"\n  All files saved to: {PROCESSED_DIR}")
+
+    # Optional: data quality report on processed outputs (value: traceability/regression detection)
+    try:
+        from quality.data_quality import run_quality_checks, write_reports
+        report = run_quality_checks(PROCESSED_DIR)
+        _, md_path = write_reports(report)
+        status = "OK" if report.get("ok") else "ISSUES"
+        print(f"  Data quality report: {status} -> {md_path}")
+    except Exception as e:
+        print(f"  Data quality report: skipped ({e})")
+
     return mercados_clean, generales_clean, pop, gdp, hhi, nsi, elasticity
 
 

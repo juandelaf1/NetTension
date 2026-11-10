@@ -2,12 +2,17 @@
 NetTension — Export consolidated datasets to DuckDB.
 
 Creates net_tension.duckdb with all processed parquet files as SQL tables.
-Power BI can connect via DuckDB ODBC driver for SQL-based queries.
+Versioned KPI/validation queries live in `sql/` (see sql/README.md).
 """
-import duckdb
+
 from pathlib import Path
 
-PROC = Path(__file__).parents[2] / "data" / "processed"
+import duckdb
+
+ROOT = Path(__file__).parents[2]
+PROC = ROOT / "data" / "processed"
+SQL_DIR = ROOT / "sql"
+RESULTS_DIR = ROOT / "reports" / "results"
 DB_PATH = PROC / "net_tension.duckdb"
 
 PARQUET_TABLES = {
@@ -27,92 +32,67 @@ PARQUET_TABLES = {
     "eurostat_nama_10_gdp_tidy": PROC / "eurostat_nama_10_gdp_tidy.parquet",
 }
 
+# Ordered, versioned validation queries (files in sql/)
+VALIDATION_QUERIES = [
+    ("Scissors Effect (H1)", SQL_DIR / "01_scissors_effect_h1.sql"),
+    ("HHI Trend (H2)", SQL_DIR / "02_hhi_trend_h2.sql"),
+    ("NSI vs ARPU (H4)", SQL_DIR / "03_nsi_vs_arpu_h4.sql"),
+    ("Macro Context (H5)", SQL_DIR / "04_macro_context_h5.sql"),
+    ("Operator Count by Group", SQL_DIR / "05_operator_groups.sql"),
+    ("Service Categories", SQL_DIR / "06_service_categories.sql"),
+]
 
-def export_to_duckdb():
+
+def load_sql(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def export_to_duckdb(db_path: Path = DB_PATH):
     """Load all parquet files into DuckDB database."""
-    if DB_PATH.exists():
-        DB_PATH.unlink()
+    db_path = Path(db_path)
+    if db_path.exists():
+        db_path.unlink()
 
-    con = duckdb.connect(str(DB_PATH))
+    con = duckdb.connect(str(db_path))
 
     for table_name, parquet_path in PARQUET_TABLES.items():
         if parquet_path.exists():
-            con.execute(f"""
+            con.execute(
+                f"""
                 CREATE TABLE {table_name} AS
                 SELECT * FROM read_parquet('{parquet_path.as_posix()}')
-            """)
+                """
+            )
             row_count = con.execute(f"SELECT count(*) FROM {table_name}").fetchone()[0]
             print(f"  {table_name}: {row_count} rows")
 
-    print(f"\nDatabase: {DB_PATH}")
+    print(f"\nDatabase: {db_path}")
 
     return con
 
 
-def run_validation_queries(con):
-    """Demonstrate SQL analytics capabilities on the DuckDB database."""
-    queries = {
-        "Scissors Effect (H1)": """
-            SELECT year, quarter,
-                   data_traffic_index, revenue_index,
-                   (data_traffic_index - revenue_index) AS scissors_gap
-            FROM fact_observed_agg
-            WHERE year IN (2005, 2010, 2015, 2020, 2025)
-            ORDER BY year, quarter
-        """,
-        "HHI Trend (H2)": """
-            SELECT year,
-                   round(avg(hhi), 0)::INT AS avg_hhi,
-                   classification
-            FROM kpi_hhi
-            WHERE year IN (2005, 2010, 2015, 2020, 2025)
-            GROUP BY year, classification
-            ORDER BY year
-        """,
-        "NSI vs ARPU (H4)": """
-            SELECT year, quarter,
-                   round(nsi, 0)::INT AS nsi,
-                   round(revenue_per_line, 2) AS revenue_per_line
-            FROM fact_observed_agg
-            WHERE year IN (2005, 2010, 2015, 2020, 2025)
-            ORDER BY year, quarter
-        """,
-        "Macro Context (H5)": """
-            SELECT f.year, f.population, f.gdp_meur,
-                   round(f.gdp_per_capita, 0)::INT AS gdp_per_capita,
-                   round(o.revenue / (f.gdp_meur * 1e6) * 100, 2) AS telecom_gdp_share
-            FROM fact_eurostat_es f
-            JOIN (
-                SELECT year, avg(revenue) AS revenue
-                FROM fact_observed_agg
-                GROUP BY year
-            ) o ON f.year = o.year
-            WHERE f.year IN (2005, 2010, 2015, 2020, 2025)
-            ORDER BY f.year
-        """,
-        "Operator Count by Group": """
-            SELECT operator_group, count(*) AS num_operators
-            FROM dim_operator
-            GROUP BY operator_group
-            ORDER BY num_operators DESC
-        """,
-        "Service Categories": """
-            SELECT category, market_type, count(*) AS num_services
-            FROM dim_service
-            GROUP BY category, market_type
-            ORDER BY category, market_type
-        """,
-    }
-
+def run_validation_queries(con, queries=None, save_dir: Path | None = None):
+    """Execute versioned SQL validation queries, print results, and optionally save outputs."""
+    queries = VALIDATION_QUERIES if queries is None else queries
+    if save_dir is not None:
+        save_dir = Path(save_dir)
+        save_dir.mkdir(parents=True, exist_ok=True)
     print("\n=== VALIDATION QUERIES ===")
-    for name, sql in queries.items():
+    for name, sql_ref in queries:
+        sql = load_sql(sql_ref) if isinstance(sql_ref, Path) else str(sql_ref)
         print(f"\n--- {name} ---")
-        result = con.execute(sql)
-        print(result.fetchdf().to_string(index=False))
+        rel = con.execute(sql)
+        df = rel.fetchdf()
+        print(df.to_string(index=False))
+        if save_dir is not None and isinstance(sql_ref, Path):
+            out = save_dir / f"{sql_ref.stem}.csv"
+            df.to_csv(out, index=False)
+            print(f"  -> saved: {out}")
 
 
 if __name__ == "__main__":
     print("Exporting to DuckDB...")
     con = export_to_duckdb()
-    run_validation_queries(con)
+    run_validation_queries(con, save_dir=RESULTS_DIR)
     con.close()
+    print(f"\nResults saved to: {RESULTS_DIR}")

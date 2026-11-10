@@ -1,0 +1,205 @@
+{
+  "ok": true,
+  "generated_at": "2026-11-10T08:48:32.225308+00:00",
+  "proc_dir": "C:\\Users\\JUAN\\Desktop\\Proyectos\\NetTension\\data\\processed",
+  "summary": {
+    "pass": 29,
+    "fail": 0,
+    "warn": 0,
+    "skip": 0
+  },
+  "checks": [
+    {
+      "name": "exists:fact_observed_agg",
+      "status": "pass",
+      "detail": "found fact_observed_agg.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:fact_eurostat_es",
+      "status": "pass",
+      "detail": "found fact_eurostat_es.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:kpi_hhi",
+      "status": "pass",
+      "detail": "found kpi_hhi.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:kpi_nsi",
+      "status": "pass",
+      "detail": "found kpi_nsi.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:kpi_elasticity",
+      "status": "pass",
+      "detail": "found kpi_elasticity.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:dim_time",
+      "status": "pass",
+      "detail": "found dim_time.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:dim_operator",
+      "status": "pass",
+      "detail": "found dim_operator.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:dim_service",
+      "status": "pass",
+      "detail": "found dim_service.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:dim_geography",
+      "status": "pass",
+      "detail": "found dim_geography.parquet",
+      "value": null
+    },
+    {
+      "name": "exists:cnmc_mercados_clean",
+      "status": "pass",
+      "detail": "found cnmc_mercados_clean.parquet",
+      "value": null
+    },
+    {
+      "name": "rows:kpi_hhi",
+      "status": "pass",
+      "detail": "83 rows",
+      "value": 83
+    },
+    {
+      "name": "nulls:kpi_hhi",
+      "status": "pass",
+      "detail": "no nulls in ['hhi']",
+      "value": null
+    },
+    {
+      "name": "range:hhi",
+      "status": "pass",
+      "detail": "min=1903.13, max=3537.77 (expected 0..10000)",
+      "value": {
+        "min": 1903.1289321574584,
+        "max": 3537.7679145082366
+      }
+    },
+    {
+      "name": "coverage:kpi_hhi",
+      "status": "pass",
+      "detail": "years 2005-2025",
+      "value": {
+        "min": 2005,
+        "max": 2025
+      }
+    },
+    {
+      "name": "rows:kpi_nsi",
+      "status": "pass",
+      "detail": "83 rows",
+      "value": 83
+    },
+    {
+      "name": "positive:kpi_nsi",
+      "status": "pass",
+      "detail": "non-negative in ['network_stress_index']",
+      "value": null
+    },
+    {
+      "name": "coverage:kpi_nsi",
+      "status": "pass",
+      "detail": "years inferred 2005-2025",
+      "value": {
+        "min": 2005,
+        "max": 2025
+      }
+    },
+    {
+      "name": "rows:kpi_elasticity",
+      "status": "pass",
+      "detail": "83 rows",
+      "value": 83
+    },
+    {
+      "name": "positive:kpi_elasticity",
+      "status": "pass",
+      "detail": "non-negative in ['revenue_per_line', 'traffic_per_line']",
+      "value": null
+    },
+    {
+      "name": "coverage:kpi_elasticity",
+      "status": "pass",
+      "detail": "years inferred 2005-2025",
+      "value": {
+        "min": 2005,
+        "max": 2025
+      }
+    },
+    {
+      "name": "rows:fact_observed_agg",
+      "status": "pass",
+      "detail": "83 rows",
+      "value": 83
+    },
+    {
+      "name": "coverage:fact_observed_agg",
+      "status": "pass",
+      "detail": "years 2005-2025",
+      "value": {
+        "min": 2005,
+        "max": 2025
+      }
+    },
+    {
+      "name": "positive:fact_observed_agg",
+      "status": "pass",
+      "detail": "non-negative in ['revenue']",
+      "value": null
+    },
+    {
+      "name": "rows:fact_eurostat_es",
+      "status": "pass",
+      "detail": "66 rows",
+      "value": 66
+    },
+    {
+      "name": "coverage:fact_eurostat_es",
+      "status": "pass",
+      "detail": "years 1960-2025",
+      "value": {
+        "min": 1960,
+        "max": 2025
+      }
+    },
+    {
+      "name": "rows:dim_time",
+      "status": "pass",
+      "detail": "83 rows",
+      "value": 83
+    },
+    {
+      "name": "rows:dim_operator",
+      "status": "pass",
+      "detail": "32 rows",
+      "value": 32
+    },
+    {
+      "name": "rows:dim_service",
+      "status": "pass",
+      "detail": "38 rows",
+      "value": 38
+    },
+    {
+      "name": "rows:dim_geography",
+      "status": "pass",
+      "detail": "1 rows",
+      "value": 1
+    }
+  ]
+}
