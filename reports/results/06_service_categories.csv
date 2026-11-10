@@ -1,0 +1,9 @@
+category,market_type,num_services
+Access,Minorista,1
+Data,Minorista,3
+Other,Mayorista,2
+Other,Minorista,10
+Portability,Minorista,2
+Revenue,Mayorista,5
+Revenue,Minorista,10
+Voice,Minorista,5
